@@ -1,0 +1,305 @@
+In file included from ./arch/x86/include/asm/pgtable_types.h:250:0,
+                 from ./arch/x86/include/asm/processor.h:18,
+                 from ./arch/x86/include/asm/thread_info.h:52,
+                 from include/linux/thread_info.h:54,
+                 from ./arch/x86/include/asm/preempt.h:6,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+include/asm-generic/pgtable-nopud.h:15:0: warning: "PUD_SHIFT" redefined
+ #define PUD_SHIFT PGDIR_SHIFT
+ ^
+In file included from ./arch/x86/include/asm/pgtable_types.h:205:0,
+                 from ./arch/x86/include/asm/processor.h:18,
+                 from ./arch/x86/include/asm/thread_info.h:52,
+                 from include/linux/thread_info.h:54,
+                 from ./arch/x86/include/asm/preempt.h:6,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+./arch/x86/include/asm/pgtable_64_types.h:33:0: note: this is the location of the previous definition
+ #define PUD_SHIFT 30
+ ^
+In file included from ./arch/x86/include/asm/pgtable_types.h:250:0,
+                 from ./arch/x86/include/asm/processor.h:18,
+                 from ./arch/x86/include/asm/thread_info.h:52,
+                 from include/linux/thread_info.h:54,
+                 from ./arch/x86/include/asm/preempt.h:6,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+include/asm-generic/pgtable-nopud.h:16:0: warning: "PTRS_PER_PUD" redefined
+ #define PTRS_PER_PUD 1
+ ^
+In file included from ./arch/x86/include/asm/pgtable_types.h:205:0,
+                 from ./arch/x86/include/asm/processor.h:18,
+                 from ./arch/x86/include/asm/thread_info.h:52,
+                 from include/linux/thread_info.h:54,
+                 from ./arch/x86/include/asm/preempt.h:6,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+./arch/x86/include/asm/pgtable_64_types.h:34:0: note: this is the location of the previous definition
+ #define PTRS_PER_PUD 512
+ ^
+In file included from ./arch/x86/include/asm/pgtable_types.h:250:0,
+                 from ./arch/x86/include/asm/processor.h:18,
+                 from ./arch/x86/include/asm/thread_info.h:52,
+                 from include/linux/thread_info.h:54,
+                 from ./arch/x86/include/asm/preempt.h:6,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+include/asm-generic/pgtable-nopud.h:17:0: warning: "PUD_SIZE" redefined
+ #define PUD_SIZE   (1UL << PUD_SHIFT)
+ ^
+In file included from ./arch/x86/include/asm/pgtable_types.h:205:0,
+                 from ./arch/x86/include/asm/processor.h:18,
+                 from ./arch/x86/include/asm/thread_info.h:52,
+                 from include/linux/thread_info.h:54,
+                 from ./arch/x86/include/asm/preempt.h:6,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+./arch/x86/include/asm/pgtable_64_types.h:50:0: note: this is the location of the previous definition
+ #define PUD_SIZE (_AC(1, UL) << PUD_SHIFT)
+ ^
+In file included from ./arch/x86/include/asm/pgtable_types.h:250:0,
+                 from ./arch/x86/include/asm/processor.h:18,
+                 from ./arch/x86/include/asm/thread_info.h:52,
+                 from include/linux/thread_info.h:54,
+                 from ./arch/x86/include/asm/preempt.h:6,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+include/asm-generic/pgtable-nopud.h:18:0: warning: "PUD_MASK" redefined
+ #define PUD_MASK   (~(PUD_SIZE-1))
+ ^
+In file included from ./arch/x86/include/asm/pgtable_types.h:205:0,
+                 from ./arch/x86/include/asm/processor.h:18,
+                 from ./arch/x86/include/asm/thread_info.h:52,
+                 from include/linux/thread_info.h:54,
+                 from ./arch/x86/include/asm/preempt.h:6,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+./arch/x86/include/asm/pgtable_64_types.h:51:0: note: this is the location of the previous definition
+ #define PUD_MASK (~(PUD_SIZE - 1))
+ ^
+In file included from ./arch/x86/include/asm/segment.h:4:0,
+                 from ./arch/x86/include/asm/ptrace.h:4,
+                 from ./arch/x86/include/asm/alternative.h:8,
+                 from ./arch/x86/include/asm/bitops.h:16,
+                 from include/linux/bitops.h:36,
+                 from include/linux/kernel.h:10,
+                 from /home/hon/workstation/modules/hello.c:2:
+./arch/x86/include/asm/processor.h: In function ‘load_cr3’:
+./arch/x86/include/asm/page_32_types.h:16:28: error: ‘CONFIG_PAGE_OFFSETUL’ undeclared (first use in this function)
+ #define __PAGE_OFFSET  _AC(CONFIG_PAGE_OFFSET, UL)
+                            ^
+./include/uapi/linux/const.h:19:20: note: in definition of macro ‘__AC’
+ #define __AC(X,Y) (X##Y)
+                    ^
+./arch/x86/include/asm/page_32_types.h:16:24: note: in expansion of macro ‘_AC’
+ #define __PAGE_OFFSET  _AC(CONFIG_PAGE_OFFSET, UL)
+                        ^
+./arch/x86/include/asm/page_types.h:35:38: note: in expansion of macro ‘__PAGE_OFFSET’
+ #define PAGE_OFFSET  ((unsigned long)__PAGE_OFFSET)
+                                      ^
+./arch/x86/include/asm/page_32.h:8:39: note: in expansion of macro ‘PAGE_OFFSET’
+ #define __phys_addr_nodebug(x) ((x) - PAGE_OFFSET)
+                                       ^
+./arch/x86/include/asm/page_32.h:12:25: note: in expansion of macro ‘__phys_addr_nodebug’
+ #define __phys_addr(x)  __phys_addr_nodebug(x)
+                         ^
+./arch/x86/include/asm/page.h:40:18: note: in expansion of macro ‘__phys_addr’
+ #define __pa(x)  __phys_addr((unsigned long)(x))
+                  ^
+./arch/x86/include/asm/processor.h:211:12: note: in expansion of macro ‘__pa’
+  write_cr3(__pa(pgdir));
+            ^
+./arch/x86/include/asm/page_32_types.h:16:28: note: each undeclared identifier is reported only once for each function it appears in
+ #define __PAGE_OFFSET  _AC(CONFIG_PAGE_OFFSET, UL)
+                            ^
+./include/uapi/linux/const.h:19:20: note: in definition of macro ‘__AC’
+ #define __AC(X,Y) (X##Y)
+                    ^
+./arch/x86/include/asm/page_32_types.h:16:24: note: in expansion of macro ‘_AC’
+ #define __PAGE_OFFSET  _AC(CONFIG_PAGE_OFFSET, UL)
+                        ^
+./arch/x86/include/asm/page_types.h:35:38: note: in expansion of macro ‘__PAGE_OFFSET’
+ #define PAGE_OFFSET  ((unsigned long)__PAGE_OFFSET)
+                                      ^
+./arch/x86/include/asm/page_32.h:8:39: note: in expansion of macro ‘PAGE_OFFSET’
+ #define __phys_addr_nodebug(x) ((x) - PAGE_OFFSET)
+                                       ^
+./arch/x86/include/asm/page_32.h:12:25: note: in expansion of macro ‘__phys_addr_nodebug’
+ #define __phys_addr(x)  __phys_addr_nodebug(x)
+                         ^
+./arch/x86/include/asm/page.h:40:18: note: in expansion of macro ‘__phys_addr’
+ #define __pa(x)  __phys_addr((unsigned long)(x))
+                  ^
+./arch/x86/include/asm/processor.h:211:12: note: in expansion of macro ‘__pa’
+  write_cr3(__pa(pgdir));
+            ^
+In file included from ./arch/x86/include/asm/segment.h:155:0,
+                 from ./arch/x86/include/asm/ptrace.h:4,
+                 from ./arch/x86/include/asm/alternative.h:8,
+                 from ./arch/x86/include/asm/bitops.h:16,
+                 from include/linux/bitops.h:36,
+                 from include/linux/kernel.h:10,
+                 from /home/hon/workstation/modules/hello.c:2:
+./arch/x86/include/asm/processor.h: At top level:
+./arch/x86/include/asm/cache.h:7:25: error: ‘CONFIG_X86_L1_CACHE_SHIFT’ undeclared here (not in a function)
+ #define L1_CACHE_SHIFT (CONFIG_X86_L1_CACHE_SHIFT)
+                         ^
+./arch/x86/include/asm/cache.h:8:30: note: in expansion of macro ‘L1_CACHE_SHIFT’
+ #define L1_CACHE_BYTES (1 << L1_CACHE_SHIFT)
+                              ^
+include/linux/cache.h:12:25: note: in expansion of macro ‘L1_CACHE_BYTES’
+ #define SMP_CACHE_BYTES L1_CACHE_BYTES
+                         ^
+include/linux/cache.h:20:58: note: in expansion of macro ‘SMP_CACHE_BYTES’
+ #define ____cacheline_aligned __attribute__((__aligned__(SMP_CACHE_BYTES)))
+                                                          ^
+./arch/x86/include/asm/processor.h:275:27: note: in expansion of macro ‘____cacheline_aligned’
+ } __attribute__((packed)) ____cacheline_aligned;
+                           ^
+In file included from ./arch/x86/include/asm/thread_info.h:52:0,
+                 from include/linux/thread_info.h:54,
+                 from ./arch/x86/include/asm/preempt.h:6,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+./arch/x86/include/asm/processor.h:275:1: error: requested alignment is not an integer constant
+ } __attribute__((packed)) ____cacheline_aligned;
+ ^
+./arch/x86/include/asm/processor.h:306:1: error: requested alignment is not an integer constant
+ } ____cacheline_aligned;
+ ^
+In file included from include/asm-generic/percpu.h:6:0,
+                 from ./arch/x86/include/asm/percpu.h:551,
+                 from ./arch/x86/include/asm/preempt.h:5,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+./arch/x86/include/asm/processor.h:308:39: error: requested alignment is not an integer constant
+ DECLARE_PER_CPU_SHARED_ALIGNED(struct tss_struct, cpu_tss);
+                                       ^
+include/linux/percpu-defs.h:101:38: note: in definition of macro ‘DECLARE_PER_CPU_SECTION’
+  extern __PCPU_ATTRS(sec) __typeof__(type) name
+                                      ^
+./arch/x86/include/asm/processor.h:308:1: note: in expansion of macro ‘DECLARE_PER_CPU_SHARED_ALIGNED’
+ DECLARE_PER_CPU_SHARED_ALIGNED(struct tss_struct, cpu_tss);
+ ^
+In file included from ./arch/x86/include/asm/preempt.h:5:0,
+                 from include/linux/preempt.h:59,
+                 from include/linux/spinlock.h:50,
+                 from include/linux/seqlock.h:35,
+                 from include/linux/time.h:5,
+                 from include/linux/stat.h:18,
+                 from include/linux/module.h:10,
+                 from /home/hon/workstation/modules/hello.c:3:
+./arch/x86/include/asm/processor.h: In function ‘current_top_of_stack’:
+./arch/x86/include/asm/processor.h:466:30: error: ‘cpu_current_top_of_stack’ undeclared (first use in this function)
+  return this_cpu_read_stable(cpu_current_top_of_stack);
+                              ^
+./arch/x86/include/asm/percpu.h:213:9: note: in definition of macro ‘percpu_stable_op’
+  typeof(var) pfo_ret__;    \
+         ^
+./arch/x86/include/asm/processor.h:466:9: note: in expansion of macro ‘this_cpu_read_stable’
+  return this_cpu_read_stable(cpu_current_top_of_stack);
+         ^
+In file included from ./arch/x86/include/asm/segment.h:155:0,
+                 from ./arch/x86/include/asm/ptrace.h:4,
+                 from ./arch/x86/include/asm/alternative.h:8,
+                 from ./arch/x86/include/asm/bitops.h:16,
+                 from include/linux/bitops.h:36,
+                 from include/linux/kernel.h:10,
+                 from /home/hon/workstation/modules/hello.c:2:
+include/linux/mmzone.h: At top level:
+./arch/x86/include/asm/cache.h:12:31: error: ‘CONFIG_X86_INTERNODE_CACHE_SHIFT’ undeclared here (not in a function)
+ #define INTERNODE_CACHE_SHIFT CONFIG_X86_INTERNODE_CACHE_SHIFT
+                               ^
+include/linux/cache.h:57:35: note: in expansion of macro ‘INTERNODE_CACHE_SHIFT’
+  __attribute__((__aligned__(1 << (INTERNODE_CACHE_SHIFT))))
+                                   ^
+include/linux/mmzone.h:108:3: note: in expansion of macro ‘____cacheline_internodealigned_in_smp’
+ } ____cacheline_internodealigned_in_smp;
+   ^
+In file included from include/linux/gfp.h:5:0,
+                 from include/linux/kmod.h:22,
+                 from include/linux/module.h:13,
+                 from /home/hon/workstation/modules/hello.c:3:
+include/linux/mmzone.h:108:1: error: requested alignment is not an integer constant
+ } ____cacheline_internodealigned_in_smp;
+ ^
+include/linux/mmzone.h:531:1: error: requested alignment is not an integer constant
+ } ____cacheline_internodealigned_in_smp;
+ ^
+In file included from include/linux/elf.h:4:0,
+                 from include/linux/module.h:15,
+                 from /home/hon/workstation/modules/hello.c:3:
+./arch/x86/include/asm/elf.h: In function ‘elf_common_init’:
+./arch/x86/include/asm/elf.h:179:3: error: ‘struct thread_struct’ has no member named ‘fs’
+  t->fs = t->gs = 0;
+   ^
+./arch/x86/include/asm/elf.h: At top level:
+./arch/x86/include/asm/elf.h:362:1: error: requested alignment is not an integer constant
+ } ____cacheline_aligned;
+ ^
+In file included from include/linux/module.h:24:0,
+                 from /home/hon/workstation/modules/hello.c:3:
+./arch/x86/include/asm/module.h:57:2: error: #error unknown processor family
+ #error unknown processor family
+  ^
+In file included from /home/hon/workstation/modules/hello.c:3:0:
+include/linux/module.h:377:2: error: requested alignment is not an integer constant
+  void *module_init ____cacheline_aligned;
+  ^
+include/linux/module.h:484:1: error: requested alignment is not an integer constant
+ } ____cacheline_aligned;
+ ^
+make[2]: *** [/home/hon/workstation/modules/hello.o] Error 1
+make[1]: *** [_module_/home/hon/workstation/modules] Error 2
+make: *** [all] Error 2

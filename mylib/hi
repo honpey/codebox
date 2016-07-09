@@ -1,0 +1,100 @@
+In file included from ./include/rbtree_augmented.h:28:0,
+                 from rbtree.c:24:
+./include/./rbtree.h: In function ‘rb_link_node’:
+./include/./rbtree.h:83:35: error: ‘NULL’ undeclared (first use in this function)
+  node->rb_left = node->rb_right = NULL;
+                                   ^
+./include/./rbtree.h:83:35: note: each undeclared identifier is reported only once for each function it appears in
+In file included from rbtree.c:24:0:
+./include/rbtree_augmented.h: At top level:
+./include/rbtree_augmented.h:136:24: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘struct’
+ static __always_inline struct rb_node *
+                        ^
+./include/rbtree_augmented.h:233:24: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘void’
+ static __always_inline void
+                        ^
+rbtree.c:71:24: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘void’
+ static __always_inline void
+                        ^
+rbtree.c:200:24: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘void’
+ static __always_inline void
+                        ^
+rbtree.c:368:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(__rb_erase_color);
+ ^
+rbtree.c:368:1: warning: parameter names (without types) in function declaration
+rbtree.c:389:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(rb_insert_color);
+ ^
+rbtree.c:389:1: warning: parameter names (without types) in function declaration
+rbtree.c: In function ‘rb_erase’:
+rbtree.c:394:12: warning: assignment makes pointer from integer without a cast
+  rebalance = __rb_erase_augmented(node, root, &dummy_callbacks);
+            ^
+rbtree.c: At top level:
+rbtree.c:398:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(rb_erase);
+ ^
+rbtree.c:398:1: warning: parameter names (without types) in function declaration
+rbtree.c:412:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(__rb_insert_augmented);
+ ^
+rbtree.c:412:1: warning: parameter names (without types) in function declaration
+rbtree.c: In function ‘rb_first’:
+rbtree.c:423:10: error: ‘NULL’ undeclared (first use in this function)
+   return NULL;
+          ^
+rbtree.c: At top level:
+rbtree.c:428:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(rb_first);
+ ^
+rbtree.c:428:1: warning: parameter names (without types) in function declaration
+rbtree.c: In function ‘rb_last’:
+rbtree.c:436:10: error: ‘NULL’ undeclared (first use in this function)
+   return NULL;
+          ^
+rbtree.c: At top level:
+rbtree.c:441:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(rb_last);
+ ^
+rbtree.c:441:1: warning: parameter names (without types) in function declaration
+rbtree.c: In function ‘rb_next’:
+rbtree.c:448:10: error: ‘NULL’ undeclared (first use in this function)
+   return NULL;
+          ^
+rbtree.c: At top level:
+rbtree.c:473:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(rb_next);
+ ^
+rbtree.c:473:1: warning: parameter names (without types) in function declaration
+rbtree.c: In function ‘rb_prev’:
+rbtree.c:480:10: error: ‘NULL’ undeclared (first use in this function)
+   return NULL;
+          ^
+rbtree.c: At top level:
+rbtree.c:502:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(rb_prev);
+ ^
+rbtree.c:502:1: warning: parameter names (without types) in function declaration
+rbtree.c:519:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(rb_replace_node);
+ ^
+rbtree.c:519:1: warning: parameter names (without types) in function declaration
+rbtree.c: In function ‘rb_next_postorder’:
+rbtree.c:537:10: error: ‘NULL’ undeclared (first use in this function)
+   return NULL;
+          ^
+rbtree.c: At top level:
+rbtree.c:550:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(rb_next_postorder);
+ ^
+rbtree.c:550:1: warning: parameter names (without types) in function declaration
+rbtree.c: In function ‘rb_first_postorder’:
+rbtree.c:555:10: error: ‘NULL’ undeclared (first use in this function)
+   return NULL;
+          ^
+rbtree.c: At top level:
+rbtree.c:559:1: warning: data definition has no type or storage class
+ EXPORT_SYMBOL(rb_first_postorder);
+ ^
+rbtree.c:559:1: warning: parameter names (without types) in function declaration
