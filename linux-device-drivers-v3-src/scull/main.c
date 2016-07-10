@@ -14,7 +14,7 @@
  *
  */
 
-#include <linux/config.h>
+//#include <linux/config.h>
 #include <linux/module.h>
 #include <linux/moduleparam.h>
 #include <linux/init.h>
@@ -28,8 +28,9 @@
 #include <linux/fcntl.h>	/* O_ACCMODE */
 #include <linux/seq_file.h>
 #include <linux/cdev.h>
+#include <linux/sched.h>
 
-#include <asm/system.h>		/* cli(), *_flags */
+//#include <asm/system.h>		/* cli(), *_flags */
 #include <asm/uaccess.h>	/* copy_*_user */
 
 #include "scull.h"		/* local definitions */
@@ -82,7 +83,6 @@ int scull_trim(struct scull_dev *dev)
 	dev->data = NULL;
 	return 0;
 }
-#ifdef SCULL_DEBUG /* use proc only if debugging */
 /*
  * The proc filesystem: function to read and entry
  */
@@ -209,27 +209,39 @@ static struct file_operations scull_proc_ops = {
 static void scull_create_proc(void)
 {
 	struct proc_dir_entry *entry;
-	create_proc_read_entry("scullmem", 0 /* default mode */,
-			NULL /* parent dir */, scull_read_procmem,
-			NULL /* client data */);
+//	create_proc_read_entry("scullmem", 0 /* default mode */,
+//			NULL /* parent dir */, scull_read_procmem,
+//			NULL /* client data */);
+
+/*
 	entry = create_proc_entry("scullseq", 0, NULL);
 	if (entry)
 		entry->proc_fops = &scull_proc_ops;
+*/
+
+// reference to /proc/f2fs to rewrite the proc issue
+// create_proc_entry ----> proc_create
+/*
+static inline struct proc_dir_entry *proc_create(
+		    const char *name, umode_t mode, struct proc_dir_entry *parent,
+			    const struct file_operations *proc_fops)
+{
+	    return proc_create_data(name, mode, parent, proc_fops, NULL);
+}
+*/
+	entry = proc_create("scullseq", 0, NULL, &scull_proc_ops);
+	if (!entry) {
+		printk("Fail to create scullseq\n");
+		return ;
+	}
 }
 
 static void scull_remove_proc(void)
 {
 	/* no problem if it was not registered */
-	remove_proc_entry("scullmem", NULL /* parent dir */);
+//	remove_proc_entry("scullmem", NULL /* parent dir */);
 	remove_proc_entry("scullseq", NULL);
 }
-
-
-#endif /* SCULL_DEBUG */
-
-
-
-
 
 /*
  * Open and close
@@ -239,6 +251,9 @@ int scull_open(struct inode *inode, struct file *filp)
 {
 	struct scull_dev *dev; /* device information */
 
+	/* 什么时候给注册的? */
+	/* inode <---> scull_dev */
+	/* mknod*/
 	dev = container_of(inode->i_cdev, struct scull_dev, cdev);
 	filp->private_data = dev; /* for other methods */
 
@@ -264,7 +279,7 @@ struct scull_qset *scull_follow(struct scull_dev *dev, int n)
 	struct scull_qset *qs = dev->data;
 
         /* Allocate first qset explicitly if need be */
-	if (! qs) {
+	if (!qs) {
 		qs = dev->data = kmalloc(sizeof(struct scull_qset), GFP_KERNEL);
 		if (qs == NULL)
 			return NULL;  /* Never mind */
@@ -553,7 +568,7 @@ struct file_operations scull_fops = {
 	.llseek =   scull_llseek,
 	.read =     scull_read,
 	.write =    scull_write,
-	.ioctl =    scull_ioctl,
+//	.ioctl =    scull_ioctl,
 	.open =     scull_open,
 	.release =  scull_release,
 };
@@ -581,9 +596,7 @@ void scull_cleanup_module(void)
 		kfree(scull_devices);
 	}
 
-#ifdef SCULL_DEBUG /* use proc only if debugging */
 	scull_remove_proc();
-#endif
 
 	/* cleanup_module is never called if registering failed */
 	unregister_chrdev_region(devno, scull_nr_devs);
@@ -649,7 +662,7 @@ int scull_init_module(void)
 	for (i = 0; i < scull_nr_devs; i++) {
 		scull_devices[i].quantum = scull_quantum;
 		scull_devices[i].qset = scull_qset;
-		init_MUTEX(&scull_devices[i].sem);
+		sema_init(&scull_devices[i].sem, 1);
 		scull_setup_cdev(&scull_devices[i], i);
 	}
 
@@ -658,9 +671,7 @@ int scull_init_module(void)
 	dev += scull_p_init(dev);
 	dev += scull_access_init(dev);
 
-#ifdef SCULL_DEBUG /* only when debugging */
 	scull_create_proc();
-#endif
 
 	return 0; /* succeed */
 

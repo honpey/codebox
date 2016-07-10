@@ -27,6 +27,7 @@
 #include <linux/poll.h>
 #include <linux/cdev.h>
 #include <asm/uaccess.h>
+#include <linux/sched.h>
 
 #include "scull.h"		/* local definitions */
 
@@ -235,18 +236,35 @@ static unsigned int scull_p_poll(struct file *filp, poll_table *wait)
 	 * if "wp" is right behind "rp" and empty if the
 	 * two are equal.
 	 */
+//static inline void poll_wait
+//(struct file * filp, wait_queue_head_t * wait_address, poll_table *p)
+/*
+ * dev->inq is the wait_address
+ * will add p->entry->wait to dev->inq
+ * So, where p comes from? and how to deal with the dev->inq, by interrupt?
+ *
+ * answer:
+ * After write, wake_up_interruptible(&dev->inq) to wakeup all the reader.
+ * however, how this is related to poll(poll_table)?
+ * answer:
+ 		curr->func(curr, mode, wake_flags, key)
+   so the key is to check what the wait->func
+   attention to __pollwait:
+   static void __pollwait(struct file *filp, wait_queue_head_t *wait_address)
+    init_waitqueue_func_entry(&entry->wait, pollwake);
+	so the crital function is pollwake
+
+	pwq->triggered = 1;
+ */
 	down(&dev->sem);
-	poll_wait(filp, &dev->inq,  wait);
+	poll_wait(filp, &dev->inq,  wait); /* so */
 	poll_wait(filp, &dev->outq, wait);
 	if (dev->rp != dev->wp)
 		mask |= POLLIN | POLLRDNORM;	/* readable */
 	if (spacefree(dev))
 		mask |= POLLOUT | POLLWRNORM;	/* writable */
 	up(&dev->sem);
-	return mask;
-}
-
-
+	return mask; } 
 
 
 
@@ -260,7 +278,6 @@ static int scull_p_fasync(int fd, struct file *filp, int mode)
 
 
 /* FIXME this should use seq_file */
-#ifdef SCULL_DEBUG
 static void scullp_proc_offset(char *buf, char **start, off_t *offset, int *len)
 {
 	if (*offset == 0)
@@ -302,9 +319,6 @@ static int scull_read_p_mem(char *buf, char **start, off_t offset, int count,
 }
 
 
-#endif
-
-
 
 /*
  * The file operations for the pipe device
@@ -316,7 +330,7 @@ struct file_operations scull_pipe_fops = {
 	.read =		scull_p_read,
 	.write =	scull_p_write,
 	.poll =		scull_p_poll,
-	.ioctl =	scull_ioctl,
+//	.ioctl =	scull_ioctl,
 	.open =		scull_p_open,
 	.release =	scull_p_release,
 	.fasync =	scull_p_fasync,
@@ -362,12 +376,10 @@ int scull_p_init(dev_t firstdev)
 	for (i = 0; i < scull_p_nr_devs; i++) {
 		init_waitqueue_head(&(scull_p_devices[i].inq));
 		init_waitqueue_head(&(scull_p_devices[i].outq));
-		init_MUTEX(&scull_p_devices[i].sem);
+		sema_init(&scull_p_devices[i].sem, 1);
 		scull_p_setup_cdev(scull_p_devices + i, i);
 	}
-#ifdef SCULL_DEBUG
-	create_proc_read_entry("scullpipe", 0, NULL, scull_read_p_mem, NULL);
-#endif
+	//create_proc_read_entry("scullpipe", 0, NULL, scull_read_p_mem, NULL);
 	return scull_p_nr_devs;
 }
 
@@ -379,9 +391,7 @@ void scull_p_cleanup(void)
 {
 	int i;
 
-#ifdef SCULL_DEBUG
 	remove_proc_entry("scullpipe", NULL);
-#endif
 
 	if (!scull_p_devices)
 		return; /* nothing else to release */
