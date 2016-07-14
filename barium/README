@@ -1,0 +1,23 @@
+module programming:
+
+Attention:
+1)	static int handler_pre(struct kprobe *p, struct pt_regs *regs);
+	
+	**** return 0 ****
+
+2) static void handler_pos(struct kprobe *p, struct pt_regs *regs,
+	unsigned long flags)
+
+	**** no return value ****
+
+3) static int __init barium_init(void)
+
+	**** __init is necessary ****
+
+	and as the same 'static void __exit barium_cleanup_module'
+
+	**** __exit is necessary ****
+
+4) MODULE_LICENSE("GPL");
+
+	**** license info is necessary ****
