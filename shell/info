@@ -1,0 +1,12 @@
+#include <linux/compiler.h>
+123 12 34 56 78
+123 12 34 56
+123 12 34
+123 12
+123
+234
+789
+890
+hello 123 world 234 nihao 456
+         __user
+HOnpeys
