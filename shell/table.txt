@@ -1,0 +1,13 @@
+create table xxxx (
+		------------,
+		-----------,
+		)
+	go
+
+	create table xxxx (
+			------------,
+			-----------,
+			)
+	go
+
+create

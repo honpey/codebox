@@ -1,0 +1,7 @@
+<scenario tps='1014' MaxNumOfMsg='84500' low3='0' low4='0' low5='0' low6='0' low7='0' low8='1' saveSeq='0'>
+          <message msgFile='../diamsg/mar_lte_5013.msg.raw'/>
+</scenario>
+
+<scenario tps='1014' MaxNumOfMsg='84500' low3='5' low4='4' low5='8' low6='0' low7='0' low8='1' saveSeq='0'>
+            <message msgFile='../diamsg/mar3_rat2000_swx_vzw_lte.msg.raw'/>
+</scenario>
