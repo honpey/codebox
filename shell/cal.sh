@@ -18,3 +18,4 @@ done
 ##!/bin/bash
 #echo "0x12+0x12" | bc
 
+http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=4261389&page=1#pid24630878
