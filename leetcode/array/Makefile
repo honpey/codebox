@@ -1,3 +1,5 @@
+p48:p48.cpp
+	g++ -std=c++11 -o $@ $<
 p34:p34.cpp
 	g++ -std=c++11 -o $@ $<
 p35:p35.cpp
