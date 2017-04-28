@@ -5,57 +5,57 @@
 using namespace std;
 
 #define LEN 5
-void output(vector<int> &nums)
+void output(vector<int> &matrix)
 {
 	vector<int>::iterator iter;
-	for(iter=nums.begin(); iter!=nums.end(); iter++) {
+	for(iter=matrix.begin(); iter!=matrix.end(); iter++) {
 		cout<<*iter<<" ";
 	}
 	cout<<endl;
 }
-void outputD(vector<vector<int>> &nums)
+void outputD(vector<vector<int>> &matrix)
 {
 	int i, j;
 	for (i = 0; i < LEN; i++) {
 		for (j = 0; j < LEN; j++) {
-			cout<<nums[i][j]<<" ";
+			cout<<matrix[i][j]<<" ";
 		}
 		cout<<endl;
 	}
 }
 
-void rotate(vector<vector<int>>& nums)
+void rotate(vector<vector<int>>& matrix)
 {
 	
-	for (int i = 0, j = nums.size()-1; i < j; i++, j--)  
+	for (int i = 0, j = matrix.size()-1; i < j; i++, j--)
         {  
-            for (int k = i, d = j; k < j; k++, d--)  
+            for (int k = i, d = j; k < j; k++, d--)
             {  
-                int t = nums[i][k];  
-                nums[i][k] = nums[d][i];  
-                nums[d][i] = nums[j][d];  
-                nums[j][d] = nums[k][j];  
-                nums[k][j] = t;  
+                int t = matrix[i][k];
+                matrix[i][k] = matrix[d][i];
+                matrix[d][i] = matrix[j][d];
+                matrix[j][d] = matrix[k][j];
+                matrix[k][j] = t;
             }  
         }  
 }
 
-void rotate2(vector<vector<int>> &nums)
+void rotate2(vector<vector<int>> &matrix)
 {
 	int i,j;
 	int loop, upBd, temp;
-	loop = nums.size()/2;
+	loop = matrix.size()/2;
 
 	for (i = 0; i < loop; i++) {
 
-		upBd =  nums.size() - 1 -i; /* [i, upBd] is the target retangle */
-		for (j = i; j < upBd-1; j++) {
-			temp = nums[i][j];
-			nums[i][j] = nums[upBd-j][i];
-			nums[upBd-j-i][i] = nums[upBd][upBd-j-i];
-			nums[upBd][upBd-j-i] = nums[j][upBd];
+		upBd =  matrix.size() - 1 -i; /* [i, upBd] is the target retangle */
+		for (j = i; j < upBd; j++) {
+			temp = matrix[i][j];
+			matrix[i][j] = matrix[upBd-j+i][i];
+			matrix[upBd-j+i][i] = matrix[upBd][upBd-j+i];
+			matrix[upBd][upBd-j+i] = matrix[j][upBd];
+			matrix[j][upBd] = temp;
 		}
-		return;
 		
 	}
 }
