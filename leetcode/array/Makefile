@@ -1,3 +1,5 @@
+p33:p33.cpp
+	g++ -std=c++11 -o $@ $<
 p48:p48.cpp
 	g++ -std=c++11 -o $@ $<
 p34:p34.cpp
@@ -31,4 +33,6 @@ p448:p448.cpp
 p485:p485.cpp
 	g++ -std=c++11 -o $@ $<
 p532:p532.cpp
+	g++ -std=c++11 -o $@ $<
+test:test.cpp
 	g++ -std=c++11 -o $@ $<
