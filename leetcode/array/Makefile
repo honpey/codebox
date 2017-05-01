@@ -1,3 +1,5 @@
+p54_spiral_matrix:p54_spiral_matrix.cpp
+	g++ -std=c++11 -o $@ $<
 p40_combination_sum_2:p40_combination_sum_2.cpp
 	g++ -std=c++11 -o $@ $<
 p39_combination_sum:p39_combination_sum.cpp
