@@ -1,3 +1,5 @@
+p39_combination_sum:p39_combination_sum.cpp
+	g++ -std=c++11 -o $@ $<
 p18:p18.cpp
 	g++ -std=c++11 -o $@ $<
 p16:p16.cpp
