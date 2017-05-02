@@ -1,3 +1,5 @@
+p121_best_time_to_buy_and_sell_stock:p121_best_time_to_buy_and_sell_stock.cpp
+	g++ -std=c++11 -o $@ $<
 p561_array_partition_1:p561_array_partition_1.cpp
 	g++ -std=c++11 -o $@ $<
 p54_spiral_matrix:p54_spiral_matrix.cpp
