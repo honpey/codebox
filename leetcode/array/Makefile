@@ -1,3 +1,5 @@
+p566_reshape_the_matrix:p566_reshape_the_matrix.cpp
+	g++ -std=c++11 -o $@ $<
 p53_maximum_subarray:p53_maximum_subarray.cpp
 	g++ -std=c++11 -o $@ $<
 p27_remove_element:p27_remove_element.cpp
