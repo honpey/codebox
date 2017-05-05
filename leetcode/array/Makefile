@@ -1,3 +1,5 @@
+p53_maximum_subarray:p53_maximum_subarray.cpp
+	g++ -std=c++11 -o $@ $<
 p27_remove_element:p27_remove_element.cpp
 	g++ -std=c++11 -o $@ $<
 p31_next_permutation:p31_next_permutation.cpp
