@@ -1,3 +1,5 @@
+p27_remove_element:p27_remove_element.cpp
+	g++ -std=c++11 -o $@ $<
 p31_next_permutation:p31_next_permutation.cpp
 	g++ -std=c++11 -o $@ $<
 p121_best_time_to_buy_and_sell_stock:p121_best_time_to_buy_and_sell_stock.cpp
@@ -25,8 +27,6 @@ p48:p48.cpp
 p34:p34.cpp
 	g++ -std=c++11 -o $@ $<
 p35:p35.cpp
-	g++ -std=c++11 -o $@ $<
-p27:p27.cpp
 	g++ -std=c++11 -o $@ $<
 p1:p1.cpp
 	g++ -std=c++11 -o $@ $<
