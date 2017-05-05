@@ -40,25 +40,17 @@ vector<string> summaryRanges(vector<int> &nums) {
 		if (pre == nums.size() - 1) {
 			temp.clear();
 			if (pre==pos)
-				temp.append(to_string(nums[pre]));
-			else {
-				temp.append(to_string(nums[pos]));
-				temp.append("->");
-				temp.append(to_string(nums[pre]));
-			}
-			res.push_back(temp);
+				res.push_back(to_string(nums[pre]));
+			else 
+				res.push_back(to_string(nums[pos])+"->"+to_string(nums[pre]));
 			break;
 		}
 		if (nums[pre+1] != nums[pre]+1) {
 			temp.clear();
 			if (pre == pos)
-				temp.append(to_string(nums[pre]));	
-			else {
-				temp.append(to_string(nums[pos]));
-				temp.append("->");
-				temp.append(to_string(nums[pre]));
-			}
-			res.push_back(temp);
+				res.push_back(to_string(nums[pre]));
+			else 
+				res.push_back(to_string(nums[pre])+"->"+to_string(nums[pre]));
 			pos = pre+1;
 		}
 		pre++;
