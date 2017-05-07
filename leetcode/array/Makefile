@@ -1,3 +1,5 @@
+p380_insert_delete_getrandom:p380_insert_delete_getrandom.cpp
+	g++ -std=c++11 -o $@ $<
 p228_summary_ranges:p228_summary_ranges.cpp
 	g++ -std=c++11 -o $@ $<
 p566_reshape_the_matrix:p566_reshape_the_matrix.cpp
