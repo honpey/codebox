@@ -1,3 +1,5 @@
+p66_plus_one:p66_plus_one.cpp
+	g++ -std=c++11 -o $@ $<
 p56_merge_intervals:p56_merge_intervals.cpp
 	g++ -std=c++11 -o $@ $<
 p229_majority_element:p229_majority_element.cpp
