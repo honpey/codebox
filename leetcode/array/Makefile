@@ -1,3 +1,5 @@
+p229_majority_element:p229_majority_element.cpp
+	g++ -std=c++11 -o $@ $<
 p380_insert_delete_getrandom:p380_insert_delete_getrandom.cpp
 	g++ -std=c++11 -o $@ $<
 p228_summary_ranges:p228_summary_ranges.cpp
