@@ -1,3 +1,5 @@
+p56_merge_intervals:p56_merge_intervals.cpp
+	g++ -std=c++11 -o $@ $<
 p229_majority_element:p229_majority_element.cpp
 	g++ -std=c++11 -o $@ $<
 p380_insert_delete_getrandom:p380_insert_delete_getrandom.cpp
