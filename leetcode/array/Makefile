@@ -1,3 +1,7 @@
+p152_maximum_product_subarray:p152_maximum_product_subarray.cpp
+	g++ -std=c++11 -o $@ $<
+p79_word_search:p79_word_search.cpp
+	g++ -std=c++11 -o $@ $<
 p66_plus_one:p66_plus_one.cpp
 	g++ -std=c++11 -o $@ $<
 p56_merge_intervals:p56_merge_intervals.cpp
