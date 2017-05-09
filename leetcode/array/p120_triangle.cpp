@@ -87,25 +87,34 @@ int minimumTotal2(vector<vector<int>> &triangle)
 
 	return minval;
 }
+
+int minimumTotal3(vector<vector<int>> &triangle)
+{
+	vector<int> mini = triangle[triangle.size()-1];
+
+	for (int i = triangle.size() -2; i >= 0; --i)
+		for (int j = 0; j < triangle[i].size(); ++j)
+			mini[j] = triangle[i][j] + min(mini[j], mini[j+1]);
+	return mini[0];
+}
 int main()
 {
-	int l1[] = {-10};
-/*	int l2[] = {3,4};
+	int l1[] = {2};
+	int l2[] = {3,4};
 	int l3[] = {6,5,7};
 	int l4[] = {4,1,8,3};
-*/
+
 	vector<int> iv1(l1, l1+sizeof(l1)/sizeof(int));
-/*	vector<int> iv2(l2, l2+sizeof(l2)/sizeof(int));
+	vector<int> iv2(l2, l2+sizeof(l2)/sizeof(int));
 	vector<int> iv3(l3, l3+sizeof(l3)/sizeof(int));
 	vector<int> iv4(l4, l4+sizeof(l4)/sizeof(int));
-	*/
+
 	vector<vector<int>> tri;
 	tri.push_back(iv1);
-/*	tri.push_back(iv2);
+	tri.push_back(iv2);
 	tri.push_back(iv3);
 	tri.push_back(iv4);
-	*/
-	int res= minimumTotal2(tri);
+	int res= minimumTotal3(tri);
 	cout<<"res:"<<res<<endl;
 	
 	return 0;
