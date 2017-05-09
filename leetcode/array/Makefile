@@ -1,3 +1,5 @@
+p88_merge_sorted_array:p88_merge_sorted_array.cpp
+	g++ -std=c++11 -o $@ $<
 p120_triangle:p120_triangle.cpp
 	g++ -std=c++11 -o $@ $<
 p162_find_peak_element:p162_find_peak_element.cpp
