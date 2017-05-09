@@ -1,3 +1,5 @@
+p162_find_peak_element:p162_find_peak_element.cpp
+	g++ -std=c++11 -o $@ $<
 p152_maximum_product_subarray:p152_maximum_product_subarray.cpp
 	g++ -std=c++11 -o $@ $<
 p79_word_search:p79_word_search.cpp
