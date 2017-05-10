@@ -1,3 +1,5 @@
+p79_word_search:p79_word_search.cpp
+	g++ -std=c++11 -o $@ $<
 p88_merge_sorted_array:p88_merge_sorted_array.cpp
 	g++ -std=c++11 -o $@ $<
 p120_triangle:p120_triangle.cpp
@@ -5,8 +7,6 @@ p120_triangle:p120_triangle.cpp
 p162_find_peak_element:p162_find_peak_element.cpp
 	g++ -std=c++11 -o $@ $<
 p152_maximum_product_subarray:p152_maximum_product_subarray.cpp
-	g++ -std=c++11 -o $@ $<
-p79_word_search:p79_word_search.cpp
 	g++ -std=c++11 -o $@ $<
 p66_plus_one:p66_plus_one.cpp
 	g++ -std=c++11 -o $@ $<
