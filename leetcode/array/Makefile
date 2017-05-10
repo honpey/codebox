@@ -1,3 +1,5 @@
+p62_unique_paths:p62_unique_paths.cpp
+	g++ -std=c++11 -o $@ $<
 p79_word_search:p79_word_search.cpp
 	g++ -std=c++11 -o $@ $<
 p88_merge_sorted_array:p88_merge_sorted_array.cpp
