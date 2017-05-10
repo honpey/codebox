@@ -1,3 +1,5 @@
+p75_sort_colors:p75_sort_colors.cpp
+	g++ -std=c++11 -o $@ $<
 p63_unique_paths:p63_unique_paths.cpp
 	g++ -std=c++11 -o $@ $<
 p62_unique_paths:p62_unique_paths.cpp
