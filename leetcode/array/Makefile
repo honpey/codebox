@@ -1,3 +1,5 @@
+p78_subsets:p78_subsets.cpp
+	g++ -std=c++11 -o $@ $<
 p75_sort_colors:p75_sort_colors.cpp
 	g++ -std=c++11 -o $@ $<
 p63_unique_paths:p63_unique_paths.cpp
