@@ -1,3 +1,5 @@
+p287_find_the_duplicate_number:p287_find_the_duplicate_number.cpp
+	g++ -std=c++11 -o $@ $<
 p78_subsets:p78_subsets.cpp
 	g++ -std=c++11 -o $@ $<
 p75_sort_colors:p75_sort_colors.cpp
