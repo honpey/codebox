@@ -1,3 +1,5 @@
+p495_teemo_attacking:p495_teemo_attacking.cpp
+	g++ -std=c++11 -o $@ $<
 p287_find_the_duplicate_number:p287_find_the_duplicate_number.cpp
 	g++ -std=c++11 -o $@ $<
 p78_subsets:p78_subsets.cpp
