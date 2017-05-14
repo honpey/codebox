@@ -1,3 +1,7 @@
+p238_product_of_array_except_self:p238_product_of_array_except_self.cpp
+	g++ -std=c++11 -o $@ $<
+p560_subarray_sum_equals_k:p560_subarray_sum_equals_k.cpp
+	g++ -std=c++11 -o $@ $<
 p495_teemo_attacking:p495_teemo_attacking.cpp
 	g++ -std=c++11 -o $@ $<
 p287_find_the_duplicate_number:p287_find_the_duplicate_number.cpp
