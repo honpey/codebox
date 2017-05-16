@@ -1,3 +1,5 @@
+p442_find_all_duplicates_in_an_array:p442_find_all_duplicates_in_an_array.cpp
+	g++ -std=c++11 -o $@ $<
 p238_product_of_array_except_self:p238_product_of_array_except_self.cpp
 	g++ -std=c++11 -o $@ $<
 p560_subarray_sum_equals_k:p560_subarray_sum_equals_k.cpp
