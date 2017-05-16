@@ -1,3 +1,5 @@
+p216_combination_sum:p216_combination_sum.cpp
+	g++ -std=c++11 -o $@ $<
 p289_game_of_life:p289_game_of_life.cpp
 	g++ -std=c++11 -o $@ $<
 p442_find_all_duplicates_in_an_array:p442_find_all_duplicates_in_an_array.cpp
