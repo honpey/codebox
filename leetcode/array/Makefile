@@ -1,3 +1,5 @@
+p289_game_of_life:p289_game_of_life.cpp
+	g++ -std=c++11 -o $@ $<
 p442_find_all_duplicates_in_an_array:p442_find_all_duplicates_in_an_array.cpp
 	g++ -std=c++11 -o $@ $<
 p238_product_of_array_except_self:p238_product_of_array_except_self.cpp
