@@ -1,3 +1,5 @@
+p153_find_minimum_in_rotated_sorted_array:p153_find_minimum_in_rotated_sorted_array.cpp
+	g++ -std=c++11 -o $@ $<
 p59_spiral_matrix:p59_spiral_matrix.cpp
 	g++ -std=c++11 -o $@ $<
 p209_minimum_size_subarray_sum:p209_minimum_size_subarray_sum.cpp
