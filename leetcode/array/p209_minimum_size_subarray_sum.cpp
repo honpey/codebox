@@ -19,22 +19,20 @@ int minSubArrayLen(int s, vector<int>& nums)
 {
 	if (nums.size() <= 0)
 		return 0;
+	if (s > accumulate(nums.begin(), nums.end(),0))
+		return 0;
 	int min = nums.size();	
-	int cursum = 0;
+	int cursum = nums[0];
 	int fast = 0, slow = 0;
 	while (fast < nums.size()) {
 		if (cursum >= s && (fast-slow+1) <= min) {
-			cout<<slow<<" "<<fast<<endl;
 			min = (fast-slow+1);
-			cursum -= nums[slow];
-			if (slow < fast)	
-				slow++;
 		}
 		if (cursum < s) {
 			fast++; 
 			if (fast < nums.size())
 				cursum += nums[fast];
-		} else if (cursum > s) {
+		} else if (cursum >= s) {
 			cursum -= nums[slow]; 
 			if (slow < fast)
 				slow++;
@@ -47,6 +45,7 @@ int main()
 {
 	int a[] = {2,3,1,2,4,3};
 	vector<int> iv(a, a+sizeof(a)/sizeof(int));
-	cout<<minSubArrayLen(7, iv)<<endl;
+	output(iv);
+	cout<<minSubArrayLen(100, iv)<<endl;
 	return 0;
 }
