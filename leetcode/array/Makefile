@@ -1,3 +1,5 @@
+p59_spiral_matrix:p59_spiral_matrix.cpp
+	g++ -std=c++11 -o $@ $<
 p209_minimum_size_subarray_sum:p209_minimum_size_subarray_sum.cpp
 	g++ -std=c++11 -o $@ $<
 p216_combination_sum:p216_combination_sum.cpp
