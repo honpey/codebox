@@ -1,3 +1,5 @@
+p64_minimum_path_sum:p64_minimum_path_sum.cpp
+	g++ -std=c++11 -o $@ $<
 p74_search_a_2d_matrix:p74_search_a_2d_matrix.cpp
 	g++ -std=c++11 -o $@ $<
 p90_subsets_2:p90_subsets_2.cpp
