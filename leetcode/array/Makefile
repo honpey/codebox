@@ -1,3 +1,5 @@
+p81_search_in_rotated_sorted_array_2:p81_search_in_rotated_sorted_array_2.cpp
+	g++ -std=c++11 -o $@ $<
 p64_minimum_path_sum:p64_minimum_path_sum.cpp
 	g++ -std=c++11 -o $@ $<
 p74_search_a_2d_matrix:p74_search_a_2d_matrix.cpp
