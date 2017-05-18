@@ -1,3 +1,5 @@
+p90_subsets_2:p90_subsets_2.cpp
+	g++ -std=c++11 -o $@ $<
 p118_pascal_triangle1:p118_pascal_triangle1.cpp
 	g++ -std=c++11 -o $@ $<
 p119_pascal_triangle:p119_pascal_triangle.cpp
