@@ -1,3 +1,5 @@
+p118_pascal_triangle1:p118_pascal_triangle1.cpp
+	g++ -std=c++11 -o $@ $<
 p119_pascal_triangle:p119_pascal_triangle.cpp
 	g++ -std=c++11 -o $@ $<
 p122_best_time_to_buy_and_sell_stock:p122_best_time_to_buy_and_sell_stock.cpp
