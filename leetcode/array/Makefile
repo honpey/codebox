@@ -1,3 +1,5 @@
+p119_pascal_triangle:p119_pascal_triangle.cpp
+	g++ -std=c++11 -o $@ $<
 p122_best_time_to_buy_and_sell_stock:p122_best_time_to_buy_and_sell_stock.cpp
 	g++ -std=c++11 -o $@ $<
 p153_find_minimum_in_rotated_sorted_array:p153_find_minimum_in_rotated_sorted_array.cpp
