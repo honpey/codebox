@@ -1,3 +1,5 @@
+p74_search_a_2d_matrix:p74_search_a_2d_matrix.cpp
+	g++ -std=c++11 -o $@ $<
 p90_subsets_2:p90_subsets_2.cpp
 	g++ -std=c++11 -o $@ $<
 p118_pascal_triangle1:p118_pascal_triangle1.cpp
