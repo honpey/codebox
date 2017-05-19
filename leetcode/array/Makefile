@@ -1,3 +1,7 @@
+p80_remove_duplicates_from_sorted_array_2:p80_remove_duplicates_from_sorted_array_2.cpp
+	g++ -std=c++11 -o $@ $<
+p73_set_matrix_zeroes:p73_set_matrix_zeroes.cpp
+	g++ -std=c++11 -o $@ $<
 p81_search_in_rotated_sorted_array_2:p81_search_in_rotated_sorted_array_2.cpp
 	g++ -std=c++11 -o $@ $<
 p64_minimum_path_sum:p64_minimum_path_sum.cpp
