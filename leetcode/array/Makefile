@@ -1,3 +1,5 @@
+p500_keyboard_row:p500_keyboard_row.cpp
+	g++ -std=c++11 -o $@ $<
 p525_contiguous_array:p525_contiguous_array.cpp
 	g++ -std=c++11 -o $@ $<
 p554_brick_wall:p554_brick_wall.cpp
