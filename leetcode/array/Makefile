@@ -1,3 +1,5 @@
+p454_4sum_2:p454_4sum_2.cpp
+	g++ -std=c++11 -o $@ $<
 p463_island_perimeter:p463_island_perimeter.cpp
 	g++ -std=c++11 -o $@ $<
 p500_keyboard_row:p500_keyboard_row.cpp
