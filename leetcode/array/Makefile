@@ -1,3 +1,5 @@
+p347_top_k_frequent_elements:p347_top_k_frequent_elements.cpp
+	g++ -std=c++11 -o $@ $<
 p389_find_the_difference:p389_find_the_difference.cpp
 	g++ -std=c++11 -o $@ $<
 p409_longest_palindrome:p409_longest_palindrome.cpp
