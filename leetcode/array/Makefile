@@ -1,3 +1,5 @@
+p409_longest_palindrome:p409_longest_palindrome.cpp
+	g++ -std=c++11 -o $@ $<
 p438_find_all_anagrams_in_a_string:p438_find_all_anagrams_in_a_string.cpp
 	g++ -std=c++11 -o $@ $<
 p447_number_of_boomerangs:p447_number_of_boomerangs.cpp
