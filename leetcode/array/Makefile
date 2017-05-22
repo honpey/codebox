@@ -1,3 +1,5 @@
+p389_find_the_difference:p389_find_the_difference.cpp
+	g++ -std=c++11 -o $@ $<
 p409_longest_palindrome:p409_longest_palindrome.cpp
 	g++ -std=c++11 -o $@ $<
 p438_find_all_anagrams_in_a_string:p438_find_all_anagrams_in_a_string.cpp
