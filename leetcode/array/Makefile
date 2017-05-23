@@ -1,3 +1,5 @@
+p349_intersection_of_two_arrays:p349_intersection_of_two_arrays.cpp
+	g++ -std=c++11 -o $@ $<
 p350_intersection_of_two_arrays_2:p350_intersection_of_two_arrays_2.cpp
 	g++ -std=c++11 -o $@ $<
 p347_top_k_frequent_elements:p347_top_k_frequent_elements.cpp
