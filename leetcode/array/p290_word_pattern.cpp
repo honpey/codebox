@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <unordered_set>
 #include <sstream>
+#include <map>
 
 using namespace std;
 
@@ -47,10 +48,26 @@ bool wordPattern(string pattern, string str)
 	return true;
 }
 
+/* 妙笔生花的妙啊 */
+/* leetcode 上做法！妙！ */
+bool wordPattern2(string pattern, string str)
+{
+	map<char, int> p2i;
+	map<string, int> w2i;
+	istringstream in(str);
+	int i = 0, n = pattern.size();
+	for (string word; in >> word; ++i) {
+		if (i == n || p2i[pattern[i]] != w2i[word])
+			return false;
+		p2i[pattern[i]] = w2i[word] = i + 1;
+	}
+	return i == n;
+}
+
 int main()
 {
 	int a[] = {1,2,2};
 	vector<int> iv(a, a+sizeof(a)/sizeof(int));
-	cout<<wordPattern(string("adda"), string("dog cat cat fish"))<<endl;
+	cout<<wordPattern2(string("adda"), string("dog cat cat fish"))<<endl;
 	return 0;
 }
