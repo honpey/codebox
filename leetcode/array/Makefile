@@ -1,3 +1,9 @@
+p202_happy_number:p202_happy_number.cpp
+	g++ -std=c++11 -o $@ $<
+p136_single_number:p136_single_number.cpp
+	g++ -std=c++11 -o $@ $<
+p274_h_index:p274_h_index.cpp
+	g++ -std=c++11 -o $@ $<
 p290_word_pattern:p290_word_pattern.cpp
 	g++ -std=c++11 -o $@ $<
 p349_intersection_of_two_arrays:p349_intersection_of_two_arrays.cpp
