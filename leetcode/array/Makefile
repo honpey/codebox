@@ -1,3 +1,5 @@
+p205_isomorphic_strings:p205_isomorphic_strings.cpp
+	g++ -std=c++11 -o $@ $<
 p202_happy_number:p202_happy_number.cpp
 	g++ -std=c++11 -o $@ $<
 p136_single_number:p136_single_number.cpp
