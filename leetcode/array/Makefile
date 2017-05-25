@@ -1,3 +1,5 @@
+p204_count_primes:p204_count_primes.cpp
+	g++ -std=c++11 -o $@ $<
 p205_isomorphic_strings:p205_isomorphic_strings.cpp
 	g++ -std=c++11 -o $@ $<
 p202_happy_number:p202_happy_number.cpp
