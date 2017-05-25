@@ -1,3 +1,5 @@
+p187_repeated_dna_sequences:p187_repeated_dna_sequences.cpp
+	g++ -std=c++11 -o $@ $<
 p242_valid_anagram:p242_valid_anagram.cpp
 	g++ -std=c++11 -o $@ $<
 p204_count_primes:p204_count_primes.cpp
