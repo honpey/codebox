@@ -1,3 +1,5 @@
+p242_valid_anagram:p242_valid_anagram.cpp
+	g++ -std=c++11 -o $@ $<
 p204_count_primes:p204_count_primes.cpp
 	g++ -std=c++11 -o $@ $<
 p205_isomorphic_strings:p205_isomorphic_strings.cpp
