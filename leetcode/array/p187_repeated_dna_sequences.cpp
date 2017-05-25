@@ -35,6 +35,29 @@ vector<string> findRepeatedDnaSequences(string s)
 	return res;
 }
 
+/*
+ * 从A C G 入手!
+ * A -- 0 0000
+ * C -- 2 0010
+ * G -- 6 0110
+ * 妙！ 每10为字符串的组合即为一个数字 
+ * A --> 00
+ * c --> 01
+ * G --> 10
+ * T --> 11
+ * 每次向右移动一位字符，相当于字符串对应的init值左移两位
+ * 太妙了！发现数组本身的规律!
+ */
+vector<string> findRepeatedDnaSequences(string s)
+{
+	char hashMap[1048576] = {0};
+	vector<string> ans;
+	int len = s.size(), hashNum = 0;
+	if (len < 11) return ans;
+	for (int i = 0; i < 9; ++i)
+		hashNum = hashNum << 2 | (s[i] - 'A' + 1)%5;
+}
+
 int main()
 {
 	vector<string> res;
