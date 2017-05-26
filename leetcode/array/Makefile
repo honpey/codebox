@@ -1,3 +1,5 @@
+p594_longest_harmonious_subsequence:p594_longest_harmonious_subsequence.cpp
+	g++ -std=c++11 -o $@ $<
 p187_repeated_dna_sequences:p187_repeated_dna_sequences.cpp
 	g++ -std=c++11 -o $@ $<
 p242_valid_anagram:p242_valid_anagram.cpp
