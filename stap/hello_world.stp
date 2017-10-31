@@ -1,0 +1,8 @@
+probe begin {
+	print("hello world\n")
+	exit()
+}
+
+probe end {
+	print("hello world, end\n")
+}
