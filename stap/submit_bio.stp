@@ -4,6 +4,12 @@ probe begin {
 	printf("begin\n")
 }
 
+function filename_by_inode:string (inodeST:long)%{
+	struct inode *inode = (struct inode *)inodeST
+	printk("inode->i_ino:%d", inode->i_ino)
+	
+%}
+
 probe kernel.function("submit_bio") {
 //	if (execname() == "dd") {
 		bw = $bio->bi_io_vec
@@ -18,6 +24,10 @@ probe kernel.function("submit_bio") {
 				inode = bv->bv_page->mapping->host
 				printf("%s --> %p\n", execname(), inode)
 				printf("%d\n", inode->i_ino)
+				filename_by_inode(inode)
+				/* Next: we parse the file from the */
+				/* how to parse the inode->i_dentry using SystemTap */
+
 			}
 		}
 //	}
@@ -25,4 +35,5 @@ probe kernel.function("submit_bio") {
 
 probe end {
 	printf("End\n")
+		
 }
