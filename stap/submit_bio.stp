@@ -1,0 +1,28 @@
+#!/usr/bin/stap
+
+probe begin {
+	printf("begin\n")
+}
+
+probe kernel.function("submit_bio") {
+//	if (execname() == "dd") {
+		bw = $bio->bi_io_vec
+		for (i = 0; i < $bio->bi_vcnt; i++) {
+			bv = &@cast(bw, "bio_vec")[i]	
+			mappAddr = bv->bv_page->mapping
+			if (mappAddr & 0x1) { // dd if=/dev/zero of=./hi bs=4k count=1 oflag=direct
+				printf("mapping %p\n", mappAddr)
+				printf("anonymous page :%s\n", execname())
+
+			} else if (mappAddr != NULL) {
+				inode = bv->bv_page->mapping->host
+				printf("%s --> %p\n", execname(), inode)
+				printf("%d\n", inode->i_ino)
+			}
+		}
+//	}
+}
+
+probe end {
+	printf("End\n")
+}
