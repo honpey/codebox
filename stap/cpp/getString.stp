@@ -1,0 +1,7 @@
+probe begin {
+	printf("begin tracing\n");
+}
+probe process("./test").function("A::setName") {
+	printf("come here");
+	printf("%s", user_string($a));
+}
