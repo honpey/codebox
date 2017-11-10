@@ -2,6 +2,7 @@ probe begin {
 	printf("begin tracing\n");
 }
 probe process("./test").function("A::setName") {
-	printf("come here");
-	printf("%s", user_string($a));
+	printf("come here\n");
+	name=$aaaNB->_M_dataplus->_M_p
+	printf("%s\n", user_string(name));
 }
