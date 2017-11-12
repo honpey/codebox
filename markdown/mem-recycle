@@ -1,0 +1,24 @@
+mem_cgroup_shrink_node:
+总共有两个地
+shrink_node_memcg是唯一的地方会涉及到
+mem_cgroup_shrink_node--->shrink_node_memcg
+---------------------------------------------------------------
+1)- kswapd-->balance_pgdata-->kswapd_shrink_node
+2)- get_page_from_freelist-->node_reclaim-->__node_reclaim
+3)- try_to_free_pages/try_to_free_mem_cgroup_pages/shrink_all_memory---->do_try_to_free_pages-->shrink_zones
+-->shrink_node-------------->shrink_node_memcg
+---------------------------------------------------------------
+
+
+3.1)__alloc_pages_slowpath --> __alloc_pages_direct_reclaim -->__perform_reclaim ----> try_to_free_pages
+3.2) try_to_free_mem_cgroup_pages [当在这个ｍｅｍｏｒｙ], 在try_to_charge的时候会自己触发回收
+3.3.1) try_charge
+3.3.2) mem_cgroup_write --> mem_cgroup_resize_limit
+3.3.3) mem_cgroup_force_empty_write-->mem_cgroup_force_empty
+3.3.4) mem_files['high']--->memory_high_write
+3.3.5) memory_max_write['max']
+3.3.6) reclaim_high
+
+3.3.6.1) mem_cgroup_alloc-->INIT_WORK(&memcg->high_work, high_work_func)-->high_work_func-->reclaim_high /* 原来每个 ｃｇｒｏｕｐ 都是有自己的回收函数的 */
+3.3.6.2) exit_to_usermode_loop ---> tracehook_notify_resume --> mem_cgroup_handle_over_high
+tracehook_notify_resume 到底是啥
