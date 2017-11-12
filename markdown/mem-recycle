@@ -9,7 +9,6 @@ mem_cgroup_shrink_node--->shrink_node_memcg
 -->shrink_node-------------->shrink_node_memcg
 ---------------------------------------------------------------
 
-
 3.1)__alloc_pages_slowpath --> __alloc_pages_direct_reclaim -->__perform_reclaim ----> try_to_free_pages
 3.2) try_to_free_mem_cgroup_pages [当在这个ｍｅｍｏｒｙ], 在try_to_charge的时候会自己触发回收
 3.3.1) try_charge
@@ -20,5 +19,7 @@ mem_cgroup_shrink_node--->shrink_node_memcg
 3.3.6) reclaim_high
 
 3.3.6.1) mem_cgroup_alloc-->INIT_WORK(&memcg->high_work, high_work_func)-->high_work_func-->reclaim_high /* 原来每个 ｃｇｒｏｕｐ 都是有自己的回收函数的 */
-3.3.6.2) exit_to_usermode_loop ---> tracehook_notify_resume --> mem_cgroup_handle_over_high
+3.3.6.2) exit_to_usermode_loop ---> tracehook_notify_resume --> mem_cgroup_handle_over_high; [b23afb93d317c65cef553b804f08dec8a7a0f7e1, mmecg: punt high overage reclaim to return-to-userland path ]中说的很清楚，在返回用户态之前回收这个组的内存！
+【翻译: currently, 当high limit is breached, try_charge()会试图同步地回收内存；但是，如果分配内存并不是从__GFP_WAIT这条路径来的话，同步的回收将会被skipped掉，如果一个进程】
+申请内存的这些标志都是啥意思【】
 tracehook_notify_resume 到底是啥
