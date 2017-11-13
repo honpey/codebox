@@ -1,0 +1,34 @@
+probe begin {
+	printf("begin probe\n")
+}
+global map
+probe kernel.function("sys_write") {
+	if (execname() == "dd") {
+		//怎么由ｄｄ导出
+//		printf("count:%d\n", $count)
+		if ($count == 4096) {
+			map["dd", pid()]=gettimeofday_ns()
+		}
+	}
+}
+probe kernel.function("sys_write").return {
+	if (execname() == "dd" && $count == 4096) {
+		start = map["dd", pid()]
+		diff=gettimeofday_ns() - start
+		printf("write: %d\n", diff);
+	
+	}
+}
+global mapFsync
+probe kernel.function("sys_fsync") {
+	if (execname() == "dd") {
+		mapFsync["dd", pid()] = gettimeofday_ns()
+	}
+}
+probe kernel.function("sys_fsync").return {
+	if (execname() == "dd") {
+		start = mapFsync["dd", pid()]
+		diff = gettimeofday_ns() - start
+		printf("fsync:%d\n", diff)
+	}
+}
