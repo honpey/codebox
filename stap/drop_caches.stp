@@ -1,0 +1,22 @@
+probe begin {
+	printf("probe begin\n")
+}
+
+global map
+probe kernel.function("drop_pagecache_sb") {
+	name=$sb->s_type->name
+	printf("%s(%d): %s\n", execname(), pid(), kernel_string(name));
+}
+
+probe kernel.function("invalidate_mapping_pages") {
+	if (execname() == "bash") {
+		name=$mapping->host->i_sb->s_type->name	
+		map[kernel_string(name)]++
+	}
+}
+
+probe end {
+	foreach ([name] in map) {
+		printf("%s: %d\n", name, map[name])
+	}
+}
