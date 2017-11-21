@@ -3,6 +3,8 @@ probe begin {
 }
 
 global map
+global map2
+global map3
 probe kernel.function("drop_pagecache_sb") {
 	name=$sb->s_type->name
 	printf("%s(%d): %s\n", execname(), pid(), kernel_string(name));
@@ -15,8 +17,28 @@ probe kernel.function("invalidate_mapping_pages") {
 	}
 }
 
+probe kernel.function("invalidate_inode_page") {
+	if (execname() == "bash") {
+		name=$page->mapping->host->i_sb->s_type->name
+		map2[kernel_string(name)]++
+	}
+}
+
+probe kernel.function("remove_mapping") {
+	if (execname() == "bash") {
+		name=$mapping->host->i_sb->s_type->name
+		map3[kernel_string(name)]++
+	}
+}
+
 probe end {
 	foreach ([name] in map) {
-		printf("%s: %d\n", name, map[name])
+		printf("1: %s: %d\n", name, map[name])
+	}
+	foreach ([name] in map2) {
+		printf("2: %s: %d\n", name, map2[name])
+	}
+	foreach ([name] in map3) {
+		printf("3: %s: %d\n", name, map3[name])
 	}
 }
