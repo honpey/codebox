@@ -1,0 +1,17 @@
+probe begin {
+	printf("begin\n");
+}
+
+/*
+probe process("./test").function("func") {
+	printf("a:%d i:%d z:%d\n", $a, $i, $z);
+}
+*/
+
+probe process("./test").statement("func@test.c:10") {
+	printf("j:%d\n", $j);
+}
+
+probe end {
+	printf("\n\nEnd\n");
+}
