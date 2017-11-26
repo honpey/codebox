@@ -1,0 +1,21 @@
+probe begin {
+	printf("fg,t \\ bg |");
+	for (c = 40; c < 48; c++)
+		printf("   %d   ", c);
+	ansi_new_line()
+	for (l = 0; l < 75; l++)
+		printf("-");
+	ansi_new_line()
+
+	for (r = 30; r < 38; r++)
+		for (t = 0; t < 2; t++) {
+			printf("   %2d,%1d   |", r, t);
+			for (c = 40; c < 48; c++) {
+				ansi_set_color3(r, c, t)
+				printf(" %s ", !t ? "Normal" : "Bold  ")
+				ansi_reset_color()
+			}
+			ansi_new_line()
+		}
+	exit();
+}
