@@ -7,6 +7,7 @@ probe begin {
 probe kernel.function("submit_bio") {
 	if (execname() == "dd") {
 		bw = $bio->bi_io_vec
+		printf("devname:%s\n", __bio_devname($bio))
 		printf("ino: %d\n", __bio_ino($bio))
 		for (i = 0; i < $bio->bi_vcnt; i++) {
 			bv = &@cast(bw, "bio_vec")[i]	
