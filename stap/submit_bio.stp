@@ -4,6 +4,9 @@ probe begin {
 	printf("begin\n")
 }
 
+probe ioblock.request {
+	printf("%s -> %d\n", execname(), ino)
+}
 probe kernel.function("submit_bio") {
 	if (execname() == "dd") {
 		bw = $bio->bi_io_vec
