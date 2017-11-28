@@ -10,6 +10,7 @@ probe kernel.function("submit_bio") {
 		printf("devname:%s\n", __bio_devname($bio))
 		printf("ino: %d\n", __bio_ino($bio))
 		printf("%s\n", bio_rw_num($rw) == 1 ? "Write" : "Read")
+		printf("bio_start_sec:%d\n", __bio_start_sect($bio))
 		for (i = 0; i < $bio->bi_vcnt; i++) {
 			bv = &@cast(bw, "bio_vec")[i]	
 			mappAddr = bv->bv_page->mapping
