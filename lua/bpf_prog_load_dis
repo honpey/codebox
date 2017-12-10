@@ -1,0 +1,402 @@
+
+vmlinux：     文件格式 elf64-x86-64
+
+
+Disassembly of section .text:
+
+ffffffff81172f90 <bpf_prog_load>:
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:606
+ffffffff81172f90:	e8 1b 3c 6b 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff81172f95:	55                   	push   %rbp
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:613
+ffffffff81172f96:	31 f6                	xor    %esi,%esi
+ffffffff81172f98:	ba 04 00 00 00       	mov    $0x4,%edx
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:606
+ffffffff81172f9d:	48 89 e5             	mov    %rsp,%rbp
+ffffffff81172fa0:	41 56                	push   %r14
+ffffffff81172fa2:	41 55                	push   %r13
+ffffffff81172fa4:	41 54                	push   %r12
+ffffffff81172fa6:	53                   	push   %rbx
+ffffffff81172fa7:	48 89 fb             	mov    %rdi,%rbx
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:613
+ffffffff81172faa:	48 83 c7 2c          	add    $0x2c,%rdi
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:606
+ffffffff81172fae:	48 81 ec 90 00 00 00 	sub    $0x90,%rsp
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:607
+ffffffff81172fb5:	44 8b 67 d4          	mov    -0x2c(%rdi),%r12d
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:606
+ffffffff81172fb9:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+ffffffff81172fc0:	00 00 
+ffffffff81172fc2:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+ffffffff81172fc6:	31 c0                	xor    %eax,%eax
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:613
+ffffffff81172fc8:	e8 b3 ee 27 00       	callq  ffffffff813f1e80 <memchr_inv>
+ffffffff81172fcd:	48 85 c0             	test   %rax,%rax
+ffffffff81172fd0:	0f 85 ab 02 00 00    	jne    ffffffff81173281 <bpf_prog_load+0x2f1>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:617
+ffffffff81172fd6:	48 8b 73 10          	mov    0x10(%rbx),%rsi
+ffffffff81172fda:	4c 8d b5 58 ff ff ff 	lea    -0xa8(%rbp),%r14
+ffffffff81172fe1:	ba 7f 00 00 00       	mov    $0x7f,%edx
+ffffffff81172fe6:	4c 89 f7             	mov    %r14,%rdi
+ffffffff81172fe9:	e8 22 6c 2a 00       	callq  ffffffff81419c10 <strncpy_from_user>
+ffffffff81172fee:	48 85 c0             	test   %rax,%rax
+ffffffff81172ff1:	0f 88 79 03 00 00    	js     ffffffff81173370 <bpf_prog_load+0x3e0>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:620
+ffffffff81172ff7:	c6 45 d7 00          	movb   $0x0,-0x29(%rbp)
+license_is_gpl_compatible():
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/license.h:6
+ffffffff81172ffb:	b9 04 00 00 00       	mov    $0x4,%ecx
+ffffffff81173000:	48 c7 c7 e0 38 cc 81 	mov    $0xffffffff81cc38e0,%rdi
+ffffffff81173007:	4c 89 f6             	mov    %r14,%rsi
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/license.h:11
+ffffffff8117300a:	41 bd 01 00 00 00    	mov    $0x1,%r13d
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/license.h:6
+ffffffff81173010:	f3 a6                	repz cmpsb %es:(%rdi),%ds:(%rsi)
+ffffffff81173012:	0f 97 c2             	seta   %dl
+ffffffff81173015:	0f 92 c0             	setb   %al
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/license.h:11
+ffffffff81173018:	38 c2                	cmp    %al,%dl
+ffffffff8117301a:	74 61                	je     ffffffff8117307d <bpf_prog_load+0xed>
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/license.h:7
+ffffffff8117301c:	b9 07 00 00 00       	mov    $0x7,%ecx
+ffffffff81173021:	48 c7 c7 b6 38 cc 81 	mov    $0xffffffff81cc38b6,%rdi
+ffffffff81173028:	4c 89 f6             	mov    %r14,%rsi
+ffffffff8117302b:	f3 a6                	repz cmpsb %es:(%rdi),%ds:(%rsi)
+ffffffff8117302d:	74 4e                	je     ffffffff8117307d <bpf_prog_load+0xed>
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/license.h:8
+ffffffff8117302f:	b9 1a 00 00 00       	mov    $0x1a,%ecx
+ffffffff81173034:	48 c7 c7 bd 38 cc 81 	mov    $0xffffffff81cc38bd,%rdi
+ffffffff8117303b:	4c 89 f6             	mov    %r14,%rsi
+ffffffff8117303e:	f3 a6                	repz cmpsb %es:(%rdi),%ds:(%rsi)
+ffffffff81173040:	74 3b                	je     ffffffff8117307d <bpf_prog_load+0xed>
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/license.h:9
+ffffffff81173042:	b9 0d 00 00 00       	mov    $0xd,%ecx
+ffffffff81173047:	48 c7 c7 d7 38 cc 81 	mov    $0xffffffff81cc38d7,%rdi
+ffffffff8117304e:	4c 89 f6             	mov    %r14,%rsi
+ffffffff81173051:	f3 a6                	repz cmpsb %es:(%rdi),%ds:(%rsi)
+ffffffff81173053:	74 28                	je     ffffffff8117307d <bpf_prog_load+0xed>
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/license.h:10
+ffffffff81173055:	b9 0d 00 00 00       	mov    $0xd,%ecx
+ffffffff8117305a:	48 c7 c7 e4 38 cc 81 	mov    $0xffffffff81cc38e4,%rdi
+ffffffff81173061:	4c 89 f6             	mov    %r14,%rsi
+ffffffff81173064:	f3 a6                	repz cmpsb %es:(%rdi),%ds:(%rsi)
+ffffffff81173066:	74 15                	je     ffffffff8117307d <bpf_prog_load+0xed>
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/license.h:11
+ffffffff81173068:	b9 0d 00 00 00       	mov    $0xd,%ecx
+ffffffff8117306d:	48 c7 c7 f1 38 cc 81 	mov    $0xffffffff81cc38f1,%rdi
+ffffffff81173074:	4c 89 f6             	mov    %r14,%rsi
+ffffffff81173077:	f3 a6                	repz cmpsb %es:(%rdi),%ds:(%rsi)
+ffffffff81173079:	41 0f 94 c5          	sete   %r13b
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:625
+ffffffff8117307d:	8b 43 04             	mov    0x4(%rbx),%eax
+ffffffff81173080:	3d ff 0f 00 00       	cmp    $0xfff,%eax
+ffffffff81173085:	0f 87 f6 01 00 00    	ja     ffffffff81173281 <bpf_prog_load+0x2f1>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:628
+ffffffff8117308b:	41 83 fc 02          	cmp    $0x2,%r12d
+ffffffff8117308f:	0f 84 df 01 00 00    	je     ffffffff81173274 <bpf_prog_load+0x2e4>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:632
+ffffffff81173095:	41 83 fc 01          	cmp    $0x1,%r12d
+ffffffff81173099:	74 15                	je     ffffffff811730b0 <bpf_prog_load+0x120>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:632 (discriminator 1)
+ffffffff8117309b:	bf 15 00 00 00       	mov    $0x15,%edi
+ffffffff811730a0:	e8 9b 72 f1 ff       	callq  ffffffff8108a340 <capable>
+ffffffff811730a5:	84 c0                	test   %al,%al
+ffffffff811730a7:	0f 84 ad 02 00 00    	je     ffffffff8117335a <bpf_prog_load+0x3ca>
+ffffffff811730ad:	8b 43 04             	mov    0x4(%rbx),%eax
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:636
+ffffffff811730b0:	48 8d 3c c5 28 00 00 	lea    0x28(,%rax,8),%rdi
+ffffffff811730b7:	00 
+ffffffff811730b8:	be c0 00 42 02       	mov    $0x24200c0,%esi
+ffffffff811730bd:	e8 1e e1 ff ff       	callq  ffffffff811711e0 <bpf_prog_alloc>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:637
+ffffffff811730c2:	48 85 c0             	test   %rax,%rax
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:636
+ffffffff811730c5:	48 89 85 50 ff ff ff 	mov    %rax,-0xb0(%rbp)
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:637
+ffffffff811730cc:	0f 84 94 02 00 00    	je     ffffffff81173366 <bpf_prog_load+0x3d6>
+get_current():
+/build/linux-Ay7j_C/linux-4.4.0/arch/x86/include/asm/current.h:14
+ffffffff811730d2:	65 48 8b 14 25 c0 d3 	mov    %gs:0xd3c0,%rdx
+ffffffff811730d9:	00 00 
+bpf_prog_charge_memlock():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:507
+ffffffff811730db:	48 8b 8a d0 05 00 00 	mov    0x5d0(%rdx),%rcx
+ffffffff811730e2:	48 8b b9 80 00 00 00 	mov    0x80(%rcx),%rdi
+atomic_inc():
+/build/linux-Ay7j_C/linux-4.4.0/arch/x86/include/asm/atomic.h:92
+ffffffff811730e9:	f0 ff 07             	lock incl (%rdi)
+task_rlimit():
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/sched.h:3176
+ffffffff811730ec:	48 8b 92 28 06 00 00 	mov    0x628(%rdx),%rdx
+atomic64_add():
+/build/linux-Ay7j_C/linux-4.4.0/arch/x86/include/asm/atomic64_64.h:45
+ffffffff811730f3:	0f b7 08             	movzwl (%rax),%ecx
+__read_once_size():
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/compiler.h:218
+ffffffff811730f6:	48 8b 92 28 03 00 00 	mov    0x328(%rdx),%rdx
+atomic64_add():
+/build/linux-Ay7j_C/linux-4.4.0/arch/x86/include/asm/atomic64_64.h:45
+ffffffff811730fd:	f0 48 01 4f 68       	lock add %rcx,0x68(%rdi)
+__read_once_size():
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/compiler.h:218
+ffffffff81173102:	48 8b 4f 68          	mov    0x68(%rdi),%rcx
+bpf_prog_charge_memlock():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:513
+ffffffff81173106:	48 c1 ea 0c          	shr    $0xc,%rdx
+ffffffff8117310a:	48 39 ca             	cmp    %rcx,%rdx
+ffffffff8117310d:	0f 82 67 02 00 00    	jb     ffffffff8117337a <bpf_prog_load+0x3ea>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:518
+ffffffff81173113:	48 8b 40 10          	mov    0x10(%rax),%rax
+ffffffff81173117:	48 89 78 20          	mov    %rdi,0x20(%rax)
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:644
+ffffffff8117311b:	48 8b 85 50 ff ff ff 	mov    -0xb0(%rbp),%rax
+ffffffff81173122:	8b 53 04             	mov    0x4(%rbx),%edx
+ffffffff81173125:	89 50 04             	mov    %edx,0x4(%rax)
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:648
+ffffffff81173128:	48 8b bd 50 ff ff ff 	mov    -0xb0(%rbp),%rdi
+copy_from_user():
+/build/linux-Ay7j_C/linux-4.4.0/arch/x86/include/asm/uaccess.h:718
+ffffffff8117312f:	48 8b 73 08          	mov    0x8(%rbx),%rsi
+ffffffff81173133:	8b 57 04             	mov    0x4(%rdi),%edx
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:647
+ffffffff81173136:	48 83 c7 28          	add    $0x28,%rdi
+copy_from_user():
+/build/linux-Ay7j_C/linux-4.4.0/arch/x86/include/asm/uaccess.h:718
+ffffffff8117313a:	48 c1 e2 03          	shl    $0x3,%rdx
+ffffffff8117313e:	e8 ad 2e 28 00       	callq  ffffffff813f5ff0 <_copy_from_user>
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:647
+ffffffff81173143:	48 85 c0             	test   %rax,%rax
+ffffffff81173146:	0f 85 5d 01 00 00    	jne    ffffffff811732a9 <bpf_prog_load+0x319>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:651
+ffffffff8117314c:	48 8b 85 50 ff ff ff 	mov    -0xb0(%rbp),%rax
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:655
+ffffffff81173153:	45 01 ed             	add    %r13d,%r13d
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:652
+ffffffff81173156:	80 60 02 fe          	andb   $0xfe,0x2(%rax)
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:651
+ffffffff8117315a:	48 c7 40 18 00 00 00 	movq   $0x0,0x18(%rax)
+ffffffff81173161:	00 
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:654
+ffffffff81173162:	48 8b 85 50 ff ff ff 	mov    -0xb0(%rbp),%rax
+ffffffff81173169:	48 8b 40 10          	mov    0x10(%rax),%rax
+__write_once_size():
+/build/linux-Ay7j_C/linux-4.4.0/include/linux/compiler.h:246
+ffffffff8117316d:	c7 00 01 00 00 00    	movl   $0x1,(%rax)
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:655
+ffffffff81173173:	48 8b 95 50 ff ff ff 	mov    -0xb0(%rbp),%rdx
+ffffffff8117317a:	0f b6 42 02          	movzbl 0x2(%rdx),%eax
+ffffffff8117317e:	83 e0 fd             	and    $0xfffffffd,%eax
+ffffffff81173181:	41 09 c5             	or     %eax,%r13d
+ffffffff81173184:	44 88 6a 02          	mov    %r13b,0x2(%rdx)
+find_prog_type():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:427
+ffffffff81173188:	48 8b 05 d1 23 cf 00 	mov    0xcf23d1(%rip),%rax        # ffffffff81e65560 <bpf_prog_types>
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:658
+ffffffff8117318f:	48 8b 95 50 ff ff ff 	mov    -0xb0(%rbp),%rdx
+find_prog_type():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:427
+ffffffff81173196:	48 3d 60 55 e6 81    	cmp    $0xffffffff81e65560,%rax
+ffffffff8117319c:	75 38                	jne    ffffffff811731d6 <bpf_prog_load+0x246>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:435
+ffffffff8117319e:	bb ea ff ff ff       	mov    $0xffffffea,%ebx
+bpf_prog_uncharge_memlock():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:524
+ffffffff811731a3:	48 8b 42 10          	mov    0x10(%rdx),%rax
+ffffffff811731a7:	48 8b 78 20          	mov    0x20(%rax),%rdi
+atomic64_sub():
+/build/linux-Ay7j_C/linux-4.4.0/arch/x86/include/asm/atomic64_64.h:59
+ffffffff811731ab:	0f b7 02             	movzwl (%rdx),%eax
+ffffffff811731ae:	f0 48 29 47 68       	lock sub %rax,0x68(%rdi)
+bpf_prog_uncharge_memlock():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:527
+ffffffff811731b3:	e8 c8 95 f1 ff       	callq  ffffffff8108c780 <free_uid>
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:687
+ffffffff811731b8:	48 8b bd 50 ff ff ff 	mov    -0xb0(%rbp),%rdi
+ffffffff811731bf:	e8 1c df ff ff       	callq  ffffffff811710e0 <bpf_prog_free>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:688
+ffffffff811731c4:	89 d8                	mov    %ebx,%eax
+ffffffff811731c6:	e9 bb 00 00 00       	jmpq   ffffffff81173286 <bpf_prog_load+0x2f6>
+find_prog_type():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:427
+ffffffff811731cb:	48 8b 00             	mov    (%rax),%rax
+ffffffff811731ce:	48 3d 60 55 e6 81    	cmp    $0xffffffff81e65560,%rax
+ffffffff811731d4:	74 c8                	je     ffffffff8117319e <bpf_prog_load+0x20e>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:428
+ffffffff811731d6:	44 3b 60 18          	cmp    0x18(%rax),%r12d
+ffffffff811731da:	75 ef                	jne    ffffffff811731cb <bpf_prog_load+0x23b>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:429
+ffffffff811731dc:	48 8b 40 10          	mov    0x10(%rax),%rax
+ffffffff811731e0:	48 8b 4a 10          	mov    0x10(%rdx),%rcx
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:663
+ffffffff811731e4:	48 8d bd 50 ff ff ff 	lea    -0xb0(%rbp),%rdi
+ffffffff811731eb:	48 89 de             	mov    %rbx,%rsi
+find_prog_type():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:429
+ffffffff811731ee:	48 89 41 08          	mov    %rax,0x8(%rcx)
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:430
+ffffffff811731f2:	44 89 62 08          	mov    %r12d,0x8(%rdx)
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:663
+ffffffff811731f6:	e8 05 31 00 00       	callq  ffffffff81176300 <bpf_check>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:664
+ffffffff811731fb:	85 c0                	test   %eax,%eax
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:663
+ffffffff811731fd:	89 c3                	mov    %eax,%ebx
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:664
+ffffffff811731ff:	0f 88 20 01 00 00    	js     ffffffff81173325 <bpf_prog_load+0x395> // honpey add: goto free_used_maps
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:668
+ffffffff81173205:	4c 8b ad 50 ff ff ff 	mov    -0xb0(%rbp),%r13
+fixup_bpf_calls():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:457
+ffffffff8117320c:	41 8b 45 04          	mov    0x4(%r13),%eax
+ffffffff81173210:	85 c0                	test   %eax,%eax
+ffffffff81173212:	0f 84 d6 00 00 00    	je     ffffffff811732ee <bpf_prog_load+0x35e>
+ffffffff81173218:	31 db                	xor    %ebx,%ebx
+ffffffff8117321a:	eb 0d                	jmp    ffffffff81173229 <bpf_prog_load+0x299>
+ffffffff8117321c:	83 c3 01             	add    $0x1,%ebx
+ffffffff8117321f:	41 39 5d 04          	cmp    %ebx,0x4(%r13)
+ffffffff81173223:	0f 86 be 00 00 00    	jbe    ffffffff811732e7 <bpf_prog_load+0x357>
+ffffffff81173229:	48 63 c3             	movslq %ebx,%rax
+ffffffff8117322c:	4d 8d 64 c5 00       	lea    0x0(%r13,%rax,8),%r12
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:460
+ffffffff81173231:	41 80 7c 24 28 85    	cmpb   $0x85,0x28(%r12)
+ffffffff81173237:	75 e3                	jne    ffffffff8117321c <bpf_prog_load+0x28c>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:465
+ffffffff81173239:	49 8b 45 10          	mov    0x10(%r13),%rax
+ffffffff8117323d:	48 8b 50 08          	mov    0x8(%rax),%rdx
+ffffffff81173241:	48 83 3a 00          	cmpq   $0x0,(%rdx)
+ffffffff81173245:	0f 84 0d 01 00 00    	je     ffffffff81173358 <bpf_prog_load+0x3c8>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:467
+ffffffff8117324b:	41 8b 7c 24 2c       	mov    0x2c(%r12),%edi
+ffffffff81173250:	83 ff 18             	cmp    $0x18,%edi
+ffffffff81173253:	74 65                	je     ffffffff811732ba <bpf_prog_load+0x32a>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:469
+ffffffff81173255:	83 ff 07             	cmp    $0x7,%edi
+ffffffff81173258:	0f 84 eb 00 00 00    	je     ffffffff81173349 <bpf_prog_load+0x3b9>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:471
+ffffffff8117325e:	83 ff 0c             	cmp    $0xc,%edi
+ffffffff81173261:	75 7e                	jne    ffffffff811732e1 <bpf_prog_load+0x351>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:479
+ffffffff81173263:	41 c7 44 24 2c 00 00 	movl   $0x0,0x2c(%r12)
+ffffffff8117326a:	00 00 
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:480
+ffffffff8117326c:	41 80 4c 24 28 08    	orb    $0x8,0x28(%r12)
+ffffffff81173272:	eb a8                	jmp    ffffffff8117321c <bpf_prog_load+0x28c>
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:628 (discriminator 1)
+ffffffff81173274:	81 7b 28 06 04 04 00 	cmpl   $0x40406,0x28(%rbx)
+ffffffff8117327b:	0f 84 1a fe ff ff    	je     ffffffff8117309b <bpf_prog_load+0x10b>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:614
+ffffffff81173281:	b8 ea ff ff ff       	mov    $0xffffffea,%eax
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:689
+ffffffff81173286:	48 8b 4d d8          	mov    -0x28(%rbp),%rcx
+ffffffff8117328a:	65 48 33 0c 25 28 00 	xor    %gs:0x28,%rcx
+ffffffff81173291:	00 00 
+ffffffff81173293:	0f 85 f8 00 00 00    	jne    ffffffff81173391 <bpf_prog_load+0x401>
+ffffffff81173299:	48 81 c4 90 00 00 00 	add    $0x90,%rsp
+ffffffff811732a0:	5b                   	pop    %rbx
+ffffffff811732a1:	41 5c                	pop    %r12
+ffffffff811732a3:	41 5d                	pop    %r13
+ffffffff811732a5:	41 5e                	pop    %r14
+ffffffff811732a7:	5d                   	pop    %rbp
+ffffffff811732a8:	c3                   	retq   
+ffffffff811732a9:	48 8b 95 50 ff ff ff 	mov    -0xb0(%rbp),%rdx
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:646
+ffffffff811732b0:	bb f2 ff ff ff       	mov    $0xfffffff2,%ebx
+ffffffff811732b5:	e9 e9 fe ff ff       	jmpq   ffffffff811731a3 <bpf_prog_load+0x213>
+fixup_bpf_calls():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:468
+ffffffff811732ba:	41 80 4d 02 08       	orb    $0x8,0x2(%r13)
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:484
+ffffffff811732bf:	48 8b 40 08          	mov    0x8(%rax),%rax
+ffffffff811732c3:	ff 10                	callq  *(%rax)
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:488
+ffffffff811732c5:	48 8b 00             	mov    (%rax),%rax
+ffffffff811732c8:	48 85 c0             	test   %rax,%rax
+ffffffff811732cb:	0f 84 93 00 00 00    	je     ffffffff81173364 <bpf_prog_load+0x3d4>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:489
+ffffffff811732d1:	48 2d 80 10 17 81    	sub    $0xffffffff81171080,%rax
+ffffffff811732d7:	41 89 44 24 2c       	mov    %eax,0x2c(%r12)
+ffffffff811732dc:	e9 3b ff ff ff       	jmpq   ffffffff8117321c <bpf_prog_load+0x28c>
+ffffffff811732e1:	49 8b 45 10          	mov    0x10(%r13),%rax
+ffffffff811732e5:	eb d8                	jmp    ffffffff811732bf <bpf_prog_load+0x32f>
+ffffffff811732e7:	4c 8b ad 50 ff ff ff 	mov    -0xb0(%rbp),%r13
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:671
+ffffffff811732ee:	4c 89 ef             	mov    %r13,%rdi
+ffffffff811732f1:	e8 ba e1 ff ff       	callq  ffffffff811714b0 <bpf_prog_select_runtime>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:672
+ffffffff811732f6:	85 c0                	test   %eax,%eax
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:671
+ffffffff811732f8:	89 c3                	mov    %eax,%ebx
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:672
+ffffffff811732fa:	78 29                	js     ffffffff81173325 <bpf_prog_load+0x395>
+bpf_prog_new_fd():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:567
+ffffffff811732fc:	48 8b 95 50 ff ff ff 	mov    -0xb0(%rbp),%rdx
+ffffffff81173303:	b9 02 00 08 00       	mov    $0x80002,%ecx
+ffffffff81173308:	48 c7 c6 20 43 a2 81 	mov    $0xffffffff81a24320,%rsi
+ffffffff8117330f:	48 c7 c7 f4 69 cc 81 	mov    $0xffffffff81cc69f4,%rdi
+ffffffff81173316:	e8 35 3c 0e 00       	callq  ffffffff81256f50 <anon_inode_getfd>
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:676
+ffffffff8117331b:	85 c0                	test   %eax,%eax
+bpf_prog_new_fd():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:567
+ffffffff8117331d:	89 c3                	mov    %eax,%ebx
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:676
+ffffffff8117331f:	0f 89 61 ff ff ff    	jns    ffffffff81173286 <bpf_prog_load+0x2f6>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:683
+ffffffff81173325:	48 8b 85 50 ff ff ff 	mov    -0xb0(%rbp),%rax // honpey add: free_used_maps
+ffffffff8117332c:	48 8b 78 10          	mov    0x10(%rax),%rdi
+ffffffff81173330:	48 8d 77 10          	lea    0x10(%rdi),%rsi
+ffffffff81173334:	48 83 c7 04          	add    $0x4,%rdi
+ffffffff81173338:	e8 93 fb ff ff       	callq  ffffffff81172ed0 <free_used_maps.isra.9> // honpey add: call free_used_maps to free mpas
+ffffffff8117333d:	48 8b 95 50 ff ff ff 	mov    -0xb0(%rbp),%rdx
+ffffffff81173344:	e9 5a fe ff ff       	jmpq   ffffffff811731a3 <bpf_prog_load+0x213>
+fixup_bpf_calls():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:470
+ffffffff81173349:	e8 a2 e0 ff ff       	callq  ffffffff811713f0 <bpf_user_rnd_init_once>
+ffffffff8117334e:	41 8b 7c 24 2c       	mov    0x2c(%r12),%edi
+ffffffff81173353:	e9 06 ff ff ff       	jmpq   ffffffff8117325e <bpf_prog_load+0x2ce>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:465
+ffffffff81173358:	0f 0b                	ud2    
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:633
+ffffffff8117335a:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ffffffff8117335f:	e9 22 ff ff ff       	jmpq   ffffffff81173286 <bpf_prog_load+0x2f6>
+fixup_bpf_calls():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:488
+ffffffff81173364:	0f 0b                	ud2    
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:638
+ffffffff81173366:	b8 f4 ff ff ff       	mov    $0xfffffff4,%eax
+ffffffff8117336b:	e9 16 ff ff ff       	jmpq   ffffffff81173286 <bpf_prog_load+0x2f6>
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:619
+ffffffff81173370:	b8 f2 ff ff ff       	mov    $0xfffffff2,%eax
+ffffffff81173375:	e9 0c ff ff ff       	jmpq   ffffffff81173286 <bpf_prog_load+0x2f6>
+atomic64_sub():
+/build/linux-Ay7j_C/linux-4.4.0/arch/x86/include/asm/atomic64_64.h:59
+ffffffff8117337a:	0f b7 00             	movzwl (%rax),%eax
+ffffffff8117337d:	f0 48 29 47 68       	lock sub %rax,0x68(%rdi)
+bpf_prog_charge_memlock():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:515
+ffffffff81173382:	bb ff ff ff ff       	mov    $0xffffffff,%ebx
+ffffffff81173387:	e8 f4 93 f1 ff       	callq  ffffffff8108c780 <free_uid>
+ffffffff8117338c:	e9 27 fe ff ff       	jmpq   ffffffff811731b8 <bpf_prog_load+0x228>
+bpf_prog_load():
+/build/linux-Ay7j_C/linux-4.4.0/kernel/bpf/syscall.c:689
+ffffffff81173391:	e8 aa d9 f0 ff       	callq  ffffffff81080d40 <__stack_chk_fail>
+ffffffff81173396:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ffffffff8117339d:	00 00 00 
+
