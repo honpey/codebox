@@ -1,0 +1,48 @@
+probe begin {
+	print("Start Probe\n")
+}
+
+%{
+#include <linux/bio.h>
+#include <linux/genhd.h>
+#include <linux/blk_types.h>
+%}
+//Loop every page of this bio
+function bio_inode:long(bio:long)
+%{
+	struct bio *curBio = NULL;
+	struct page *curPage = NULL;
+	struct address_space *mapping = NULL;
+
+	curBio = (struct bio *)(long)STAP_ARG_bio;
+	if (curBio == NULL || curBio->bi_vcnt <= 0) {
+		STAP_RETVALUE = (long)0; 
+		return;
+	}
+	curPage = curBio->bi_io_vec[0].bv_page;
+	if (!curPage) {
+		STAP_RETVALUE = (long)0;
+	}
+	if (!PageSwapCache(curPage)) {
+		mapping = curPage->mapping;
+		if ((((unsigned long)mapping) & PAGE_MAPPING_ANON) == 0) {
+			STAP_RETVALUE = (long)mapping->host;
+		}
+	}
+	STAP_RETVALUE = (long)0;
+	printk("hello world\n");
+
+%}
+probe kprobe.function("__elv_add_request") {
+//	request = register("rsi")
+//	rq_flags = @cast(request, "struct request", "kernel<include/linux/blkdev.h>")->cmd_flags
+
+	request = register("rsi")
+	curBio = @cast(request, "struct request")->bio
+	while (curBio) {
+		hi = bio_inode(curBio)
+		curBio = @cast(curBio, "struct bio")->bi_next
+	}
+
+
+}
