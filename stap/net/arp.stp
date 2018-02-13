@@ -1,0 +1,63 @@
+probe begin {
+	print("hello world\n")
+}
+
+/*
+probe kernel.function("fib_validate_source") {
+	printf(".fib_validate_noref: %s\n", kernel_string($skb->dev->name))
+}
+
+probe kernel.function("fib_validate_source").return {
+	printf(".fib_validate_return: %d\n", $return)
+}
+*/
+/*
+probe kernel.function("ip_route_input_noref") {
+	printf("ip_route_input_noref: %s\n", kernel_string($skb->dev->name))
+}
+
+probe kernel.function("ip_route_input_noref").return {
+	printf("ip_route_input_return: %d\n", $return)
+}
+*/
+probe kernel.function("arp_ignore") {
+#	printf("%s\n", kernel_string($skb->dev->name))
+	printf("0x%x\n", $sip)
+	printf("0x%d\n", $tip)
+}
+
+probe kernel.function("neigh_event_ns").return {
+	printf("Enter neigh_event_ns:%d\n", $return)
+}
+
+probe kernel.function("arp_xmit").return {
+	printf("arp_xmit------->\n")
+}
+
+probe kernel.function("arp_process") {
+	printf("process\n")
+}
+probe kernel.function("arp_send_dst") {
+	printf("arp_send_dst\n")
+}
+
+probe kernel.function("confirm_addr_indev") {
+	#printf("%s\n", kernel_string($in_dev->dev->name))
+	printf("----------------\n");
+}
+
+probe kernel.function("confirm_addr_indev").return {
+	printf("confirm: Return: %d\n", $return)
+}
+
+probe kernel.function("inet_confirm_addr") {
+	printf("---------")
+}
+
+probe kernel.function("arp_ignore").return {
+	printf("arp_ignore: Return: %d\n", $return)
+}
+
+probe end {
+	print("End\n")
+}
