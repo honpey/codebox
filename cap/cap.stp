@@ -1,0 +1,11 @@
+probe begin {
+	print("hello world")
+}
+
+probe module("f2fs").function("f2fs_xattr_generic_get") {
+	print("%s\n", execname())
+}
+
+probe end {
+	print("End")
+}
