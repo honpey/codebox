@@ -4,7 +4,7 @@ int main()
 {
 	int i;
 	while(1) {
-		sleep(10);
-		print(".");
+//		sleep(10);
 	}
+	return 0;
 }

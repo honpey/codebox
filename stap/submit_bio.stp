@@ -4,10 +4,15 @@ probe begin {
 	printf("begin\n")
 }
 
+global map
 probe ioblock.request {
 //	printf("%s -> %d\n", execname(), ino)
 }
 probe kernel.function("submit_bio") {
+//	print("%s\n", execname())
+	map[pid(), execname()]++
+	next
+	/*
 	if (execname() == "dd") {
 		bw = $bio->bi_io_vec
 		printf("devname:%s\n", __bio_devname($bio))
@@ -27,15 +32,16 @@ probe kernel.function("submit_bio") {
 				printf("%s --> %p\n", execname(), inode)
 				printf("%d\n", inode->i_ino)
 			//	filename_by_inode(inode)
-				/* Next: we parse the file from the */
-				/* how to parse the inode->i_dentry using SystemTap */
 
 			}
 		}
 	}
+*/
 }
 
 probe end {
 	printf("End\n")
-		
+	foreach ([pid, name] in map) {
+		printf("%d(%s): %d\n", pid, name, map[pid, name])
+	}
 }

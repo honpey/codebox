@@ -2,7 +2,10 @@
 
 int main()
 {
-	printf("-----xxxxx-----\n");	
-	printf("pid: %d\n", getpid());
-	printf("hello world\n");
+	int i = 0;
+	while(i++ < 10) {
+		printf("-----xxxxx-----\n");	
+		printf("pid: %d\n", getpid());
+		printf("hello world\n");
+	}
 }

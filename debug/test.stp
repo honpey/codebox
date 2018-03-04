@@ -8,7 +8,7 @@ probe process("./test").function("func") {
 }
 */
 
-probe process("./test").statement("func@test.c:10") {
+probe process("./test").statement("func@test.c:9") {
 	printf("j:%d\n", $j);
 }
 

@@ -34,7 +34,6 @@ probe kernel.function("remove_mapping") {
 probe end {
 	foreach ([name] in map) {
 		printf("1: %s: %d\n", name, map[name])
-	}
 	foreach ([name] in map2) {
 		printf("2: %s: %d\n", name, map2[name])
 	}

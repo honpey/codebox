@@ -11,5 +11,13 @@ ffi.metatype(ffi.typeof('struct point'), {
 	}
 })
 
+local pointM = ffi.metatype('struct point', {
+			__index = {
+				ip = function() 
+					print("point -> ip")
+				end
+			}
+		})
+local a = pointM(1, 2)
 print(ffi.typeof('struct point'))
 --ffi.meta

@@ -24,10 +24,13 @@ int main()
       
   /* exchange data */    
   char ch = 'A';    
-  write(sockfd, &ch, 1);    
-  read(sockfd, &ch, 1);    
-  printf("get char from server: %c\n", ch);    
+//  while(1) {
+  	write(sockfd, &ch, 1);    
+	read(sockfd, &ch, 1);    
+	printf("-- get char from server: %c\n", ch);    
+ // }
       
+  printf("hello world\n");
   /* close the socket */    
   close(sockfd);    
       

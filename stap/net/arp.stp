@@ -2,7 +2,6 @@ probe begin {
 	print("hello world\n")
 }
 
-/*
 probe kernel.function("fib_validate_source") {
 	printf(".fib_validate_noref: %s\n", kernel_string($skb->dev->name))
 }
@@ -10,8 +9,6 @@ probe kernel.function("fib_validate_source") {
 probe kernel.function("fib_validate_source").return {
 	printf(".fib_validate_return: %d\n", $return)
 }
-*/
-/*
 probe kernel.function("ip_route_input_noref") {
 	printf("ip_route_input_noref: %s\n", kernel_string($skb->dev->name))
 }
@@ -19,7 +16,6 @@ probe kernel.function("ip_route_input_noref") {
 probe kernel.function("ip_route_input_noref").return {
 	printf("ip_route_input_return: %d\n", $return)
 }
-*/
 probe kernel.function("arp_ignore") {
 #	printf("%s\n", kernel_string($skb->dev->name))
 	printf("0x%x\n", $sip)

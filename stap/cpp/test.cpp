@@ -9,8 +9,8 @@ public:
 	string name;
 };
 
-void A::setName(string a) {
-	name = a;
+void A::setName(string aaaNB) {
+	name = aaaNB;
 }
 string A::getName() {
 	return name;

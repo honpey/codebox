@@ -5,7 +5,7 @@ int func(int a) {
 	int i = 1;
 	int z = 0;
 	for (i = 0; i < 10; i++) {
-		int j = 0;
+		int j = 1;
 		for (j = 0; j < 100; j++) {
 			z++;
 		}

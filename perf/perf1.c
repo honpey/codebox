@@ -23,7 +23,7 @@ perf_event_open(struct perf_event_attr *hw_event, pid_t pid,
 int  
 main(int argc, char **argv)  
 {  
-    struct perf_event_attr pe;  
+    struct perf_event_attr pe;
     long long count,cycles,instructions;  
     double ipc;  
     int fd;  
@@ -39,7 +39,7 @@ main(int argc, char **argv)
     pe.exclude_hv = 1;  
   
     //count cycles;  
-    fd = perf_event_open(&pe, 940, -1, -1, 0);
+    fd = perf_event_open(&pe, 940, -1, -1, 0); 
     if (fd == -1) {  
        fprintf(stderr, "Error opening leader %llx\n", pe.config);  
        exit(EXIT_FAILURE);  
@@ -49,7 +49,6 @@ main(int argc, char **argv)
     ioctl(fd, PERF_EVENT_IOC_DISABLE, 0);  
     read(fd, &count, sizeof(long long));  
     cycles=count;  
-	printf("-- %d\n", count);
   
     //count instructions  
     pe.config = PERF_COUNT_HW_INSTRUCTIONS;  
@@ -62,7 +61,6 @@ main(int argc, char **argv)
     ioctl(fd, PERF_EVENT_IOC_ENABLE, 0);  
     ioctl(fd, PERF_EVENT_IOC_DISABLE, 0);  
     read(fd, &count, sizeof(long long));  
-	printf("-- %d\n", count);
     instructions=count;  
   
     ipc=(double)instructions/(double)cycles;  

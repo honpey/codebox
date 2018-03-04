@@ -1,6 +1,6 @@
 local ffi = require("ffi")
 ffi.cdef[[
-typedef struct { double x, y; } point_t;
+typedef struct pointM { double x, y; } point_t;
 ]]
  
 param_to_reg = {param1='di', param2='si',param3='dx'}
@@ -18,11 +18,11 @@ local mt = {
   	print("hello world")
   	return assert(param_to_reg[key]--[[, 'no such registryer: '..key--]])
   end,
-
 }
 point = ffi.metatype("point_t", mt)
  
 local a = point(3, 4)
+print("ffi.offsetof(y): ", ffi.offsetof('struct pointM', 'y'))
 print(a.x, a.y)  --> 3  4
 print(#a)        --> 5
 print(a.param1)  --> 25

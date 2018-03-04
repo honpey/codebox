@@ -42,6 +42,7 @@ int main()
 	void *ret1, *ret2;
 	void *ret3, *ret4;
 
+	printf("pid: %d\n", getpid());
 	err = pthread_create(&ntid1, NULL, thr_fn1, NULL);
 	if (err != 0) {
 		printf("Something wrong 1\n");

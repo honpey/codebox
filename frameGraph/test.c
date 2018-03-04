@@ -22,6 +22,7 @@ void funa()
 }
 int main()
 {
+	printf("%d\n", getpid());
 	while (1)
 		funa();
 	printf("hello world");
