@@ -43,6 +43,4 @@ probe kprobe.function("__elv_add_request") {
 		hi = bio_inode(curBio)
 		curBio = @cast(curBio, "struct bio")->bi_next
 	}
-
-
 }
