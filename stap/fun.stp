@@ -2,6 +2,15 @@ probe begin {
 	printf("hello world Begin\n")
 }
 
+/*
+
+   1) 如何使用函数，函数的参数是如何获取的；返回值是怎么确定的；
+   2) ｔａｓｋ的使用 @task(addr)　将ａｄｄｒ解释成内核ｔａｓｋ_struct 结构体
+   3) pid2task transfer pid to task_struct
+   4) 正常函数的返回值和非正常情况下返回值的差异； 
+
+*/
+
 function tracecomm() {
 	printf("tracercomm\n")
 }
@@ -10,8 +19,7 @@ function tracecomm() {
 #include <linux/sched.h>
 #include <linux/list.h>
 %}
-
-function task_execname_by_pid:string (pid:long) %{
+@__private30 function task_execname_by_pid:string (pid:long) %{
 	struct task_struct *p;
 	struct list_head *_p, *_n;
 	list_for_each_safe(_p, _n, &current->tasks) {
@@ -22,9 +30,16 @@ function task_execname_by_pid:string (pid:long) %{
 	}
 %}
 
+function get_task_name:string (cur:long) {
+//	printf("%s\n", cur)
+	name = kernel_string(@task(cur)->comm)
+	return name
+}
+
 probe kernel.function("submit_bio") {
-	printf("%s(%d)\n", task_execname_by_pid(target()), target())
-	printf("%s(%d)\n", task_execname_by_pid(pid()), pid())
+//	printf("%s(%d)\n", task_execname_by_pid(pid()), pid())
+//	get_task_name(pid2task(pid()))
+	printf("%s\n", get_task_name(pid2task(9585)))
 }
 
 probe end {
