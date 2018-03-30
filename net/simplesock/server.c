@@ -9,7 +9,7 @@
 
 #include<ctype.h> 
 
-#define MAXLINE 80
+#define MAXLINE 4096 
 #define SER_PORT 8000
 
 int main(void){
@@ -48,9 +48,17 @@ int main(void){
         printf("received from %s at PORT %d \n",
                 inet_ntop(AF_INET,&cliaddr.sin_addr,str,sizeof(str)),
                 ntohs(cliaddr.sin_port));
+		int i = 0;
+		sleep(5);
         while(1){
+			i++;	
             n = read(connfd,buf,MAXLINE);
-
+			printf("n:%d\n", n);
+			if (n < 4096) {
+				printf("n:%d\n", i);
+				break;
+			}
+			/*
             printf("%d\n", n);
             for(int i=0;i<5;i++){
                 tt[i] = buf[i];
@@ -66,7 +74,8 @@ int main(void){
                 buf[i] = toupper(buf[i]);
             }
             write(connfd,buf,n);
-        }                                                                           
+			*/
+        }
         
     }
 

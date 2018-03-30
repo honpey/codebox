@@ -9,7 +9,7 @@
 
 #include<errno.h>
 
-#define MAXLINE 80
+#define MAXLINE 4096
 #define SER_PORT 8000
 
 int main(int argc,char *argv[]){
@@ -43,6 +43,10 @@ int main(int argc,char *argv[]){
     while(1){
         
         memset(buf,0,MAXLINE);
+		for (int j = 0; j < MAXLINE; j++) {
+			buf[j]='a'+(j%26);
+		}
+
         printf("client connet server ...\n");
         n = read(STDIN_FILENO,buf,MAXLINE);
         for(int i=0;i<5;i++){
@@ -54,8 +58,13 @@ int main(int argc,char *argv[]){
             return 0;
         }
 
-        write(sockfd,buf,n);
+		int i = 0;
+		while(i++ < 100000){ // 4096*10000 = 40M
+        	write(sockfd,buf,n);
+			printf("i:%d\n", i);
+		}
 
+		printf("writeDone");
         if(strcmp(tt,"exit1") == 0){
             printf("exit server connect \n");
             close(sockfd);
