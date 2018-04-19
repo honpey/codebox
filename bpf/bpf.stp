@@ -1,0 +1,21 @@
+%{
+#include <linux/version.h>
+%}
+
+function getVersion:long()
+%{
+    printk("%d\n", LINUX_VERSION_CODE);
+%}
+probe begin {
+    print("hello world\n")
+}
+probe kernel.function("sys_bpf") {
+    print("sys_bpf\n")
+}
+probe kernel.function("bpf_prog_load") {
+    print("bpf_prog_load\n")
+    getVersion()
+}
+probe end {
+    print("End")
+}
