@@ -1,6 +1,7 @@
 probe begin {
     printf("Begin")
 }
+
 /*
 function getAllConstraints:long(arg:long)
 {
@@ -12,7 +13,17 @@ probe kernel.function("x86_get_event_constraints") {
 //    print("0x%lx\n", @var("x86_pmu@arch/x86/events/core.c"))
     x86_pmu_addr = &$x86_pmu
     d=@cast(x86_pmu_addr, "x86_pmu")->event_constraints
-     
+    printf("event_constraints In this station: %s\n", symname(d)) // get funcname by addr
+    printf("---------event_constraint---------\n")
+//    for (elem = d; @cast(elem, "event_constraint")->weight != -1; elem = elem + %{sizeof(struct event_constraint)%}) {
+    for (elem = d; @cast(elem, "event_constraint")->weight != -1; elem = elem + 40) {
+        printf("code:%lx, cmask:%lx, weight:%d, overlap:%d, flags:%x\n", 
+        @cast(elem, "event_constraint")->code,
+        @cast(elem, "event_constraint")->cmask,
+        @cast(elem, "event_constraint")->weight,
+        @cast(elem, "event_constraint")->overlap,
+        @cast(elem, "event_constraint")->flags)
+    }
 }
 
 probe end {
