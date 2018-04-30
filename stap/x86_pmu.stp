@@ -1,0 +1,20 @@
+probe begin {
+    printf("Begin")
+}
+/*
+function getAllConstraints:long(arg:long)
+{
+    head=@cast(arg, "event_constraint")
+    for  
+}
+*/
+probe kernel.function("x86_get_event_constraints") {
+//    print("0x%lx\n", @var("x86_pmu@arch/x86/events/core.c"))
+    x86_pmu_addr = &$x86_pmu
+    d=@cast(x86_pmu_addr, "x86_pmu")->event_constraints
+     
+}
+
+probe end {
+    printf("End")
+}
