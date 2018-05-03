@@ -1,0 +1,86 @@
+probe begin {
+    print("Hello, this is IOSee\n")
+        /*
+    print("arg1")
+    print($1)
+    print("\narg2")
+    print($2)
+    */
+}
+
+%{
+#include <linux/blk_types.h>
+#include <linux/mm_types.h>
+#include <linux/fs.h>
+#include <linux/page-flags.h>
+#include <linux/dcache.h>
+%}
+
+//global gMap
+
+function getName:long (inodeC:long)
+%{
+    struct dentry *dentry;
+    struct inode *inode = (struct inode *)STAP_ARG_inodeC;
+     hlist_for_each_entry(dentry, &inode->i_dentry, d_u.d_alias) {
+         _stp_printf("%s ", dentry->d_iname);
+     }
+     _stp_printf("\n");
+%}
+function parseBio:long (bioC:long)
+%{
+    int i = 0;
+    struct bio *curBio;
+    struct inode *curInode;
+    struct address_space *aSpace;
+    struct page *curPage;
+    struct dentry *dentry;
+
+    curBio = (struct bio*)STAP_ARG_bioC;
+    for (i = 0; i < curBio->bi_vcnt; i++) {
+        curPage = curBio->bi_io_vec[i].bv_page;
+        if (((unsigned long)curPage & PAGE_MAPPING_ANON) == 0) {
+           aSpace = curPage->mapping;
+           curInode = aSpace->host;
+           _stp_printf("%d ", curInode->i_ino);
+           /*
+           hlist_for_each_entry(dentry, &curInode->i_dentry, d_u.d_alias) {
+               _stp_printf("%s ", dentry->d_iname);
+           }
+           */
+           _stp_printf("\n");
+        } else {
+           _stp_printf("anon\n");
+        }
+    }
+%}
+
+/*
+function getMajor:long(bd:long)
+%{
+    
+%}
+
+function getMinor:long(bd:long)
+%{
+    
+%}
+
+*/
+probe kernel.function("submit_bio") {
+//    block_device = $bio->bi_bdev
+    parseBio($bio)
+        /*
+    if (block_device != null) {
+        major = imajor(block_device->bd_inode)
+        minor = block_device->bd_inode
+    } else {
+
+    }
+    */
+}
+
+probe end {
+//    delete gMap
+    print("Good Bye")
+}
