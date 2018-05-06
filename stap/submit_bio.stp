@@ -4,39 +4,53 @@ probe begin {
 	printf("begin\n")
 }
 
+%{
+#include <linux/blk_types.h>
+%}
+
 global map
 probe ioblock.request {
 //	printf("%s -> %d\n", execname(), ino)
 }
+
 probe kernel.function("submit_bio") {
-//	print("%s\n", execname())
-	map[pid(), execname()]++
-	next
-	/*
-	if (execname() == "dd") {
-		bw = $bio->bi_io_vec
-		printf("devname:%s\n", __bio_devname($bio))
-		printf("ino: %d\n", __bio_ino($bio))
-		printf("%s\n", bio_rw_num($rw) == BIO_WRITE ? "Write" : "Read")
-		printf("bio_start_sec:%d\n", __bio_start_sect($bio))
-		next
-		for (i = 0; i < $bio->bi_vcnt; i++) {
-			bv = &@cast(bw, "bio_vec")[i]	
-			mappAddr = bv->bv_page->mapping
-			if (mappAddr & 0x1) { // dd if=/dev/zero of=./hi bs=4k count=1 oflag=direct
-				printf("mapping %p\n", mappAddr)
-				printf("anonymous page :%s\n", execname())
+//	map[pid(), execname()]++
+    bw = $bio->bi_io_vec
+    if ($bio == NULL) {
+        next
+    }
+    /*
+    printf("devname:%s\n", __bio_devname($bio))
+    printf("ino: %d\n", __bio_ino($bio))
+    printf("%s\n", bio_rw_num($rw) == BIO_WRITE ? "Write" : "Read")
+    printf("bio_start_sec:%d\n", __bio_start_sect($bio))
+    */
+    oprw = $rw
+    for (i = 0; i < $bio->bi_vcnt; i++) {
+        bv = &@cast(bw, "bio_vec")[i]
+        mappAddr = bv->bv_page->mapping
+        if (mappAddr & 0x1) { // dd if=/dev/zero of=./hi bs=4k count=1 oflag=direct
+            printf("mapping %p\n", mappAddr)
+            printf("anonymous page :%s\n", execname())
+        } else if (mappAddr != NULL) {
+            inode = bv->bv_page->mapping->host
+            if (oprw & %{REQ_WRITE%}) {
+                op = "W"
+            } else {
+                op = "R"
+            }
+            printf("%d:%s %s ino(%d +%d) sector(%d +%d) In %s\n", 
+                    i, execname(), op, inode->i_ino, bv->bv_page->index, $bio->bi_iter->bi_sector + i*4096, 4096, kernel_string(inode->i_sb->s_type->name))
+                /*
+            printf("%d:%s inode_add(%p) ino(%d) sector(%d +%d)\n", 
+                    i, execname(), inode, inode->i_ino, $bio->bi_iter->bi_sector + i*4096, 4096)
+                */
 
-			} else if (mappAddr != NULL) {
-				inode = bv->bv_page->mapping->host
-				printf("%s --> %p\n", execname(), inode)
-				printf("%d\n", inode->i_ino)
-			//	filename_by_inode(inode)
-
-			}
-		}
-	}
-*/
+            /*
+			filename_by_inode(inode)
+            */
+        }
+    }
 }
 
 probe end {
