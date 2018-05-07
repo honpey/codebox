@@ -8,13 +8,20 @@ probe begin {
 #include <linux/blk_types.h>
 %}
 
-global map
+global iMap
 probe ioblock.request {
 //	printf("%s -> %d\n", execname(), ino)
 }
 
+probe kernel.function("ext4_file_write_iter") {
+    ino = $iocb->ki_filp->f_inode->i_ino
+    if (iMap[ino]) {
+        printf("NSYNC: %s W %d\n", execname(), ino)
+    }
+}
+
 probe kernel.function("submit_bio") {
-//	map[pid(), execname()]++
+//	iMap[pid(), execname()]++
     bw = $bio->bi_io_vec
     if ($bio == NULL) {
         next
@@ -39,8 +46,21 @@ probe kernel.function("submit_bio") {
             } else {
                 op = "R"
             }
-            printf("%d:%s %s ino(%d +%d) sector(%d +%d) In %s\n", 
-                    i, execname(), op, inode->i_ino, bv->bv_page->index, $bio->bi_iter->bi_sector + i*4096, 4096, kernel_string(inode->i_sb->s_type->name))
+            fileName = inode_name(inode)
+            printf("%d:%s %s ino(%d +%d) %s sector(%d +%d) In %s\n", 
+                   i, execname(), op, inode->i_ino, bv->bv_page->index, fileName, $bio->bi_iter->bi_sector + i*4096, 4096, kernel_string(inode->i_sb->s_type->name))
+            /*
+            who has synced
+             */
+            /*
+            if ((oprw & %{REQ_WRITE%}) && !(oprw & %{REQ_SYNC%})) {
+//                printf("NO SYNC: %s\n",  execname())
+                iMap[inode->i_ino] = 1
+                if (execname() == "dd") {
+                    //print_backtrace();
+                }
+            }
+            */
                 /*
             printf("%d:%s inode_add(%p) ino(%d) sector(%d +%d)\n", 
                     i, execname(), inode, inode->i_ino, $bio->bi_iter->bi_sector + i*4096, 4096)
@@ -55,7 +75,9 @@ probe kernel.function("submit_bio") {
 
 probe end {
 	printf("End\n")
-	foreach ([pid, name] in map) {
-		printf("%d(%s): %d\n", pid, name, map[pid, name])
+        /*
+	foreach ([pid, name] in iMap) {
+		printf("%d(%s): %d\n", pid, name, iMap[pid, name])
 	}
+    */
 }
