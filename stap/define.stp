@@ -1,0 +1,24 @@
+probe begin {
+    printf("Begin\n")
+}
+
+@define name_domain
+%(
+   name="test" 
+%)
+
+/*
+probe kernel.function("sys_write") {
+    printf("sys_wirte\n")
+    @name_domain
+}
+*/
+
+probe nd_syscall.mkdir {
+    print(argstr)
+    print("\n")
+}
+
+probe end {
+    printf("End\n")
+}
