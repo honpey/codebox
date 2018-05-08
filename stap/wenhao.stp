@@ -1,0 +1,21 @@
+probe begin {
+    printf("Begin\n")
+}
+
+@define name_domain
+%(
+   name="test" 
+%)
+/*
+probe kernel.function("sys_write") {
+    printf("sys_wirte\n")
+    @name_domain
+}
+*/
+probe kernel.function("sys_write1")? {
+    printf("sys_write\n")
+}
+
+probe end {
+    printf("End\n")
+}
