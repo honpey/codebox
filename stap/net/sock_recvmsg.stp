@@ -1,0 +1,34 @@
+probe begin {
+	print("hello world\n")
+}
+
+global iMap
+probe kernel.function("sock_recvmsg_nosec") {
+   
+//   printf("%s %s\n", execname(), symname($sock->ops->recvmsg))
+//    printf("%s %s\n", execname(), symname($sock->sk->sk_prot->recvmsg))
+    arg1 = ulong_arg(1)
+    arg3 = ulong_arg(3)
+    sock = @cast(arg1, "socket")->ops->recvmsg
+//    printf("%s\n", symname(sock))
+ //   printf("size:%lx\n", arg3)
+    printf("%s sock: %p\n", probefunc(), register("rdi"))
+        /*
+    printf("ulong: %p\n", ulong_arg(1))
+    printf("regis: %p\n", register("edi"))
+    printf("ptr  : %p\n", pointer_arg(1))
+    */
+   // iMap[$sock->ops->recvmsg]++
+}
+
+probe kernel.function("unix_stream_recvmsg") {
+    printf("%s sock: %p\n", probefunc(), $sock)
+}
+
+probe end {
+    printf("-----------------\n")
+    foreach([addr] in iMap) {
+        printf("%s %d\n", symname(addr), iMap[addr])
+    }
+	print("End\n")
+}

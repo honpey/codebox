@@ -1,0 +1,101 @@
+
+vmlinux-4.4.0-21-generic：     文件格式 elf64-x86-64
+
+
+Disassembly of section .text:
+
+ffffffff816fb700 <sock_recvmsg_nosec>:
+ffffffff816fb700:	48 8b 47 28          	mov    0x28(%rdi),%rax
+ffffffff816fb704:	55                   	push   %rbp
+ffffffff816fb705:	48 89 e5             	mov    %rsp,%rbp
+ffffffff816fb708:	ff 90 90 00 00 00    	callq  *0x90(%rax)
+ffffffff816fb70e:	5d                   	pop    %rbp
+ffffffff816fb70f:	c3                   	retq   
+
+ffffffff816fb710 <sock_mmap>:
+ffffffff816fb710:	e8 9b b4 12 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff816fb715:	48 89 f2             	mov    %rsi,%rdx
+ffffffff816fb718:	48 8b b7 d0 00 00 00 	mov    0xd0(%rdi),%rsi
+ffffffff816fb71f:	55                   	push   %rbp
+ffffffff816fb720:	48 89 e5             	mov    %rsp,%rbp
+ffffffff816fb723:	48 8b 46 28          	mov    0x28(%rsi),%rax
+ffffffff816fb727:	ff 90 98 00 00 00    	callq  *0x98(%rax)
+ffffffff816fb72d:	5d                   	pop    %rbp
+ffffffff816fb72e:	c3                   	retq   
+ffffffff816fb72f:	90                   	nop
+
+ffffffff816fb730 <kernel_bind>:
+ffffffff816fb730:	e8 7b b4 12 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff816fb735:	48 8b 47 28          	mov    0x28(%rdi),%rax
+ffffffff816fb739:	55                   	push   %rbp
+ffffffff816fb73a:	48 89 e5             	mov    %rsp,%rbp
+ffffffff816fb73d:	ff 50 18             	callq  *0x18(%rax)
+ffffffff816fb740:	5d                   	pop    %rbp
+ffffffff816fb741:	c3                   	retq   
+ffffffff816fb742:	0f 1f 40 00          	nopl   0x0(%rax)
+ffffffff816fb746:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ffffffff816fb74d:	00 00 00 
+
+ffffffff816fb750 <kernel_listen>:
+ffffffff816fb750:	e8 5b b4 12 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff816fb755:	48 8b 47 28          	mov    0x28(%rdi),%rax
+ffffffff816fb759:	55                   	push   %rbp
+ffffffff816fb75a:	48 89 e5             	mov    %rsp,%rbp
+ffffffff816fb75d:	ff 50 58             	callq  *0x58(%rax)
+ffffffff816fb760:	5d                   	pop    %rbp
+ffffffff816fb761:	c3                   	retq   
+ffffffff816fb762:	0f 1f 40 00          	nopl   0x0(%rax)
+ffffffff816fb766:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ffffffff816fb76d:	00 00 00 
+
+ffffffff816fb770 <kernel_connect>:
+ffffffff816fb770:	e8 3b b4 12 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff816fb775:	48 8b 47 28          	mov    0x28(%rdi),%rax
+ffffffff816fb779:	55                   	push   %rbp
+ffffffff816fb77a:	48 89 e5             	mov    %rsp,%rbp
+ffffffff816fb77d:	ff 50 20             	callq  *0x20(%rax)
+ffffffff816fb780:	5d                   	pop    %rbp
+ffffffff816fb781:	c3                   	retq   
+ffffffff816fb782:	0f 1f 40 00          	nopl   0x0(%rax)
+ffffffff816fb786:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ffffffff816fb78d:	00 00 00 
+
+ffffffff816fb790 <kernel_getsockname>:
+ffffffff816fb790:	e8 1b b4 12 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff816fb795:	48 8b 47 28          	mov    0x28(%rdi),%rax
+ffffffff816fb799:	55                   	push   %rbp
+ffffffff816fb79a:	31 c9                	xor    %ecx,%ecx
+ffffffff816fb79c:	48 89 e5             	mov    %rsp,%rbp
+ffffffff816fb79f:	ff 50 38             	callq  *0x38(%rax)
+ffffffff816fb7a2:	5d                   	pop    %rbp
+ffffffff816fb7a3:	c3                   	retq   
+ffffffff816fb7a4:	66 90                	xchg   %ax,%ax
+ffffffff816fb7a6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ffffffff816fb7ad:	00 00 00 
+
+ffffffff816fb7b0 <kernel_getpeername>:
+ffffffff816fb7b0:	e8 fb b3 12 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff816fb7b5:	48 8b 47 28          	mov    0x28(%rdi),%rax
+ffffffff816fb7b9:	55                   	push   %rbp
+ffffffff816fb7ba:	b9 01 00 00 00       	mov    $0x1,%ecx
+ffffffff816fb7bf:	48 89 e5             	mov    %rsp,%rbp
+ffffffff816fb7c2:	ff 50 38             	callq  *0x38(%rax)
+ffffffff816fb7c5:	5d                   	pop    %rbp
+ffffffff816fb7c6:	c3                   	retq   
+ffffffff816fb7c7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ffffffff816fb7ce:	00 00 
+
+ffffffff816fb7d0 <kernel_sock_ioctl>:
+ffffffff816fb7d0:	e8 db b3 12 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff816fb7d5:	55                   	push   %rbp
+ffffffff816fb7d6:	48 89 e5             	mov    %rsp,%rbp
+ffffffff816fb7d9:	41 54                	push   %r12
+ffffffff816fb7db:	53                   	push   %rbx
+ffffffff816fb7dc:	65 48 8b 1c 25 04 42 	mov    %gs:0x14204,%rbx
+ffffffff816fb7e3:	01 00 
+ffffffff816fb7e5:	4c 8b a3 18 c0 ff ff 	mov    -0x3fe8(%rbx),%r12
+ffffffff816fb7ec:	48 c7 83 18 c0 ff ff 	movq   $0xffffffffffffffff,-0x3fe8(%rbx)
+ffffffff816fb7f3:	ff ff ff ff 
+ffffffff816fb7f7:	48 8b 47 28          	mov    0x28(%rdi),%rax
+ffffffff816fb7fb:	ff 50 48             	callq  *0x48(%rax)
+ffffffff816fb7fe:	4c 89 a3 18 c0 ff ff 	mov    %r12,-0x3fe8(%rbx)

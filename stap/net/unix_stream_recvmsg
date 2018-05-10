@@ -1,0 +1,76 @@
+
+/usr/lib/debug/boot/vmlinux-4.4.0-21-generic：     文件格式 elf64-x86-64
+
+
+Disassembly of section .text:
+
+ffffffff817bfc90 <unix_stream_recvmsg>:
+ffffffff817bfc90:	e8 1b 6f 06 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff817bfc95:	55                   	push   %rbp
+ffffffff817bfc96:	49 89 f9             	mov    %rdi,%r9
+ffffffff817bfc99:	41 89 c8             	mov    %ecx,%r8d
+ffffffff817bfc9c:	b9 06 00 00 00       	mov    $0x6,%ecx
+ffffffff817bfca1:	48 89 e5             	mov    %rsp,%rbp
+ffffffff817bfca4:	48 83 ec 38          	sub    $0x38,%rsp
+ffffffff817bfca8:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+ffffffff817bfcaf:	00 00 
+ffffffff817bfcb1:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+ffffffff817bfcb5:	31 c0                	xor    %eax,%eax
+ffffffff817bfcb7:	48 8d 7d c8          	lea    -0x38(%rbp),%rdi
+ffffffff817bfcbb:	f3 48 ab             	rep stos %rax,%es:(%rdi)
+ffffffff817bfcbe:	48 8d 7d c8          	lea    -0x38(%rbp),%rdi
+ffffffff817bfcc2:	48 89 55 e8          	mov    %rdx,-0x18(%rbp)
+ffffffff817bfcc6:	48 c7 45 c8 c0 da 7b 	movq   $0xffffffff817bdac0,-0x38(%rbp)
+ffffffff817bfccd:	81 
+ffffffff817bfcce:	4c 89 4d d0          	mov    %r9,-0x30(%rbp)
+ffffffff817bfcd2:	48 89 75 d8          	mov    %rsi,-0x28(%rbp)
+ffffffff817bfcd6:	44 89 45 f0          	mov    %r8d,-0x10(%rbp)
+ffffffff817bfcda:	e8 d1 f5 ff ff       	callq  ffffffff817bf2b0 <unix_stream_read_generic>
+ffffffff817bfcdf:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+ffffffff817bfce3:	65 48 33 14 25 28 00 	xor    %gs:0x28,%rdx
+ffffffff817bfcea:	00 00 
+ffffffff817bfcec:	75 02                	jne    ffffffff817bfcf0 <unix_stream_recvmsg+0x60>
+ffffffff817bfcee:	c9                   	leaveq 
+ffffffff817bfcef:	c3                   	retq   
+ffffffff817bfcf0:	e8 4b 10 8c ff       	callq  ffffffff81080d40 <__stack_chk_fail>
+ffffffff817bfcf5:	90                   	nop
+ffffffff817bfcf6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ffffffff817bfcfd:	00 00 00 
+
+ffffffff817bfd00 <unix_release_sock>:
+ffffffff817bfd00:	e8 ab 6e 06 00       	callq  ffffffff81826bb0 <__fentry__>
+ffffffff817bfd05:	55                   	push   %rbp
+ffffffff817bfd06:	48 89 e5             	mov    %rsp,%rbp
+ffffffff817bfd09:	41 57                	push   %r15
+ffffffff817bfd0b:	41 56                	push   %r14
+ffffffff817bfd0d:	41 55                	push   %r13
+ffffffff817bfd0f:	41 54                	push   %r12
+ffffffff817bfd11:	53                   	push   %rbx
+ffffffff817bfd12:	48 89 fb             	mov    %rdi,%rbx
+ffffffff817bfd15:	48 c7 c7 e0 62 1f 82 	mov    $0xffffffff821f62e0,%rdi
+ffffffff817bfd1c:	4c 8d b3 80 00 00 00 	lea    0x80(%rbx),%r14
+ffffffff817bfd23:	48 83 ec 28          	sub    $0x28,%rsp
+ffffffff817bfd27:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+ffffffff817bfd2e:	00 00 
+ffffffff817bfd30:	48 89 44 24 20       	mov    %rax,0x20(%rsp)
+ffffffff817bfd35:	31 c0                	xor    %eax,%eax
+ffffffff817bfd37:	89 74 24 08          	mov    %esi,0x8(%rsp)
+ffffffff817bfd3b:	e8 00 45 06 00       	callq  ffffffff81824240 <_raw_spin_lock>
+ffffffff817bfd40:	48 8b 43 70          	mov    0x70(%rbx),%rax
+ffffffff817bfd44:	48 85 c0             	test   %rax,%rax
+ffffffff817bfd47:	74 35                	je     ffffffff817bfd7e <unix_release_sock+0x7e>
+ffffffff817bfd49:	48 8b 53 68          	mov    0x68(%rbx),%rdx
+ffffffff817bfd4d:	48 85 d2             	test   %rdx,%rdx
+ffffffff817bfd50:	48 89 10             	mov    %rdx,(%rax)
+ffffffff817bfd53:	74 04                	je     ffffffff817bfd59 <unix_release_sock+0x59>
+ffffffff817bfd55:	48 89 42 08          	mov    %rax,0x8(%rdx)
+ffffffff817bfd59:	8b 83 80 00 00 00    	mov    0x80(%rbx),%eax
+ffffffff817bfd5f:	48 c7 43 70 00 00 00 	movq   $0x0,0x70(%rbx)
+ffffffff817bfd66:	00 
+ffffffff817bfd67:	83 f8 01             	cmp    $0x1,%eax
+ffffffff817bfd6a:	0f 84 57 02 00 00    	je     ffffffff817bffc7 <unix_release_sock+0x2c7>
+ffffffff817bfd70:	4c 8d b3 80 00 00 00 	lea    0x80(%rbx),%r14
+ffffffff817bfd77:	f0 ff 8b 80 00 00 00 	lock decl 0x80(%rbx)
+ffffffff817bfd7e:	48 c7 c7 e0 62 1f 82 	mov    $0xffffffff821f62e0,%rdi
+ffffffff817bfd85:	ff 14 25 c8 c1 e2 81 	callq  *0xffffffff81e2c1c8
+ffffffff817bfd8c:	4c 8d a3 20 03 00 00 	lea    0x320(%rbx),%r12
