@@ -1,0 +1,12 @@
+probe begin {
+    printf("Begin\n");
+}
+
+probe kernel.function("tcp_recvmsg").call {
+    tp = &@cast($sk, "tcp_sock")
+    printf("%s copied_seq:%d(0x%lx)\n", execname(), tp->copied_seq, tp)
+}
+
+probe end {
+    printf("End\n");
+}
