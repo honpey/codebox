@@ -1,0 +1,11 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe module("mac80211").function("ieee80211_subif_start_xmit") {
+    printf("%s\n", probefunc())
+}
+
+probe end {
+    printf("End\n")
+}
