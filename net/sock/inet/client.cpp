@@ -19,9 +19,12 @@ int main()
   bzero(&addr, sizeof(addr));
 
   addr.sin_family = AF_INET;
-//  addr.sin_addr.s_addr = inet_addr("192.168.0.110");
-  addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-  addr.sin_port = htons(7001);
+    addr.sin_addr.s_addr = inet_addr("192.168.1.111"); //
+    addr.sin_port = htons(20943);
+  /*
+    addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    addr.sin_port = htons(7002);
+    */
       
   /* connect to the server */    
   int result = connect(sockfd, (struct sockaddr *)&addr, sizeof(addr));
