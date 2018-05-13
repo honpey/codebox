@@ -1,0 +1,18 @@
+probe begin {
+	print("hello world\n")
+}
+
+global iMap
+probe kernel.function("sys_open") {
+    if (execname() == "lsof") {
+        printf("%s\n", user_string($filename))
+    }
+}
+
+probe end {
+    printf("--------stats---------\n")
+    foreach ([name] in iMap) {
+        printf("%s %d\n", name , iMap[name])
+    }
+	print("End\n")
+}

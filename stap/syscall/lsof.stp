@@ -1,0 +1,19 @@
+probe begin {
+	print("hello world\n")
+}
+
+global iMap
+probe kernel.function("sys*") {
+    if (execname() == "lsof") {
+   //     printf("%s\n", probefunc())
+        iMap[probefunc()]++
+    }
+}
+
+probe end {
+    printf("--------stats---------\n")
+    foreach ([name] in iMap) {
+        printf("%s %d\n", name , iMap[name])
+    }
+	print("End\n")
+}
