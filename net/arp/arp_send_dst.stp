@@ -1,0 +1,78 @@
+probe begin {
+	printf("begin\n");
+}
+
+%{
+#include <linux/inetdevice.h>
+#include <linux/rcupdate.h>
+#include <linux/netdevice.h>
+#include <net/neighbour.h>
+#include <linux/ip.h>
+%}
+
+global count
+function getIp(ip:long)
+%{
+    unsigned int ips = STAP_ARG_ip;
+    unsigned char iplist[4];
+    unsigned char *ippp = (unsigned char *)(&ips);
+    _stp_printf("%d.%d.%d.%d\n", ippp[0], ippp[1], ippp[2], ippp[3]);
+%}
+
+function get_announce(neighS:long)
+%{
+    struct in_device *in_dev;
+    struct net_device *dev;
+    struct neighbour *neigh;
+    int id = -1;
+
+    neigh = (struct neighbour *)STAP_ARG_neighS;
+    dev = neigh->dev;
+    rcu_read_lock();
+    in_dev = __in_dev_get_rcu(dev);
+    if (!in_dev) {
+        rcu_read_unlock();
+        return;
+    }
+    id = IN_DEV_ARP_ANNOUNCE(in_dev); 
+    rcu_read_unlock();
+    _stp_printf("id: %d\n", id);
+%}
+
+function getIpFromSkb(skbS:long)
+%{
+    struct sk_buff *skb;
+    unsigned int ip;
+
+    skb = (struct sk_buff *)STAP_ARG_skbS;
+    if (skb == NULL) {
+        return;
+    }
+    ip = ip_hdr(skb)->saddr;
+    _stp_printf("From Skb: %d.%d.%d.%d\n", ((unsigned char *)(&ip))[0],
+                                ((unsigned char *)(&ip))[1],
+                                ((unsigned char *)(&ip))[2],
+                                ((unsigned char *)(&ip))[3]);
+    
+%}
+
+
+probe kernel.statement("*@net/ipv4/arp.c:297") {
+    
+    getIp($src_ip)
+    printf("\n\n");
+}
+
+probe kernel.function("arp_solicit") {
+
+    get_announce($neigh)
+    getIpFromSkb($skb)
+}
+
+probe kernel.function("inet_addr_type_dev_table").return {
+    printf("RTN:%d\n", $return)
+}
+
+probe end {
+	printf("End\n");
+}
