@@ -1,0 +1,105 @@
+probe begin {
+	printf("begin\n");
+}
+
+%{
+#include <linux/inetdevice.h>
+#include <linux/rcupdate.h>
+#include <linux/netdevice.h>
+#include <net/neighbour.h>
+#include <linux/ip.h>
+#include <linux/skbuff.h>
+#include <net/dst.h>
+%}
+
+global count
+function getIp(ip:long)
+%{
+    unsigned int ips = STAP_ARG_ip;
+    unsigned char iplist[4];
+    unsigned char *ippp = (unsigned char *)(&ips);
+    _stp_printf("%d.%d.%d.%d\n", ippp[0], ippp[1], ippp[2], ippp[3]);
+%}
+
+function get_announce(neighS:long)
+%{
+    struct in_device *in_dev;
+    struct net_device *dev;
+    struct neighbour *neigh;
+    int id = -1;
+
+    neigh = (struct neighbour *)STAP_ARG_neighS;
+    dev = neigh->dev;
+    rcu_read_lock();
+    in_dev = __in_dev_get_rcu(dev);
+    if (!in_dev) {
+        rcu_read_unlock();
+        return;
+    }
+    id = IN_DEV_ARP_ANNOUNCE(in_dev); 
+    rcu_read_unlock();
+    _stp_printf("id: %d\n", id);
+%}
+
+function getIpFromSkb(skbS:long)
+%{
+    struct sk_buff *skb;
+    unsigned int ipS, ipD;
+
+    skb = (struct sk_buff *)STAP_ARG_skbS;
+    if (skb == NULL) {
+        return;
+    }
+    ipS = ip_hdr(skb)->saddr;
+    ipD = ip_hdr(skb)->daddr;
+
+    _stp_printf("From Skb:\n S %d.%d.%d.%d   D: %d.%d.%d.%d\n", 
+                                ((unsigned char *)(&ipS))[0],
+                                ((unsigned char *)(&ipS))[1],
+                                ((unsigned char *)(&ipS))[2],
+                                ((unsigned char *)(&ipS))[3],
+                                ((unsigned char *)(&ipD))[0],
+                                ((unsigned char *)(&ipD))[1],
+                                ((unsigned char *)(&ipD))[2],
+                                ((unsigned char *)(&ipD))[3]
+                                );
+    
+%}
+
+/*
+probe module("nf_nat").function("nf_nat_packet") {
+    printf("%s %s %s\n", execname(), probefunc(), symname(caller_addr()))
+    getIpFromSkb($skb)
+//    print_backtrace()
+}
+
+probe module("nf_nat_ipv4").function("nf_nat_ipv4_local_fn") {
+    printf("%s\n", probefunc())
+}
+
+probe module("nf_nat_ipv4").function("nf_nat_ipv4_in") {
+    printf("%s\n", probefunc())
+}
+*/
+function getOutput:long (skbS:long)
+%{
+    struct sk_buff *skb = (struct sk_buff *)STAP_ARG_skbS;
+    unsigned long addr = (unsigned long)skb_dst(skb)->output;
+    _stp_printf("%lx\n", addr);
+    STAP_RETVALUE = addr;
+    
+%}
+probe kernel.function("ip_local_deliver") {
+    printf("%s %s ", execname(), probefunc())
+    getIpFromSkb($skb)
+}
+
+probe kernel.function("ip_local_deliver_finish") {
+    printf("%s %s ", execname(), probefunc())
+    getIpFromSkb($skb)
+    printf("\n");
+}
+
+probe end {
+	printf("End\n");
+}
