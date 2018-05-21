@@ -1,0 +1,11 @@
+probe begin {
+	printf("begin\n");
+}
+
+probe module("iptable_nat").function("iptable_nat_do_chain") {
+    printf("----%s\n", probefunc());
+}
+
+probe end {
+	printf("End\n");
+}
