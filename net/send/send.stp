@@ -1,0 +1,42 @@
+probe begin {
+    printf("Begin\n")
+}
+
+global mapp
+probe kernel.function("sock_sendmsg") {
+    mapp[symname($sock->ops->sendmsg)]++
+}
+
+probe kernel.function("inet_sendmsg") {
+//    printf("%s\n", symname($sock->sk->__sk_common->skc_prot->sendmsg))
+}
+
+probe kernel.function("tcp_sendmsg") {
+    printf("%s: %s\n", execname(), ppfunc())
+}
+
+probe kernel.function("sk_stream_alloc_skb") {
+    printf("%s: %s\n", execname(), ppfunc())
+}
+
+probe kernel.function("skb_add_data_nocache") {
+    printf("%s: %s\n", execname(), ppfunc())
+}
+
+probe kernel.function("tcp_push") {
+    printf("%s: %s\n", execname(), ppfunc())
+}
+
+probe kernel.function("tcp_write_xmit") {
+    printf("%s: %s\n", execname(), ppfunc())
+}
+
+probe kernel.function("skb_copy_to_page_nocache") {
+    printf("%s: %s\n", execname(), ppfunc())
+}
+probe end {
+    printf("----End-----\n")
+    foreach ([name] in mapp) {
+        printf("%s\n", name)
+    }
+}
