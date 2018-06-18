@@ -1,0 +1,602 @@
+0fa4fe8 bpf: skip unnecessary capability check
+ca36960 bpf: allow xadd only on aligned memory
+6c5f610 bpf: fix rcu lockdep warning for lpm_trie map_free callback
+32fff23 bpf: add schedule points in percpu arrays management
+9c2d63b bpf: fix mlock precharge on arraymaps
+9c481b9 bpf: fix bpf_prog_array_copy_to_user warning from perf event prog query
+7fc17e9 bpf: cpumap: use GFP_KERNEL instead of GFP_ATOMIC in __cpu_map_entry_alloc()
+952fad8 bpf: fix sock_map_alloc() error path
+9a3efb6 bpf: fix memory leak in lpm_trie map_free callback function
+3d9e952 bpf: sockmap, fix leaking maps with attached but not detached progs
+1aa12bd bpf: sockmap, add sock close() hook to remove socks
+0911287 bpf: fix bpf_prog_array_copy_to_user() issues
+b2fe5fa Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next
+8b0fdf6 Merge branch 'work.mqueue' of git://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs
+6dd1ec6 bpf: fix kernel page fault in lpm map trie_get_next_key
+f6b1b3b bpf: fix subprog verifier bypass by div/mod by 0 exception
+5e581da bpf: make unknown opcode handling more robust
+2a5418a bpf: improve dead code sanitizing
+9c147b5 bpf: Use the IS_FD_ARRAY() macro in map_update_elem()
+2310035 bpf: fix incorrect kmalloc usage in lpm_trie MAP_GET_NEXT_KEY rcu region
+ea9722e Merge git://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf-next
+8565d26 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+4bd95f4 bpf: add upper complexity limit to verifier log
+fa9dd59 bpf: get rid of pure_initcall dependency to enable jits
+9013341 bpf, verifier: detect misconfigured mem, size argument pair
+b471f2f bpf: implement MAP_GET_NEXT_KEY command for LPM_TRIE map
+52775b3 bpf: offload: report device information about offloaded maps
+7a0ef69 bpf: offload: allow array map offload
+3285264 bpf: arraymap: use bpf_map_init_from_attr()
+ad46061 bpf: arraymap: move checks out of alloc function
+61f3c96 bpf: allow socket_filter programs to use bpf_prog_test_run
+fcfb126 bpf: add new jited info fields in bpf_dev_offload and bpf_prog_info
+6f16101 bpf: mark dst unknown on inconsistent {s, u}bounds adjustments
+c02b374 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+48b3256 bpf: annotate bpf_insn_print_t with __printf
+0a2d28f bpf: offload: make bpf_offload_dev_match() reject host+host case
+0fe875c bpf: cpumap: make some functions static
+f37a8cb bpf: reject stores into ctx via st and xadd
+a388457 bpf: offload: add map offload infrastructure
+5bc2d55 bpf: offload: factor out netdev checking at allocation time
+0a9c199 bpf: rename bpf_dev_offload -> bpf_prog_offload
+bd47564 bpf: add helper for copying attrs to struct bpf_map
+9328e0d bpf: hashtab: move checks out of alloc function
+daffc5a bpf: hashtab: move attribute validation before allocation
+1110f3a bpf: add map_alloc_check callback
+68fda45 bpf: fix 32-bit divide by zero
+c366287 bpf: fix divides by zero
+19d28fb Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+8c2e6c9 Merge git://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf-next
+bbeb6e4 bpf, array: fix overflow in max_entries and undefined behavior in index_mask
+7891a87 bpf: arsh is not supported in 32 bit alu thus reject it
+4095034 bpf: fix spelling mistake: "obusing" -> "abusing"
+661e4e3 Merge git://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf
+430e68d bpf: export function to write into verifier log buffer
+290af86 bpf: introduce BPF_JIT_ALWAYS_ON config
+a0ce093 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+b215739 bpf: prevent out-of-bounds speculation
+5896351 bpf: fix verifier GPF in kmalloc failure path
+75d4276 Merge branch 'for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs
+5731a87 bpf: sockmap missing NULL psock check
+16f07c5 bpf: implement syscall command BPF_MAP_GET_NEXT_KEY for stacktrace map
+a4a0683 bpf_obj_do_pin(): switch to vfs_mkobj(), quit abusing ->mknod()
+040ee69 fix "netfilter: xt_bpf: Fix XT_BPF_MODE_FD_PINNED mode of 'xt_bpf_info_v1'"
+5f103c5 bpf: only build sockmap with CONFIG_INET
+c20a71a bpf: sockmap remove unused function
+675fc27 bpf: offload: report device information for offloaded programs
+ad8ad79 bpf: offload: free program id when device disappears
+ce3b9db bpf: offload: free prog->aux->offload when device disappears
+cae1927 bpf: offload: allow netdev to disappear while verifier is running
+9a18eed bpf: offload: don't use prog->aux->offload as boolean
+e0d3974 bpf: offload: don't require rtnl for dev list manipulation
+fcffe2e Merge git://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf-next
+aada9ce bpf: fix max call depth check
+70a87ff bpf: fix maximum stack depth tracking logic
+fd05e57 bpf: fix stacksafe exploration when comparing states
+fba961a Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+7105e82 bpf: allow for correlation of maps and helpers in dump
+4f74d80 bpf: fix kallsyms handling for subprogs
+82abbf8 bpf: do not allow root to mangle valid pointers
+bb7f0f9 bpf: fix integer overflows
+179d1c5 bpf: don't prune branches when a scalar is replaced with a pointer
+a5ec6ae bpf: force strict alignment checks for stack pointers
+ea25f91 bpf: fix missing error return in check_stack_boundary()
+468f6ea bpf: fix 32-bit ALU op verification
+0c17d1d bpf: fix incorrect tracking of register size truncation
+95a762e bpf: fix incorrect sign extension in check_alu_op()
+4374f25 bpf/verifier: fix bounds calculation on BPF_RSH
+06ef0cc bpf/cgroup: fix a verification error for a CGROUP_DEVICE type prog
+fa2d41a bpf: make function skip_callee static and return NULL rather than 0
+e90004d bpf: fix spelling mistake: "funcation"-> "function"
+59436c9 Merge git://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf-next
+1c2a088 bpf: x64: add JIT support for multi-function programs
+60b58afc bpf: fix net.core.bpf_jit_enable race
+1ea47e0 bpf: add support for bpf_call to interpreter
+cc2b14d bpf: teach verifier to recognize zero initialized stack
+f4d7e40 bpf: introduce function calls (verification)
+cc8b0b9 bpf: introduce function calls (function boundaries)
+c30abd5 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+04514d1 bpf: guarantee r1 to be ctx in case of bpf_helper_changes_pkt_data
+9147efc bpf: add schedule points to map alloc/free
+9802d86 bpf: add a bpf_override_function helper
+f371b30 bpf/tracing: allow user space to query prog array on the same tp
+7cda4ce Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+914cb78 bpf: cleanup register_is_null()
+3bf1592 bpf: improve JEQ/JNE path walking
+2f18f62 bpf: improve verifier liveness marks
+19ceb41 bpf: don't mark FP reg as uninit
+4e92024 bpf: print liveness info to verifier log
+12a3cc8 bpf: fix stack state printing in verifier log
+c8c088b bpf: set maximum number of attached progs to 64 for a single perf tp
+a39e17b bpf: offload: add a license header
+c131187 bpf: fix branch pruning logic
+db1ac49 bpf: introduce ARG_PTR_TO_MEM_OR_NULL
+1ee6400 bpf: revert report offload info to user space
+62c71b4 bpf: offload: ignore namespace moves
+479321e bpf: turn bpf_prog_get_type() into a wrapper
+288b3de bpf: offload: move offload device validation out to the drivers
+1f6f4cb bpf: offload: rename the ifindex field
+649f11d bpf: offload: limit offload to cls_bpf and xdp programs only
+13a9c48 bpf: offload: add comment warning developers about double destroy
+7c225c6 Merge branch 'akpm' (patches from Andrew)
+4950276 kmemcheck: remove annotations
+89ad2fa bpf: fix lockdep splat
+9fd29c0 bpf: improve verifier ARG_CONST_SIZE_OR_ZERO semantics
+f3edacb bpf: Revert bpf_overrid_function() helper changes.
+dd0bb68 bpf: add a bpf_override_function helper
+15bcdc9 Merge branch 'linus' into perf/core, to fix conflicts
+ebc614f bpf, cgroup: implement eBPF-based device controller for cgroup v2
+b37a530 bpf: remove old offload/analyzer
+6c8dfe2 cls_bpf: allow attaching programs loaded for specific device
+248f346 xdp: allow attaching programs loaded for specific device
+bd601b6 bpf: report offload info to user space
+ab3f006 bpf: offload: add infrastructure for loading programs for a specific netdev
+2a17178 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+8c01c4f bpf: fix verifier NULL pointer dereference
+eba0c92 bpf: fix out-of-bounds access warning in bpf_check
+7cce782 bpf: fix link error without CONFIG_NET
+ead7515 Merge tag 'spdx_identifiers-4.14-rc8' of git://git.kernel.org/pub/scm/linux/kernel/git/gregkh/driver-core
+b244131 License cleanup: add SPDX GPL-2.0 license identifier to files with no license
+5beca08 bpf: also improve pattern matches for meta access
+b06723d bpf: minor cleanups after merge
+03c4cc3 bpf: cpumap micro-optimization in cpu_map_enqueue
+ed29668 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+1969db4 bpf: fix verifier memory leaks
+04686ef bpf: remove SK_REDIRECT from UAPI
+638f5b9 bpf: reduce verifier memory consumption
+e1ea2f9 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+bfa64075 bpf: rename sk_actions to align with bpf infrastructure
+8108a77 bpf: bpf_compute_data uses incorrect cb structure
+7d9285e perf/bpf: Extend the perf_event_read_local() interface, a.k.a. "bpf: perf event change needed for subsequent bpf helpers"
+e87c6bc bpf: permit multiple bpf attachments for a single perf event
+3174946 bpf: cpumap fix potential lost wake-up problem
+f8ddadc Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+0fd4759 bpf: fix pattern matches for direct packet access
+fb2a311 bpf: fix off by one for range markings with L{T, E} patterns
+8695a53 bpf: devmap fix arithmetic overflow in bitmap_size calculation
+f66e448 selinux: bpf: Add addtional check for bpf object file receive
+afdb09c security: bpf: Add LSM hooks for bpf object related syscall
+6e71b04 bpf: Add file mode configuration into bpf maps
+9ef2a8c bpf: require CAP_NET_ADMIN when using devmap
+fb50df8 bpf: require CAP_NET_ADMIN when using sockmap maps
+34f79502 bpf: avoid preempt enable/disable in sockmap using tcp_skb_cb region
+435bf0d bpf: enforce TCP only support for sockmap
+bc6d503 bpf: do not test for PCPU_MIN_UNIT_SIZE before percpu allocations
+82f8dd2 bpf: fix splat for illegal devmap percpu allocation
+4f9218a bpf: move knowledge about post-translation offsets out of verifier
+00176a3 bpf: remove the verifier ops from program structure
+7de16e3 bpf: split verifier and program ops
+28e33f9 bpf: disallow arithmetic operations on context pointer
+f9419f7 bpf: cpumap add tracepoints
+1c601d8 bpf: cpumap xdp_buff to skb conversion and allocation
+9c270af bpf: XDP_REDIRECT enable use of cpumap
+6710e11 bpf: introduce new bpf cpu map type BPF_MAP_TYPE_CPUMAP
+9185a61 tracing: bpf: Hide bpf trace events when they are not used
+1bdec44 bpf: verifier: set reg_type on context accesses in second pass
+952925d bpf: remove redundant variable old_flags
+a2a7d57 bpf: write back the verifier log buffer as it gets filled
+f4ac7e0 bpf: move instruction printing into a separate file
+61bd521 bpf: move global verifier log into verifier environment
+e7bf824 bpf: encapsulate verifier log state into a structure
+d93fa2b Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+fb60bcc Merge git://git.kernel.org/pub/scm/linux/kernel/git/pablo/nf
+98589a0 netfilter: xt_bpf: Fix XT_BPF_MODE_FD_PINNED mode of 'xt_bpf_info_v1'
+368211f bpf: Append prog->aux->name in bpf_get_prog_name()
+473d973 bpf: Change bpf_obj_name_cpy() to better ensure map's name is init by 0
+8fe2d6c bpf: fix liveness marking
+908432c bpf: add helper bpf_perf_event_read_value for perf event array map
+9756263 bpf: perf event change needed for subsequent bpf helpers
+53954cf Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+390ee7e bpf: enforce return code for cgroup-bpf programs
+468e2f6 bpf: introduce BPF_PROG_QUERY command
+324bda9e6 bpf: multi program support for cgroup+bpf
+90caccd bpf: fix bpf_tail_call() x64 JIT
+721e08d bpf: Fix compiler warning on info.map_ids for 32bit platform
+ad5b177 bpf: Add map_name to bpf_map_info
+cb4d2b3 bpf: Add name, load_time, uid and map_ids to bpf_prog_info
+73c864b bpf/verifier: improve disassembly of BPF_NEG instructions
+2b7c6ba bpf/verifier: improve disassembly of BPF_END instructions
+de8f3a8 bpf: add meta pointer for direct access
+6aaae2b bpf: rename bpf_compute_data_end into bpf_compute_data_pointers
+b5d7388 bpf: Optimize lpm trie delete
+1f8d31d Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+7c30013 bpf: fix ri->map_owner pointer on bpf_prog_realloc
+930651a bpf: do not disable/enable BH in bpf_map_free_id()
+e454cf5 bpf: Implement map_delete_elem for BPF_MAP_TYPE_LPM_TRIE
+582db7e bpf: devmap: pass on return value of bpf_map_precharge_memlock
+e67b8a6 bpf/verifier: reject BPF_ALU64|BPF_END
+374fb01 bpf: devmap, use cond_resched instead of cpu_relax
+5a67da2 bpf: add support for sockmap detach programs
+109980b bpf: don't select potentially stale ri->map from buggy xdp progs
+96e5ae4 bpf: fix numa_node validation
+90a9631 bpf: sockmap update/simplify memory accounting scheme
+bb9b9f8 bpf: Only set node->ref = 1 if it has not been set
+cc55542 bpf: Inline LRU map lookup
+f740c34 bpf: fix oops on allocation failure
+78aeaae bpf: sockmap indicate sock events to listeners
+81374aa bpf: harden sockmap program attach to ensure correct map type
+d26e597d bpf: sockmap add missing rcu_read_(un)lock in smap_data_ready
+2f857d0 bpf: sockmap, remove STRPARSER map_flags and add multi-map support
+464bc0f bpf: convert sockmap field attach_bpf_fd2 to type
+3fd8712 strparser: initialize all callbacks
+a5e2da6 bpf: netdev is never null in __dev_map_flush
+8e9cd9c bpf/verifier: document liveness analysis
+1b688a1 bpf/verifier: remove varlen_map_value_access flag
+63f45f8 bpf/verifier: when pruning a branch, ignore its write marks
+af4d045 bpf: minor cleanups for dev_map
+cd36c3a bpf: fix map value attribute for hash of maps
+274043c bpf: fix double free from dev_map_notification()
+7b0c2a0 bpf: inline map in map lookup functions for array and htab
+89c6307 bpf: make htab inlining more robust wrt assumptions
+96eabe7 bpf: Allow selecting numa node during map creation
+16a4362 bpf: Fix map-in-map checking in the verifier
+ae2b27b bpf: fix a return in sockmap_get_from_fd()
+976d28b bpf: don't enable preemption twice in smap_do_verdict
+1ab2de2 bpf: fix liveness propagation to parent in spilled stack slots
+6bdc9c4 bpf: sock_map fixes for !CONFIG_BPF_SYSCALL and !STREAM_PARSER
+cf56e3b bpf: sockmap state change warning fix
+cf9d014 bpf: devmap: remove unnecessary value size check
+8a31db5 bpf: add access to sock fields and pkt data from sk_skb programs
+174a79f bpf: sockmap with sk redirect support
+a6f6df6 bpf: export bpf_prog_inc_not_zero
+dc503a8 bpf/verifier: track liveness for pruning
+b4e432f bpf: enable BPF_J{LT, LE, SLT, SLE} opcodes in verifier
+92b31a9 bpf: add BPF_J{LT,LE,SLT,SLE} instructions
+752ba56 bpf: Extend check_uarg_tail_zero() checks
+58291a7 bpf: Move check_uarg_tail_zero() upward
+8e17c1b bpf/verifier: increase complexity limit to 128k
+7d1238f bpf/verifier: more concise register state logs for constant var_off
+b03c9f9 bpf/verifier: track signed and unsigned min/max values
+f1174f7 bpf/verifier: rework value tracking
+4cc7b95 bpf: devmap fix mutex in rcu critical section
+29fda25 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+9975a54 bpf: fix bpf_prog_get_info_by_fd to dump correct xlated_prog_len
+89b0968 bpf: don't indicate success when copy_from_user fails
+241a974 bpf: dev_map_alloc() shouldn't return NULL
+9305706 bpf/verifier: fix min/max handling in BPF_SUB
+7a68ada Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+96080f6 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+4cabc5b bpf: fix mixed signed/unsigned derived min/max value bounds
+2ddf71e net: add notifier hooks for devmap bpf map
+11393cc xdp: Add batching support to redirect map
+97f91a7 bpf: add bpf_redirect_map helper routine
+546ac1f bpf: add devmap, a map for storing net device references
+78dcf73 Merge branch 'work.mount' of git://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs
+4cc7c18 bpf: Implement show_options
+7114f51 Merge branch 'work.memdup_user' of git://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs
+4318870 bpf, verifier: add additional patterns to evaluate_reg_imm_alu
+9780c0a bpf: export whether tail call has jited owner
+f96da09 bpf: simplify narrower ctx access
+40304b2 bpf: BPF support for sock_ops
+b079115 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+e4448ed bpf: don't open-code memdup_user()
+6bdf6ab bpf: prevent leaking pointer via xadd on unpriviledged
+8007e40 bpf: Fix out-of-bound access on interpreters[]
+14dc6f0 bpf: Add syscall lookup support for fd array and htab
+2399463 bpf: possibly avoid extra masking for narrower load in verifier
+31fd858 bpf: permits narrower load from bpf program context fields
+36e24c0 bpf: reset id on spilled regs in clear_all_pkt_pointers
+4a2ff55 bpf: reset id on CONST_IMM transition
+d25da6c bpf: don't check spilled reg state for non-STACK_SPILLed type slots
+9204657 bpf: cgroup skb progs cannot access ld_abs/ind
+1e27097 bpf: Add BPF_OBJ_GET_INFO_BY_FD
+bd5f5f4 bpf: Add BPF_MAP_GET_FD_BY_ID
+b16d9aa bpf: Add BPF_PROG_GET_FD_BY_ID
+34ad558 bpf: Add BPF_(PROG|MAP)_GET_NEXT_ID command
+f3f1c05 bpf: Introduce bpf_map ID
+dc4bb0e bpf: Introduce bpf_prog ID
+f91840a perf, bpf: Add BPF support to all perf_event types
+80b7d81 bpf: Remove the capability check for cgroup skb eBPF program
+fb9a307 bpf: Allow CGROUP_SKB eBPF program to access sk_buff
+b870aa9 bpf: use different interpreter depending on required stack size
+80a58d0 bpf: reconcile bpf_tail_call and stack_depth
+8726679 bpf: teach verifier to track stack depth
+f696b8f bpf: split bpf core interpreter
+71189fa bpf: free up BPF_JMP | BPF_CALL | BPF_X opcode
+a316338 bpf: fix wrong exposure of map_flags into fdinfo for lpm
+a9789ef bpf: properly reset caller saved regs after helper call and ld_abs/ind
+1ad2f58 bpf: fix incorrect pruning decision when alignment must be tracked
+e4eda88 net: Make IP alignment calulations clearer.
+3c2ce60 bpf: adjust verifier heuristics
+6832a33 bpf: Handle multiple variable additions into packet pointers in verifier.
+e07b98d bpf: Add strict alignment flag for BPF_PROG_LOAD.
+c5fc969 bpf: Do per-instruction state dumping in verifier when log_level > 1.
+d117441 bpf: Track alignment of register values in the verifier.
+50fb55d Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+11fbf53 Merge branch 'work.misc' of git://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs
+19809c2 mm, vmalloc: use __GFP_HIGHMEM implicitly
+0d0e576 bpf: don't let ldimm64 leak map addresses on unprivileged
+332270f bpf: enhance verifier to understand stack pointer arithmetic
+d24f7c7 bpf: bpf_lock on kallsysms doesn't need to be irqsave
+cda3712 fs: constify tree_descr arrays passed to simple_fill_super()
+8fe4592 bpf: map_get_next_key to return first key on NULL
+e390b55 bpf: make bpf_xdp_adjust_head support mandatory
+7b9f6da Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+c2002f9 bpf: fix checking xdp_adjust_head on tail calls
+6b1bb01 bpf: fix cb access in socket filter programs on tail calls
+695ba26 bpf: lru: Lower the PERCPU_NR_SCANS from 16 to 4
+6b6cbc1 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+8f917bb bpf: pass sk to helper functions
+40077e0 bpf: remove struct bpf_map_type_list
+be9370a bpf: remove struct bpf_prog_type_list
+96a94cc bpf: reference may_access_skb() from __bpf_prog_run()
+6f14f44 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+1cf1cae bpf: introduce BPF_PROG_TEST_RUN command
+79adffc bpf, verifier: fix rejection of unaligned access checks for map_value_adj
+fce366a bpf, verifier: fix alu ops against map_value{, _adj} register types
+b197768 bpf: improve verifier packet range checks
+16ae1f2 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+bcc6b1b bpf: Add hash of maps support
+56f668d bpf: Add array of maps support
+fad73a1 bpf: Fix and simplifications on inline map lookup
+8c290e6 bpf: fix hashmap extra_elems logic
+9015d2f bpf: inline htab_map_lookup_elem()
+81ed18a bpf: add helper inlining infra and optimize map_array lookup
+8041902 bpf: adjust insn_aux_data when patching insns
+79741b3 bpf: refactor fixup_bpf_calls()
+e245c5c bpf: move fixup_bpf_calls() function
+4fe8435 bpf: convert htab map to hlist_nulls
+9f69154 bpf: fix struct htab_elem layout
+f38837b bpf: add get_next_key callback to LPM map
+8d70eeb Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+3f07c01 sched/headers: Prepare for new header dependencies before moving code to <linux/sched/signal.h>
+eba38a9 bpf: update the comment about the length of analysis
+bc1750f bpf: fix spelling mistake: "proccessed" -> "processed"
+74451e66 bpf: make jited programs visible in traces
+9383191 bpf: remove stubs for cBPF from arch code
+c78f8bd bpf: mark all registered map/prog types as __ro_after_init
+3f64116 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+7e57fbb bpf: reduce compiler warnings by adding fallthrough comments
+7f67763 bpf: introduce BPF_F_ALLOW_OVERRIDE flag
+c502faf bpf, lpm: fix overflows in trie_alloc checks
+63dfef7 bpf: enable verifier to add 0 to packet ptr
+4e8f2fc Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+a67edbf bpf: add initial bpf tracepoints
+3fadc80 bpf: enable verifier to better track const alu ops
+d140199 bpf, lpm: fix kfree of im_node in trie_update_elem
+b95a5c4 bpf: add a longest prefix match trie map implementation
+d407bd2 bpf: don't trigger OOM killer under pressure with map alloc
+580bdf5 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+f1f7714 bpf: rework prog_digest into prog_tag
+62c7989 bpf: allow b/h/w/dw access for bpf's cb in ctx
+6b8cc1d bpf: pass original insn directly to convert_ctx_access
+02ac5d1 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+7984c27 bpf: do not use KMALLOC_SHIFT_MAX
+3bf0033 bpf: Make unnecessarily global functions static
+a5ef01a bpf: Remove unused but set variable in __bpf_lru_list_shrink_inactive()
+39f19ebb bpf: rename ARG_PTR_TO_STACK
+06c1c04 bpf: allow helpers access to variable memory
+f0318d0 bpf: allow adjusted map element values to spill
+5722569 bpf: allow helpers access to map element values
+dbcfe5f bpf: split check_mem_access logic for map values
+6760bf2 bpf: fix mark_reg_unknown_value for spilled regs on map value marking
+5ccb071 bpf: fix overflow in prog accounting
+aafe6ae bpf: dynamically allocate digest scratch buffer
+a08dd0d bpf: fix regression on verifier pruning wrt map lookups
+17bedab bpf: xdp: Allow head adjustment in XDP prog
+d2a4dd3 bpf: fix state equivalence
+ef0915c bpf: fix loading of BPF_MAXINSNS sized programs
+7bd509e bpf: add prog_digest and expose it via fdinfo/netlink
+3c839744 bpf: Preserve const register type on const OR alu ops
+2745529 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+61023658 bpf: Add new cgroup attach type to enable sock modifications
+b2cd125 bpf: Refactor cgroups code in prep for new type
+3a0af8f bpf: BPF for lightweight tunnel infrastructure
+e2d2afe bpf: fix states equal logic for varlen access
+01ae87e bpf: cgroup: fix documentation of __cgroup_bpf_update()
+a3af5f8 bpf: allow for mount options to specify permissions
+21116b7 bpf: add owner_prog_type and accounted mem to array map's fdinfo
+f432455 bpf: add BPF_PROG_ATTACH and BPF_PROG_DETACH commands
+3007098 cgroup: add support for eBPF programs
+f9aa9dc Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+97bc402 bpf, mlx5: fix mlx5e_create_rq taking reference on prog
+f23cc64 bpf: fix range arithmetic for bpf map access
+2874aa2 bpf: Fix compilation warning in __bpf_lru_list_rotate_inactive
+8f84493 bpf: Add BPF_MAP_TYPE_LRU_PERCPU_HASH
+29ba732 bpf: Add BPF_MAP_TYPE_LRU_HASH
+fd91de7 bpf: Refactor codes handling percpu map
+961578b bpf: Add percpu LRU list
+3a08c2f bpf: LRU List
+bb598c1 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+535e7b4b bpf: Use u64_to_user_ptr()
+c540594 bpf, mlx4: fix prog refcount in mlx4_en_try_alloc_resources error path
+de46437 bpf: Remove unused but set variables
+20b2b24 bpf: fix map not being uncharged during map creation failure
+483bed2 bpf: fix htab map destruction when extra reserve is in use
+0f98621 bpf, inode: add support for symlinks and fix mtime/ctime
+ebb676d bpf: Print function name in addition to function id
+2d0e30c bpf: add helper for retrieving current numa node id
+57a09bf bpf: Detect identical PTR_TO_MAP_VALUE_OR_NULL registers
+101105b Merge branch 'for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs
+4846113 bpf: allow access into map value arrays
+b761fe2 bpf: clean up put_cpu_var usage
+078cd82 fs: Replace CURRENT_TIME with current_time() for inode timestamps
+1955351 bpf: Set register type according to is_valid_access()
+6b17387 bpf: recognize 64bit immediate loads as consts
+13a27df bpf: enable non-core use of the verfier
+58e2af8 bpf: expose internal verfier structures
+3df126f bpf: don't (ab)use instructions to store state
+36bbef5 bpf: direct packet write and access for helpers for clsact progs
+b399cf6 bpf, verifier: enforce larger zero range for pkt on overloading stack buffs
+f3694e0 bpf: add BPF_CALL_x macros for declaring helpers
+6088b58 bpf: minor cleanups in helpers
+2d2be8c bpf: fix range propagation on direct packet access
+fdc15d3 bpf: perf_event progs should only use preallocated maps
+ea2e7ce bpf: support 8-byte metafield access
+60747ef Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+6841de8 bpf: allow helpers access the packet directly
+747ea55 bpf: fix bpf_skb_in_cgroup helper naming
+60d20f9 bpf: Add bpf_current_task_under_cgroup helper
+a6ed3ea bpf: restore behavior of bpf_map_update_elem
+1f415a7 bpf: fix method of PTR_TO_PACKET reg id generation
+468fc7e Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next
+4acf6c0 bpf: enable direct packet data write for xdp progs
+6a773a1 bpf: add XDP prog type for early driver filter
+59d3656 bpf: add bpf_prog_add api for bulk prog refcnt
+858d68f bpf: bpf_event_entry_gen's alloc needs to be in atomic context
+555c8a8 bpf: avoid stack copy and use skb ctx for event output
+a536a6e bpf: make inode code explicitly non-modular
+3ebe3bd Merge branch 'perf/urgent' into perf/core, to pick up fixes before merging new changes
+4a482f3 cgroup: bpf: Add bpf_skb_in_cgroup_proto
+4ed8ec5 cgroup: bpf: Add BPF_MAP_TYPE_CGROUP_ARRAY
+113214b bpf: refactor bpf_prog_get and type check into helper
+1aacde3 bpf: generally move prog destruction to RCU deferral
+80b48c4 bpf: don't use raw processor id in generic helper
+1ca1cc9 bpf: minor cleanups on fd maps and helpers
+ee58b57 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+3b1efb1 bpf, maps: flush own entries on perf map release
+d056a78 bpf, maps: extend map_fd_get_ptr arguments
+61d1b6a bpf, maps: add release callback
+19de99f bpf: fix matching of data/data_end in verifier
+616d1c1 Merge branch 'linus' into perf/core, to refresh the branch
+6b15d66 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+97c79a3 perf core: Per event callchain limit
+bdc6b75 Merge branch 'perf-urgent-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
+612baca bpf, inode: disallow userns mounts
+1b9b69e bpf: teach verifier to recognize imm += ptr pattern
+d91b28e bpf: support decreasing order in direct packet access
+e27f4a9 bpf: Use mount_nodev not mount_ns to mount the bpf filesystem
+b7552e1b bpf: rather use get_random_int for randomizations
+9e17632 Merge branch 'work.misc' of git://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs
+a7fd20d Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next
+cfbcf46 perf core: Pass max stack as a perf_callchain_entry context
+4f3446b bpf: add generic constant blinding for use in jits
+d1c55ab bpf: prepare bpf_int_jit_compile/bpf_prog_select_runtime apis
+c237ee5 bpf: add bpf_patch_insn_single helper
+4936e35 bpf: minor cleanups in ebpf code
+d295015 Merge branch 'perf/urgent' into perf/core, to pick up fixes
+735b433 bpf: improve verifier state equivalence
+969bf05 bpf: direct packet access
+1a0dc1a bpf: cleanup verifier code
+1a618c2 Merge branch 'perf/urgent' into perf/core, to pick up fixes
+cba65321 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+6aff67c bpf: fix check_map_func_compatibility logic
+92117d8 bpf: fix refcnt overflow
+c0cc531 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+c5dfd78 perf core: Allow setting up max frame stack depth via sysctl
+8358b02 bpf: fix double-fdput in replace_map_fd_with_map_ptr()
+1602f49 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+bd570ff bpf: add event output helper for notifications/sampling/logging
+074f528 bpf: convert relevant helper args to ARG_PTR_TO_RAW_STACK
+435faee1 bpf, verifier: add ARG_PTR_TO_RAW_STACK type
+33ff982 bpf, verifier: add bpf_call_arg_meta for passing meta data
+d82bccc bpf/verifier: reject invalid LD_ABS | BPF_DW instruction
+4923ec0 bpf: simplify verifier register state assignments
+0701615 bpf, verifier: further improve search pruning
+32bbe00 bpf: sanitize bpf tracepoint access
+9940d67 bpf: support bpf_get_stackid() and bpf_perf_event_output() in tracepoint programs
+0c93b7d bpf: reject invalid names right in ->lookup()
+322cea2 bpf: add missing map_flags to bpf_map_show_fdinfo
+26660a4 Merge branch 'core-objtool-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
+cdc4e47 bpf: avoid copying junk bytes in bpf_get_current_comm()
+b8cdc05 bpf: bpf_stackmap_copy depends on CONFIG_PERF_EVENTS
+557c0c6 bpf: convert stackmap to pre-allocation
+823707b bpf: check for reserved flag bits in array and stack maps
+6c90598 bpf: pre-allocate hash map elements
+e19494e bpf: introduce percpu_freelist
+b121d1e bpf: prevent kprobe+bpf deadlocks
+39853cc bpf: Mark __bpf_prog_run() stack frame as non-standard
+b633353 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+8e2fe1d9 bpf: add new arg_type that allows for 0 sized stack buffer
+d5a3b1f bpf: introduce BPF_MAP_TYPE_STACK_TRACE
+6bbd9a0 bpf: grab rcu read lock for bpf_percpu_hash_update
+a1b14d2 bpf: fix branch offset adjustment on backjumps after patching ctx expansion
+15a07b3 bpf: add lookup/update support for per-cpu hash and array maps
+a10423b bpf: introduce BPF_MAP_TYPE_PERCPU_ARRAY map
+824bd0c bpf: introduce BPF_MAP_TYPE_PERCPU_HASH map
+e03e7ee perf/bpf: Convert perf_event_array to use struct file
+229394e net: bpf: reject invalid shifts
+688ecfe bpf: hash: use per-bucket spinlock
+45d8390 bpf: hash: move select_bucket() out of htab's spinlock
+6591f1e bpf: hash: use atomic count
+8b614ae bpf: move clearing of A/X into classic to eBPF migration prologue
+bb35a6e bpf, inode: allow for rename and link ops
+f188b95 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+01b3f52 bpf: fix allocation warnings in bpf maps and integer overflow
+fbca9d2 bpf, array: fix heap out-of-bounds access when updating elements
+c9da161 bpf: fix clearing on persistent program array maps
+f99bf20 bpf: add show_fdinfo handler for maps
+1d056d9 bpf, verifier: annotate verbose printer with __printf
+b219775 bpf: add support for persistent maps/progs
+e9d8afa bpf: consolidate bpf_prog_put{, _rcu} dismantle paths
+c210129 bpf: align and clean bpf_{map,prog}_get helpers
+aa79781 bpf: abstract anon_inode_getfd invocations
+ac00881 bpf: convert hashtab lock to raw lock
+62544ce bpf: fix bpf_perf_event_read() helper
+a43eec3 bpf: introduce bpf_perf_event_output() helper
+ac00737 bpf: Need to call bpf_prog_uncharge_memlock from bpf_prog_put
+aaac3ba bpf: charge user for creation of BPF maps and programs
+1be7f75 bpf: enable non-root eBPF programs
+ff936a0 bpf: fix cb access in socket filter programs
+3ad0040 bpf: split state from prandom_u32() and consolidate {c, e}BPF prngs
+0cdf5640 ebpf: include perf_event only where really needed
+c46646d sched, bpf: add helper for retrieving routing realms
+a91263d ebpf: migrate bpf_prog's flags to bitfield
+687f071 bpf: fix out of bounds access in verifier log
+592867b ebpf: fix fd refcount leaks related to maps in bpf syscall
+140d8b3 bpf: fix bpf_perf_event_read() loop upper bound
+35578d7 bpf: Implement function bpf_perf_event_read() that get the selected hardware PMU conuter
+ea317b2 bpf: Add new bpf map type to store the pointer to struct perf_event
+2a36f0b bpf: Make the bpf_prog_array_map more generic
+24b4d2a ebpf: Allow dereferences of PTR_TO_STACK registers
+4d9c5c5 test_bpf: add bpf_skb_vlan_push/pop() tests
+c4675f9 ebpf: remove self-assignment in interpreter's tail call
+0756ea3 bpf: allow networking programs to use bpf_trace_printk() for debugging
+ffeedaf bpf: introduce current->pid, tgid, uid, gid, comm accessors
+d691f9e bpf: allow programs to write to certain skb fields
+3324b58 ebpf: misc core cleanup
+17ca8cb ebpf: allow bpf_ktime_get_ns_proto also for networking
+abf2e7d bpf: add missing rcu protection when releasing programs from prog_array
+04fd61a bpf: allow bpf programs to tail-call other bpf programs
+876a7ae bpf: fix 64-bit divide
+725f9dc bpf: fix two bugs in verification logic when accessing 'ctx' pointer
+c3de631 bpf: fix verifier memory corruption
+6c373ca Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next
+2541517 tracing, perf: Implement BPF programs attached to kprobes
+608cd71 tc: bpf: generalize pedit action
+94caee8 ebpf: add sched_act_type and map it to sk_filter's verifier ops
+9bac3d6 bpf: allow extended BPF programs access skb fields
+c04167c ebpf: add helper for obtaining current processor id
+03e69b5 ebpf: add prandom helper for packet sampling
+80f1d68 ebpf: verifier: check that call reg with ARG_ANYTHING is initialized
+3ba67da ebpf: bpf_map_*: fix linker error on avr32 and openrisc arch
+e2e9b65 cls_bpf: add initial eBPF support for programmable classifiers
+24701ec ebpf: move read-only fields to bpf_prog and shrink bpf_prog_aux
+96be432 ebpf: add sched_cls_type and map it to sk_filter's verifier ops
+a2c83ff ebpf: constify various function pointer structs
+f91fe17 ebpf: remove kernel test stubs
+59343cd Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+8ebe667 bpf: rcu lock must not be held when calling copy_to_user()
+be1f221 module: remove mod arg from module_free, rename module_memfree().
+ddd872b bpf: verifier: add checks for BPF_ABS | BPF_IND instructions
+daaf427 bpf: fix arraymap NULL deref and missing overflow and zero size checks
+7943c0f bpf: remove test map scaffolding and user proper types
+d0003ec bpf: allow eBPF programs to use maps
+a1854d6 bpf: fix BPF_MAP_LOOKUP_ELEM command return code
+28fbcfa bpf: add array type of eBPF maps
+0f8e4bd bpf: add hashtable type of eBPF maps
+3274f52 bpf: add 'flags' attribute to BPF_MAP_UPDATE_ELEM command
+55b42b5 Merge git://git.kernel.org/pub/scm/linux/kernel/git/davem/net
+9c399760 bpf: reduce verifier memory consumption
+f89b775 bpf: split eBPF out of NET
+32bf08a bpf: fix bug in eBPF verifier
+f1bca82 bpf: add search pruning optimization to verifier
+3c731eb bpf: mini eBPF library, test stubs and verifier testsuite
+17a5267 bpf: verifier (add verifier core)
+475fb78 bpf: verifier (add branch/goto checks)
+0246e64 bpf: handle pseudo BPF_LD_IMM64 insn
+cbd3570 bpf: verifier (add ability to receive verification log)
+51580e7 bpf: verifier (add docs)
+0a542a8 bpf: handle pseudo BPF_CALL insn
+09756af bpf: expand BPF syscall with program load/unload
+db20fd2 bpf: add lookup/update/delete/iterate methods to BPF maps
+99c55f7 bpf: introduce BPF syscall and maps
+b954d83 net: bpf: only build bpf_jit_binary_{alloc, free}() when jit selected
+738cbe7 net: bpf: consolidate JIT binary allocator
+02ab695 net: filter: add "load 64-bit immediate" eBPF instruction
+60a3b22 net: bpf: make eBPF interpreter images read-only
+7ae457c net: filter: split 'struct sk_filter' into socket and bpf parts
+8fb575c net: filter: rename sk_convert_filter() -> bpf_convert_filter()
+4df95ff net: filter: rename sk_chk_filter() -> bpf_check_classic()
+2695fb5 net: filter: rename 'struct sock_filter_int' into 'struct bpf_insn'
+f5bffec net: filter: split filter.c into two files
