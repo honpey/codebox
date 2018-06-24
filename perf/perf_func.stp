@@ -1,0 +1,12 @@
+global proc_counter  
+      
+probe begin {  
+	print("Started monitoring creation of new processes...Press ^C to terminate\n")  
+}  
+probe kernel.function("tracepoint_probe_register") {  
+    printf("---%s\n", symname($probe))
+}  
+      
+probe end {  
+	printf("\n%d processes forked during the observed period\n", proc_counter)  
+}  
