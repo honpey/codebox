@@ -1,0 +1,139 @@
+probe begin {
+    printf("hello world\n")
+}
+
+global count
+global count1
+global iMap
+/*
+probe kernel.function("perf_swevent_init_hrtimer") {
+    printf("sample_freq: %d\n", $event->attr->sample_freq)
+    printf("sample_period: %d\n", $event->attr->sample_period)
+    printf("freq: %d\n", $event->attr->freq)
+    print($event->attr$)
+}
+*/
+
+probe kernel.function("perf_calculate_period") {
+//    print($event->attr$)
+//    print_backtrace()
+//   printf("%d \n", ++count)
+}
+
+/*
+probe kernel.function("bts_event_init") {
+    printf("%s %d [%d vs %d]\n", ppfunc(), $event->attr->config, $event->attr->type, $event->pmu->type)
+}
+probe kernel.function("rapl_pmu_event_init") {
+    printf("%s %d [%d vs %d]\n", ppfunc(), $event->attr->config, $event->attr->type, $event->pmu->type)
+}
+probe kernel.function("cstate_pmu_event_init") {
+    printf("%s %d [%d vs %d]\n", ppfunc(), $event->attr->config, $event->attr->type, $event->pmu->type)
+}
+probe kernel.function("pt_event_init") {
+    printf("%s %d [%d vs %d]\n", ppfunc(), $event->attr->config, $event->attr->type, $event->pmu->type)
+}
+probe kernel.function("msr_event_init") {
+    printf("%s %d [%d vs %d]\n", ppfunc(), $event->attr->config, $event->attr->type, $event->pmu->type)
+}
+probe kernel.function("x86_pmu_event_init") {
+    printf("%s %d [%d vs %d]\n", ppfunc(), $event->attr->config, $event->attr->type, $event->pmu->type)
+}
+probe kernel.function("x86_pmu_hw_config") {
+    printf("%s %d [%d vs %d]\n", ppfunc(), $event->attr->config, $event->attr->type, $event->pmu->type)
+}
+
+*/
+
+/*
+probe kernel.function("x86_assign_hw_event") {
+    printf("-------idx: %d\n", $event->hw->idx)
+}
+*/
+probe kernel.function("__perf_event_enable") {
+    printf("-------------- perf_ioctl");
+}
+
+global pretime9
+probe kernel.function("perf_adjust_period") {
+//    print_backtrace()
+    curtime9=gettimeofday_ns()
+    diff=curtime9-pretime9
+    pretime9=curtime9
+    printf("%d %s frequency:%d nsec:%d count:%d event:%p\n", diff, ppfunc(), $event->attr->sample_freq, $nsec, $count, $event)
+}
+
+global pretime2
+global count2
+probe kernel.function("x86_perf_event_set_period") {
+ //   print_backtrace()
+    curtime2=gettimeofday_ns()
+    diff=curtime2-pretime2
+    pretime2=curtime2
+    printf("%d %s %d sample_period(%d 0x%lx) event:%p\n", diff, ppfunc(), count2++, $event->hw->sample_period, $event->hw->sample_period, $event)
+}
+
+global pretime3
+global count3
+probe kernel.function("intel_pmu_handle_irq") {
+    curtime3=gettimeofday_ns()
+    diff=curtime3-pretime3
+    pretime3=curtime3
+    printf("%d %s %d\n", diff,  ppfunc(), count3++)
+}
+/*
+probe kernel.function("x86_pmu_enable_event") {
+    printf("-------------------------\n")
+    print_backtrace()
+    printf("-------------------------\n")
+}
+
+probe kernel.function("perf_event_alloc") {
+    printf("---------------------- %s %d\n", ppfunc(), $attr->sample_period)
+}
+
+
+probe kernel.function("perf_event_overflow") {
+    printf("----->>>>>>>-------: freq:%d config:%d hw.config:%d %s\n", $event->attr->freq, $event->attr->sample_period, $event->hw->sample_period & 0xfff, symname($event->overflow_handler))
+}
+*/
+/*
+probe kernel.function("intel_pmu_enable_event") {
+    printf("-------------------------:%d 0x%x\n", count, $event->hw->config)
+    print_backtrace()
+    printf("-------------------------:%d\n", count++)
+} probe kernel.function("perf_prepare_sample") { printf("%s %d\n", ppfunc(), count1++); printf("---------fsfsfsf1sfsfsfs-------:%d\n",0x2429)
+    print_backtrace()
+    printf("---------fsfsfsf2sfsfsfs-------:%d\n",0x2429) 
+}
+*/
+
+/*
+probe kernel.function("bts_event_init").return {
+    printf("ret %s %d\n", ppfunc(), $return)
+}
+probe kernel.function("rapl_pmu_event_init").return {
+    printf("ret %s %d\n", ppfunc(), $return)
+}
+probe kernel.function("cstate_pmu_event_init").return {
+    printf("ret %s %d\n", ppfunc(), $return)
+}
+probe kernel.function("pt_event_init").return {
+    printf("ret %s %d\n", ppfunc(), $return)
+}
+probe kernel.function("msr_event_init").return {
+    printf("ret %s %d\n", ppfunc(), $return)
+}
+probe kernel.function("bts_event_init").return {
+    printf("ret %s %d\n", ppfunc(), $return)
+}
+*/
+probe kernel.function("x86_pmu_event_init").return {
+    printf("ret %s %d\n", ppfunc(), $return)
+}
+probe end {
+    printf("%d\n", count1)
+//    delete count
+//    print(iMap)
+    printf("End\n")
+}
