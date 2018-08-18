@@ -35,7 +35,16 @@ void signal_dispath(int signo)
 	{
 		cout<<"receving signal SIGRTMIN"<<endl;
 		g_reliable++;
-	}
+	} 
+    else if (signo == SIGTERM) {
+        cout<<"receving signal SIGTERM" <<endl;
+    }
+    else if (signo == SIGSTOP) {
+        cout<<"receving signal SIGSTOP" <<endl;
+    }
+    else if (signo == SIGKILL) {
+        cout<<"receving signal SIGKILL" <<endl;
+    }
 }
 void output_myself()
 {
@@ -63,6 +72,16 @@ int main(int argc, char** argv)
 		perror("register SIGRTMIN signal failed");
 		return -1;
 	}
+	if(signal(SIGTERM, signal_dispath) == SIG_ERR)
+	{
+		perror("register SIGTERM signal failed");
+		return -1;
+	}
+	if(signal(SIGKILL, signal_dispath) == SIG_ERR)
+	{
+		perror("register SIGKILL signal failed");
+		return -1;
+    }
 
 	sigset_t set;
 	sigset_t oset;
@@ -77,7 +96,7 @@ int main(int argc, char** argv)
 		perror("set process signal to be set failed");
 		return -1;
 	}
-	sleep(10);
+	sleep(100000);
 	if(sigpending(&set) == -1)
 	{
 		perror("sigpending get signal mask failed");
