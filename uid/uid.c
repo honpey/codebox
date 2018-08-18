@@ -9,7 +9,10 @@ int main() {
     for (i = 0; i < 4096; i++) {
         buf[i] = 'A'+i%23;
     }
-//    setuid(getuid());
+    int uid, euid, suid;
+    getresuid(&uid, &euid, &suid);
+    printf("%d %d %d\n", uid, euid, suid);
+    setuid(suid);
     int fdGuest = open("./fileGuest", O_RDWR, NULL);
     if (fdGuest < 0) {
         printf("fail to open fileGuest\n");
@@ -34,7 +37,7 @@ int main() {
     }
     */
 
-    kill(32614, 9); 
+//    kill(32614, 9); 
     pid = fork();
     if (pid > 0) {
         printf("child: %d\n", getpid());
