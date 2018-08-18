@@ -1,0 +1,14 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("sys_mount") {
+    printf("dev_name: %s\n", user_string($dev_name)) 
+    printf("dir_name: %s\n", user_string($dir_name))
+    printf("type:     %s\n", user_string($type))
+    printf("flags:   0x%lx\n", $flags);
+}
+
+probe end {
+    printf("End\n")
+}
