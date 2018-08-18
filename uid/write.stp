@@ -1,0 +1,12 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("sys_write") {
+    if (execname() == "uid") {
+       printf("uid(%d) euid(%d)\n", uid(), euid())
+    }
+}
+probe end {
+    printf("End\n")
+}
