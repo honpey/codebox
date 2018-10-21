@@ -1,0 +1,39 @@
+probe begin {
+    print("Begin\n")
+}
+
+probe kernel.function("qdisc_create") {
+    printf("qdisc_create: %s\n", execname())
+    printf("num_queue: %d\n", $dev->real_num_tx_queues)
+    printf("parent:(0x%x) handle(0x%x)\n\n", $parent, $handle)
+    
+    print_backtrace()
+}
+
+probe kernel.function("qdisc_create_dflt") {
+    printf("qdisc_create_dflt: %s\n", execname())
+    printf("parentId: %d(%x)\n\n", $parentid, $parentid)
+    print_backtrace()
+}
+
+probe kernel.function("qdisc_lookup") {
+    printf("qdisc_lookup: %s\n", execname())
+    printf("num_queue: %d\n", $dev->real_num_tx_queues)
+    printf("handle: %d(0x%x)\n\n", $handle, $handle)
+ //   print_backtrace()
+}
+
+probe module("sch_htb").function("htb_enqueue") {
+    printf("------->htb_enqeueue: %s\n", execname())
+    printf("skb->priority(%d) sch->handle(0x%x %d)\n", $skb->priority, $sch->handle, $sch->handle)
+}
+
+/*
+probe kernel.function("qdisc_lookup").return {
+    printf("qdisc_lookup: q->ops: 0x%x\n\n", $return->ops)
+}
+*/
+
+probe end {
+    print("End\n")
+}
