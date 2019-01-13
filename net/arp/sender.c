@@ -238,7 +238,6 @@ main (int argc, char **argv)
   free (dst_ip);
   free (ip_flags);
 
-  while(1);
   return (EXIT_SUCCESS);
 }
 

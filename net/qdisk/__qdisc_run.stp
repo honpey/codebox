@@ -1,0 +1,72 @@
+probe begin {
+	printf("begin\n");
+}
+
+%{
+#include <linux/inetdevice.h>
+#include <linux/rcupdate.h>
+#include <linux/netdevice.h>
+#include <net/neighbour.h>
+#include <linux/ip.h>
+%}
+
+global count
+function getIp(ip:long)
+%{
+    unsigned int ips = STAP_ARG_ip;
+    unsigned char iplist[4];
+    unsigned char *ippp = (unsigned char *)(&ips);
+    _stp_printf("%d.%d.%d.%d\n", ippp[0], ippp[1], ippp[2], ippp[3]);
+%}
+
+function get_announce(neighS:long)
+%{
+    struct in_device *in_dev;
+    struct net_device *dev;
+    struct neighbour *neigh;
+    int id = -1;
+
+    neigh = (struct neighbour *)STAP_ARG_neighS;
+    dev = neigh->dev;
+    rcu_read_lock();
+    in_dev = __in_dev_get_rcu(dev);
+    if (!in_dev) {
+        rcu_read_unlock();
+        return;
+    }
+    id = IN_DEV_ARP_ANNOUNCE(in_dev); 
+    rcu_read_unlock();
+    _stp_printf("id: %d\n", id);
+%}
+
+function getIpFromSkb(skbS:long)
+%{
+    struct sk_buff *skb;
+    unsigned int ip;
+
+    skb = (struct sk_buff *)STAP_ARG_skbS;
+    if (skb == NULL) {
+        return;
+    }
+    ip = ip_hdr(skb)->saddr;
+    _stp_printf("From Skb: %d.%d.%d.%d\n", ((unsigned char *)(&ip))[0],
+                                ((unsigned char *)(&ip))[1],
+                                ((unsigned char *)(&ip))[2],
+                                ((unsigned char *)(&ip))[3]);
+    
+%}
+
+probe kernel.function("__dev_queue_xmit") {
+	printf("__dev_queue_xmit: %s\n", kernel_string($skb->dev->name))
+	getIpFromSkb($skb)
+	printf("\n");
+}
+
+probe kernel.function("__qdisc_run") {
+	printf("%s __qdisc_run device(%s)\n", execname(), kernel_string($q->dev_queue->dev->name));
+	backtrace();
+}
+
+probe end {
+	printf("End\n");
+}
