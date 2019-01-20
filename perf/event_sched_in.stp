@@ -1,0 +1,43 @@
+probe begin {
+	printf("Begin");
+}
+
+/*
+probe kernel.function("__perf_event_read") {
+	event = @cast($info, "perf_read_data")->event
+	printf("__perf_event_read: %s\n", symname(event->pmu->read));
+	print_backtrace()
+}
+*/
+
+probe kernel.function("x86_perf_event_update") {
+	printf("%s ", execname())
+	print_backtrace()
+}
+
+/*
+probe kernel.function("event_sched_in") {
+	printf("%s ", execname());
+	printf("0x%x\n", $event->pmu->add);
+}
+
+probe kernel.function("x86_pmu_add") {
+	printf("%s x86_pmu_add\n", execname());
+	backtrace();
+}
+
+*/
+/*
+probe kernel.function("perf_event_read") {
+	printf("%s perf_event_read\n", execname());
+	print_backtrace()
+}
+probe kernel.function("perf_read") {
+	printf("%s perf_read\n", execname());
+	print_backtrace()
+}
+*/
+
+probe end {
+	printf("End");
+}
