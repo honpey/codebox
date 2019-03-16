@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from class2.hi2 import base
 from class2.hi2.base import hi
 from class2.hi4 import base
@@ -13,10 +14,11 @@ if __name__ == '__main__':
     xiaolv = hi("xiaolv")
     print xiaolv
     """
+    print "Begin---------"
+    print "PeoPle init"
     base1 = base.People
     peo = base.People("xiaolv", 12)
     print peo.name
     print peo.age
     print base1.name
     print base1.age
-
