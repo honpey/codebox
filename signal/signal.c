@@ -77,9 +77,16 @@ int main(int argc, char** argv)
 		perror("register SIGTERM signal failed");
 		return -1;
 	}
+    /*
 	if(signal(SIGKILL, signal_dispath) == SIG_ERR)
 	{
 		perror("register SIGKILL signal failed");
+		return -1;
+    }
+    */
+	if(signal(SIGCHLD, signal_dispath) == SIG_ERR)
+	{
+		perror("register SIGCHLD signal failed");
 		return -1;
     }
 
