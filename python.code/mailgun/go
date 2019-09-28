@@ -1,0 +1,7 @@
+./swaks --auth \
+	--server smtp.mailgun.org \
+	--au postmaster@sandboxe62c56c78aa140a788e61e485ad45f5a.mailgun.org \
+	--ap 93826b8d1aa18b64b869dd12e4fa8d70-e51d0a44-09d2b82e \
+	--to bigjason@126.com \
+	--h-Subject: "Hello" \
+	--body 'Testing some Mailgun awesomness!'
