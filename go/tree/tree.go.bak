@@ -1,0 +1,100 @@
+package main
+
+import "reflect"
+
+type CBTree struct {
+	root *CBTreeNode
+	nodeType reflect.Type
+	custom []string
+}
+
+type CBTreeNode struct {
+	Childs *CBTreeNode
+	Brothers *CBTreeNode
+	Tree	*CBTree
+	Value interface{}
+}
+
+func New() *CBTree {
+	return new(CBTree).Init()
+}
+
+func (t *CBTree) Init() *CBTree {
+	tree := &CBTree{
+		root: new(CBTreeNode),
+	}
+	tree.root.Tree = tree
+	return tree
+}
+
+func (t *CBTree)AddChild(parent *CBTreeNode, value interface{}) (*CBTreeNode, error) {
+	if parent == nil {
+		return nil, nil
+	}
+	child := new(CBTreeNode)
+	child.Value = value
+
+	temp := parent.Childs
+	parent.Childs = child
+	child.Brothers = temp
+
+	return child, nil
+}
+
+// 从前序遍历直接从根节点开始就好啦
+func (t *CBTree)PreOrderTravel(root *CBTreeNode, f func()) error {
+	if root == nil {
+		return nil
+	}
+	f()
+	curNode := root.Child
+	t.PreOrderTraval(curNode, f)
+
+	if curNode != nil {
+		curNode := curNode.Brother
+		for curNode != nil {
+			t.PreOrderTravel(curNode, f)
+			curNode = curNode.Brother
+		}
+	}
+	return nil
+}
+
+func (t *CBTree)postOrderTravelInternal(root *CBTreeNode, f func()) error {
+	if root == nil {
+		return nil
+	}
+	curNode := vroot.Child
+	t.postOrderTravelInterval(curNode, f)
+
+	if curNode != nil {
+		curNode := curNode.Brother
+		for curNode != nil {
+			t.postOrderTravelInterval(curNode, f)
+			curNode = curNode.Brother
+		}
+	}
+	f()
+}
+
+func (t *CBTree)PostOrderTravel(vroot *CBTreeNode, f func()) error {
+	if vroot == nil {
+		return nil
+	}
+
+	r.postOrderTravelInternal(vroot->Child)
+	f()
+	return nil
+}
+
+func MakeTree(topo string) error {
+	return nil
+}
+
+type test struct {
+	name string
+}
+
+func main() {
+	t := GetNewTree((*test)(nil))
+}
