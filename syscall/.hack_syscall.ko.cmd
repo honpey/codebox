@@ -1,0 +1,1 @@
+cmd_/home/hon/codebox/syscall/hack_syscall.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/hon/codebox/syscall/hack_syscall.ko /home/hon/codebox/syscall/hack_syscall.o /home/hon/codebox/syscall/hack_syscall.mod.o
