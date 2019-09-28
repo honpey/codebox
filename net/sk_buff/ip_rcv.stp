@@ -1,0 +1,11 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("ip_rcv") {
+    printf("dev_name:%s\n", kernel_string($skb->dev->name));
+    print_backtrace()
+}
+probe end {
+    printf("End\n")
+}

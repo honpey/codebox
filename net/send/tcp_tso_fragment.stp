@@ -1,0 +1,14 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("tso_fragment") {
+    printf("%s: %s\n", execname(), ppfunc())
+}
+
+probe kernel.function("tcp_fragment") {
+    printf("%s: %s\n", execname(), ppfunc())
+}
+probe end {
+    printf("----End-----\n")
+}

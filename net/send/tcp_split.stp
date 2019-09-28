@@ -1,0 +1,10 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("tcp_mss_split_point") {
+    printf("%s: %s\n", execname(), ppfunc())
+}
+probe end {
+    printf("----End-----\n")
+}

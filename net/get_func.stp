@@ -1,0 +1,8 @@
+probe begin {
+	printf("begin\n");
+}
+
+probe kernel.function("dev_hard_start_xmit") {
+	printf("%p\n", $dev);
+	printf("%p\n", $dev->netdev_ops);
+}

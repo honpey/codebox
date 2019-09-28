@@ -1,0 +1,73 @@
+      1 0.000000000    192.168.0.1           192.168.0.110         ICMP     98     Echo (ping) request  id=0x0c58, seq=1/256, ttl=64 (reply in 2)
+
+Frame 1: 98 bytes on wire (784 bits), 98 bytes captured (784 bits) on interface 0
+Ethernet II, Src: 1a:70:da:77:94:cc (1a:70:da:77:94:cc), Dst: RealtekU_12:34:56 (52:54:00:12:34:56)
+Internet Protocol Version 4, Src: 192.168.0.1, Dst: 192.168.0.110
+Internet Control Message Protocol
+
+      2 0.000917996    192.168.0.110         192.168.0.1           ICMP     98     Echo (ping) reply    id=0x0c58, seq=1/256, ttl=64 (request in 1)
+
+Frame 2: 98 bytes on wire (784 bits), 98 bytes captured (784 bits) on interface 0
+Ethernet II, Src: RealtekU_12:34:56 (52:54:00:12:34:56), Dst: 1a:70:da:77:94:cc (1a:70:da:77:94:cc)
+Internet Protocol Version 4, Src: 192.168.0.110, Dst: 192.168.0.1
+Internet Control Message Protocol
+
+      3 5.013060953    1a:70:da:77:94:cc     RealtekU_12:34:56     ARP      42     Who has 192.168.0.110? Tell 192.168.0.1
+
+Frame 3: 42 bytes on wire (336 bits), 42 bytes captured (336 bits) on interface 0
+Ethernet II, Src: 1a:70:da:77:94:cc (1a:70:da:77:94:cc), Dst: RealtekU_12:34:56 (52:54:00:12:34:56)
+Address Resolution Protocol (request)
+    Hardware type: Ethernet (1)
+    Protocol type: IPv4 (0x0800)
+    Hardware size: 6
+    Protocol size: 4
+    Opcode: request (1)
+    Sender MAC address: 1a:70:da:77:94:cc (1a:70:da:77:94:cc)
+    Sender IP address: 192.168.0.1
+    Target MAC address: 00:00:00_00:00:00 (00:00:00:00:00:00)
+    Target IP address: 192.168.0.110
+
+      4 5.013751832    RealtekU_12:34:56     1a:70:da:77:94:cc     ARP      60     192.168.0.110 is at 52:54:00:12:34:56
+
+Frame 4: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface 0
+Ethernet II, Src: RealtekU_12:34:56 (52:54:00:12:34:56), Dst: 1a:70:da:77:94:cc (1a:70:da:77:94:cc)
+Address Resolution Protocol (reply)
+    Hardware type: Ethernet (1)
+    Protocol type: IPv4 (0x0800)
+    Hardware size: 6
+    Protocol size: 4
+    Opcode: reply (2)
+    Sender MAC address: RealtekU_12:34:56 (52:54:00:12:34:56)
+    Sender IP address: 192.168.0.110
+    Target MAC address: 1a:70:da:77:94:cc (1a:70:da:77:94:cc)
+    Target IP address: 192.168.0.1
+
+      5 5.135674880    RealtekU_12:34:56     1a:70:da:77:94:cc     ARP      60     Who has 192.168.0.1? Tell 192.168.0.110
+
+Frame 5: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface 0
+Ethernet II, Src: RealtekU_12:34:56 (52:54:00:12:34:56), Dst: 1a:70:da:77:94:cc (1a:70:da:77:94:cc)
+Address Resolution Protocol (request)
+    Hardware type: Ethernet (1)
+    Protocol type: IPv4 (0x0800)
+    Hardware size: 6
+    Protocol size: 4
+    Opcode: request (1)
+    Sender MAC address: RealtekU_12:34:56 (52:54:00:12:34:56)
+    Sender IP address: 192.168.0.110
+    Target MAC address: 00:00:00_00:00:00 (00:00:00:00:00:00)
+    Target IP address: 192.168.0.1
+
+      6 5.135698563    1a:70:da:77:94:cc     RealtekU_12:34:56     ARP      42     192.168.0.1 is at 1a:70:da:77:94:cc
+
+Frame 6: 42 bytes on wire (336 bits), 42 bytes captured (336 bits) on interface 0
+Ethernet II, Src: 1a:70:da:77:94:cc (1a:70:da:77:94:cc), Dst: RealtekU_12:34:56 (52:54:00:12:34:56)
+Address Resolution Protocol (reply)
+    Hardware type: Ethernet (1)
+    Protocol type: IPv4 (0x0800)
+    Hardware size: 6
+    Protocol size: 4
+    Opcode: reply (2)
+    Sender MAC address: 1a:70:da:77:94:cc (1a:70:da:77:94:cc)
+    Sender IP address: 192.168.0.1
+    Target MAC address: RealtekU_12:34:56 (52:54:00:12:34:56)
+    Target IP address: 192.168.0.110

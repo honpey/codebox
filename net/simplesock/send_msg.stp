@@ -1,0 +1,21 @@
+probe begin {
+    printf("Begin\n")
+}
+
+global count
+probe kernel.function("tcp_sendmsg") {
+    if (execname() == "client") {
+       printf("%s %d\n", ppfunc(), count++)
+    }
+}
+
+probe kernel.function("ip_local_out") {
+//    if ($skb->dev->name != 0x0) {
+//        printf("%s dev: %s\n", execname(), kernel_string($skb->dev->name))
+        printf("\n\n%s dev: %d\n\n", execname(), ($skb->dev->name))
+        print_backtrace()
+ //   }
+}
+probe end {
+    printf("End\n")
+}
