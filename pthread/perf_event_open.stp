@@ -1,0 +1,22 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("sys_perf_event_open") {
+    printf("%s: pid:%d group_fd:%d\n", execname(), $pid, $group_fd)
+}
+
+probe kernel.function("alloc_perf_context") {
+    printf("%s: %s\n", execname(), probefunc())
+}
+
+probe kernel.function("perf_lock_task_context").return {
+    printf("%s: %s %lx\n", execname(), probefunc(), $return)
+}
+
+probe kernel.function("perf_event_alloc") {
+    printf("%s %s\n", execname(), probefunc())
+}
+probe end {
+    printf("End\n")
+}
