@@ -1,0 +1,14 @@
+probe begin {
+    print("Hello, this is IOSee\n")
+}
+
+global count
+probe kernel.function("do_sys_poll") {
+    if (pid() == 3055) {
+        printf("%s %d %d\n", ppfunc(), $nfds, count++)
+    }
+}
+
+probe end {
+    print("Good Bye")
+}
