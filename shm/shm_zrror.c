@@ -5,7 +5,7 @@
 #include <sys/shm.h>
 #include <string.h>
 
-#define MEMSIZE 512*1024*1023
+#define MEMSIZE 40*1024*1024
 
 int
 main()
@@ -62,6 +62,8 @@ main()
         }
         bzero(ptr, MEMSIZE);
         strcpy(ptr, "Hello!");
+        printf("child put hello to buffer\n");
+        while(1);
         exit(0);
     } else {
         wait(NULL);
@@ -71,6 +73,8 @@ main()
             exit(1);
         }
         puts(ptr);
+        printf("buf: %s\n", ptr);
+        while(1);
         exit(0);
     }
 }

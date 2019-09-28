@@ -25,9 +25,11 @@ function tracecomm() {
 	list_for_each_safe(_p, _n, &current->tasks) {
 		p = list_entry(_p, struct task_struct, tasks);
 		if (p->pid == (int)STAP_ARG_pid) {
+		//	STAP_RETURN("")
 			snprintf(STAP_RETVALUE, MAXSTRINGLEN, "%s", p->comm);
 		}
 	}
+//	STAP_RETURN("")
 %}
 
 function get_task_name:string (cur:long) {
@@ -37,9 +39,9 @@ function get_task_name:string (cur:long) {
 }
 
 probe kernel.function("submit_bio") {
-//	printf("%s(%d)\n", task_execname_by_pid(pid()), pid())
+	printf("%s(%d)\n", task_execname_by_pid(pid()), pid())
 //	get_task_name(pid2task(pid()))
-	printf("%s\n", get_task_name(pid2task(9585)))
+//	printf("%s\n", get_task_name(pid2task(9585)))
 }
 
 probe end {

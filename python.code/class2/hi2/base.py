@@ -17,7 +17,7 @@ class hi2():
 	 	self.age = age
 	def getNameAge(self):
 		return self.name, self.age
-	 
+
 if __name__ == '__main__':
 	hello = hi("xioahong")
 	print hello.getName()
@@ -31,4 +31,3 @@ if __name__ == '__main__':
 	d = {"hello":1, "world":2}
 	print d["hello"]
 	print d['world']
-	print d

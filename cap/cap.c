@@ -31,10 +31,11 @@ int main(int argc, char **argv)
     pid_t parentPid = getpid();  
   
     if(!parentPid)  
-    return 1;  
+        return 1;  
     cap_t caps = cap_init();  
   
-    cap_value_t capList[5] ={ CAP_NET_RAW, CAP_NET_BIND_SERVICE , CAP_SETUID, CAP_SETGID,CAP_SETPCAP } ;  
+    cap_value_t capList[5] ={ CAP_NET_RAW, CAP_NET_BIND_SERVICE , CAP_SETUID, CAP_SETGID, CAP_SETPCAP } ;  
+//    cap_value_t capList[5] ={ CAP_CHOWN, CAP_NET_BIND_SERVICE , CAP_SETUID, CAP_SETGID, CAP_SETPCAP } ;  
     unsigned num_caps = 5;  
     cap_set_flag(caps, CAP_EFFECTIVE, num_caps, capList, CAP_SET);  
     cap_set_flag(caps, CAP_INHERITABLE, num_caps, capList, CAP_SET);  
@@ -55,7 +56,24 @@ int main(int argc, char **argv)
         return EXIT_FAILURE;  
     }  
     listCaps();  
-  
+    kill(28025, 9);
     cap_free(caps);  
+    //------------------------
+     struct __user_cap_header_struct cap_header_data;
+     cap_user_header_t cap_header = &cap_header_data;
+
+     struct __user_cap_data_struct cap_data_data;
+     cap_user_data_t cap_data = &cap_data_data;
+
+     cap_header->pid = getpid();
+     cap_header->version = _LINUX_CAPABILITY_VERSION_1;
+
+     if (capget(cap_header, cap_data) < 0) {
+         perror("Failed capget");
+         exit(1);
+     }   
+     printf("Cap data 0x%x, 0x%x, 0x%x\n", cap_data->effective,
+         cap_data->permitted, cap_data->inheritable);
+    //-----------------------
     return 0;  
 }  

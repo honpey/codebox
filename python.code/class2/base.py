@@ -21,14 +21,3 @@ class hi2():
 if __name__ == '__main__':
 	hello = hi("xioahong")
 	print hello.getName()
-	hi2E = hi2("xiaohua", 29)
-	print hi2E.getNameAge()
-
-	hi2E.setName("xiaohuahua")
-	hi2E.setAge(30)
-	print hi2E.getNameAge()
-
-	d = {"hello":1, "world":2}
-	print d["hello"]
-	print d['world']
-	print d

@@ -49,15 +49,16 @@ int main(void){
                 inet_ntop(AF_INET,&cliaddr.sin_addr,str,sizeof(str)),
                 ntohs(cliaddr.sin_port));
 		int i = 0;
-		sleep(5);
         while(1){
 			i++;	
             n = read(connfd,buf,MAXLINE);
 			printf("n:%d\n", n);
+            /*
 			if (n < 4096) {
 				printf("n:%d\n", i);
 				break;
 			}
+            */
 			/*
             printf("%d\n", n);
             for(int i=0;i<5;i++){

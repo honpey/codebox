@@ -2,7 +2,7 @@
 #include <linux/version.h>
 %}
 
-function getVersion:long()
+function getVersion:string()
 %{
     printk("%d\n", LINUX_VERSION_CODE);
 %}
@@ -12,9 +12,19 @@ probe begin {
 probe kernel.function("sys_bpf") {
     print("sys_bpf\n")
 }
+probe kernel.function("bpf_prog_alloc") {
+    print("bpf_prog_alloc\n")
+}
+probe kernel.function("bpf_check") {
+    print("bpf_check\n")
+}
+probe kernel.function("find_prog_type") {
+    print("find_prog_type\n")
+}
 probe kernel.function("bpf_prog_load") {
     print("bpf_prog_load\n")
-    getVersion()
+    print(getVersion())
+
 }
 probe end {
     print("End")

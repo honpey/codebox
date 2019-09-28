@@ -24,9 +24,10 @@ int main()
       
   /* exchange data */    
   char ch = 'A';    
+  char buffer[4096];
 //  while(1) {
-  	write(sockfd, &ch, 1);    
-	read(sockfd, &ch, 1);    
+  	write(sockfd, &buffer, 4096);    
+	read(sockfd, &buffer, 4096);    
 	printf("-- get char from server: %c\n", ch);    
  // }
       

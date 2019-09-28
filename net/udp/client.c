@@ -17,12 +17,16 @@ void client(int sock){
     char sendbuf[1024] = {0};  
     char recvbuf[1024] = {0};  
     while(fgets(sendbuf, sizeof(sendbuf), stdin) != NULL){  
-        sendto(sock, sendbuf, strlen(sendbuf), 0, (struct sockaddr *)&servaddr, sizeof(servaddr));  
+		for (int i = 0; i < 1; i++)
+        	sendto(sock, sendbuf, strlen(sendbuf), 0, (struct sockaddr *)&servaddr, sizeof(servaddr));  
+		printf("send down\n");
+        /*
         ret = recvfrom(sock, recvbuf, sizeof(recvbuf), 0, NULL, NULL);  
         if(ret == -1){  
             perror("recvfrom");  
             exit(EXIT_FAILURE);  
         }  
+        */
   
         memset(sendbuf, 0, sizeof(sendbuf));  
         memset(recvbuf, 0, sizeof(recvbuf));  

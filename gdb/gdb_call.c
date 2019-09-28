@@ -29,6 +29,12 @@ void showNode(struct node *root) {
 	}
 }
 
+void showArray(int array[]) {
+	for (int i = 0; i < 10; i++) {
+		printf("a[%d]=%d\n", i, array[i]);
+	}
+}
+
 void testGDB() {
 	printf("testGDB call function\n");
 }

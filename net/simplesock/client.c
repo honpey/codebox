@@ -9,18 +9,20 @@
 
 #include<errno.h>
 
-#define MAXLINE 4096
+#define MAXLINE 10240
 #define SER_PORT 8000
 
 int main(int argc,char *argv[]){
 
 
+    printf("hello world----\n");
     struct sockaddr_in servaddr;
     char buf[MAXLINE];
 
     int sockfd,n;
     char *str;
     char tt[5];
+    int j = 0, i = 0;
 
     //if(argc != 2){
        // fputs("usage: ./client message \n ",stderr);
@@ -33,7 +35,9 @@ int main(int argc,char *argv[]){
 
     bzero(&servaddr,sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    inet_pton(AF_INET,"127.0.0.1",&servaddr.sin_addr);
+//    inet_pton(AF_INET,"10.101.161.105",&servaddr.sin_addr);
+//    inet_pton(AF_INET,"127.0.0.1",&servaddr.sin_addr);
+    inet_pton(AF_INET,"192.168.0.1",&servaddr.sin_addr);
     servaddr.sin_port = htons(SER_PORT);
 
     if(connect(sockfd,(struct sockaddr *)&servaddr,sizeof(servaddr))<0){
@@ -42,14 +46,14 @@ int main(int argc,char *argv[]){
 
     while(1){
         
-        memset(buf,0,MAXLINE);
-		for (int j = 0; j < MAXLINE; j++) {
+        memset(buf, 0, MAXLINE);
+		for (j = 0; j < MAXLINE; j++) {
 			buf[j]='a'+(j%26);
 		}
 
         printf("client connet server ...\n");
         n = read(STDIN_FILENO,buf,MAXLINE);
-        for(int i=0;i<5;i++){
+        for(i=0;    i<5;    i++){
                 tt[i] = buf[i];
             }
         if(strcmp(tt,"exit1") == 0){
@@ -58,24 +62,25 @@ int main(int argc,char *argv[]){
             return 0;
         }
 
-		int i = 0;
-		while(i++ < 100000){ // 4096*10000 = 40M
-        	write(sockfd,buf,n);
-			printf("i:%d\n", i);
+		i = 0;
+		while(i++ < 1){ // 4096*10 = 40M
+            printf("Begin write \n");
+        	write(sockfd,buf,MAXLINE);
+            printf("End write \n");
 		}
 
-		printf("writeDone");
+		printf("writeDone: 40k");
         if(strcmp(tt,"exit1") == 0){
             printf("exit server connect \n");
             close(sockfd);
             return 0;
         }
 
-        n = read(sockfd,buf,MAXLINE);
+        //n = read(sockfd,buf,MAXLINE);
 
 
-        printf("Response from server:\n");
-        write(STDOUT_FILENO,buf,n);
+        //printf("Response from server:\n");
+        //write(STDOUT_FILENO,buf,n);
         printf("\n");
     }
     

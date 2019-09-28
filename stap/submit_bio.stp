@@ -20,18 +20,17 @@ probe kernel.function("ext4_file_write_iter") {
     }
 }
 
+probe kernel.function("wb_start_writeback") {
+    printf("%s\n", execname())
+    print_backtrace()
+}
+
 probe kernel.function("submit_bio") {
 //	iMap[pid(), execname()]++
     bw = $bio->bi_io_vec
     if ($bio == NULL) {
         next
     }
-    /*
-    printf("devname:%s\n", __bio_devname($bio))
-    printf("ino: %d\n", __bio_ino($bio))
-    printf("%s\n", bio_rw_num($rw) == BIO_WRITE ? "Write" : "Read")
-    printf("bio_start_sec:%d\n", __bio_start_sect($bio))
-    */
     oprw = $rw
     for (i = 0; i < $bio->bi_vcnt; i++) {
         bv = &@cast(bw, "bio_vec")[i]
@@ -46,7 +45,11 @@ probe kernel.function("submit_bio") {
             } else {
                 op = "R"
             }
-            fileName = inode_name(inode)
+            if (inode->i_ino != 0) {
+                fileName = inode_name(inode)
+            } else {
+                fileName = "META"
+            }
             printf("%d:%s %s ino(%d +%d) %s sector(%d +%d) In %s\n", 
                    i, execname(), op, inode->i_ino, bv->bv_page->index, fileName, $bio->bi_iter->bi_sector + i*4096, 4096, kernel_string(inode->i_sb->s_type->name))
             /*
@@ -61,14 +64,7 @@ probe kernel.function("submit_bio") {
                 }
             }
             */
-                /*
-            printf("%d:%s inode_add(%p) ino(%d) sector(%d +%d)\n", 
-                    i, execname(), inode, inode->i_ino, $bio->bi_iter->bi_sector + i*4096, 4096)
-                */
 
-            /*
-			filename_by_inode(inode)
-            */
         }
     }
 }

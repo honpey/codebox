@@ -158,7 +158,7 @@ int main(int argc, char ** argv) {
                 ethhead[9], ethhead[10], ethhead[11]);
         printf(" type[%04x]\n", (ntohs(ethhead[12]|ethhead[13]<<8)));
 
-        iphead = ethhead + ETH_HDR_LEN;
+        iphead = ethhead + ETH_HDR_LEN; //package type，有的是在
         // header length as 32-bit
         printf("IP: Version: %d HeaderLen: %d[%d]", (*iphead>>4), (*iphead & 0x0f), (*iphead & 0x0f)*4);
         printf(" TotalLen %d", (iphead[2]<<8|iphead[3]));

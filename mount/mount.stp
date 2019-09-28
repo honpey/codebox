@@ -9,6 +9,10 @@ probe kernel.function("sys_mount") {
     printf("flags:   0x%lx\n", $flags);
 }
 
+probe kernel.function("sys_mknod") {
+    printf("-------------filename: %s\n", user_string($filename))
+}
+
 probe end {
     printf("End\n")
 }

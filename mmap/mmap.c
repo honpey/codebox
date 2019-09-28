@@ -19,26 +19,29 @@ int main()
 		else
 			buffer[i] = 'a' + i%26;
 	}
-	ptr = mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0); /*  看下子进程是否能够访问 */
+	ptr = mmap(NULL, 40960000, PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0); /*  看下子进程是否能够访问 */
 	printf("ptr:%p\n", ptr);
 	pid = fork();
 	if (pid > 0) { /* parent thread */
-		printf("I'm parent, my son is %d, mmap success\n", pid);
-		for (i = 0; i < 1; i++) {
-			ptr[1] = 'A';
-			ptr[2] = 'L'; 
-			ptr[3] = 'I';
-			printf("parent write done\n");
-			printf("ptr[1]=%c\n", ptr[1]);
-			printf("ptr[2]=%c\n", ptr[2]);
+		printf("I'm parent(%d), my son is %d, mmap success\n", getpid(), pid);
+		for (i = 0; i < 40960000/4096; i++) {
+            char *curptr = ptr + i*4096;
+			curptr[1] = 'A';
+			curptr[2] = 'L'; 
+			curptr[3] = 'I';
+			printf("parent write done :%d %d\n", i, i*4096);
+			printf("ptr[1]=%c\n", curptr[1]);
+			printf("ptr[2]=%c\n", curptr[2]);
 		}
+        sleep(10000);
 		sleep(10);
 
 	} else if (pid == 0) { /* child thread */
 		sleep(2);
 		printf("ptr[1]=%c\n", ptr[1]);
 		printf("ptr[2]=%c\n", ptr[2]);
-		printf("child read done\n");
+		printf("child(%d) read done\n", getpid());
+        sleep(100000);
 	} else { /* fault condition */
 
 	}

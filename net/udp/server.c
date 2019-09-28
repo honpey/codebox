@@ -12,6 +12,7 @@ void server(int sock){
     struct sockaddr_in peeraddr;  
     socklen_t peerlen;  
     int n;  
+	sleep(10);
     while(1){  
         peerlen = sizeof(peeraddr);  
         memset(recvbuf, 0, sizeof(recvbuf));  
@@ -21,7 +22,7 @@ void server(int sock){
                 exit(EXIT_FAILURE);   
         }else if(n > 0){  
             fputs(recvbuf, stdout);  
-            sendto(sock, recvbuf, n, 0, (struct sockaddr *)&peeraddr, peerlen);  
+//            sendto(sock, recvbuf, n, 0, (struct sockaddr *)&peeraddr, peerlen);  
         }  
     }  
     close(sock);  

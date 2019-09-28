@@ -93,7 +93,7 @@ probe kernel.function("__ip_local_out") {
     if (execname() != "client") {
         next
     }
-    printf("%s ", probefunc())
+    printf("%s %s ", execname(), probefunc())
     printf("%s \n", symname(getOutput($skb)))
 }
 

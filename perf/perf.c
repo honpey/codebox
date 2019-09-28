@@ -12,6 +12,6 @@ int main() {
 	fd = perf_event_open(&attr, 940, -1, -1, PERF_FLAG_FD_CLOEXEC);
 		
 
-	printf("hello world\n");
+	printf("hello world: %d\n", fd);
 	return 0;
 }

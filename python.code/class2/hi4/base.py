@@ -8,4 +8,3 @@ class People:
         self.age = age
     def setAge(self, name):
         self.name=name
-

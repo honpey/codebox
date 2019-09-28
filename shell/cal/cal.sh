@@ -10,22 +10,17 @@ do
         echo "Attention: Skip current dir"
         continue
     fi
-    echo "-1-"
     cgPath=${item}
     cgPathShares=${cgPath}"/cpu.shares"
     cgPathPeriod=${cgPath}"/cpu.cfs_period_us"
     cgPathQuota=${cgPath}"/cpu.cfs_quota_us"
-    echo "-2-"
     echo "cgPathShares:${cgPathShares}"
     echo "cgPathPeriod:${cgPathPeriod}"
     shares=`cat ${cgPathShares}`
     period=`cat ${cgPathPeriod}`
     scale=$(($shares/1024*2))
     quota=$((${scale}*${period}))
-    echo "-3-"
-    `echo ${quota} > ${cgPathQuota}` 
-    echo "-4-"
-    
+    `echo ${quota} > ${cgPathQuota}`
 done
 
 for item in `find $path2 -maxdepth 1 -type d`
@@ -35,20 +30,15 @@ do
         echo "Attention: Skip current dir"
         continue
     fi
-    echo "-1-"
     cgPath=${item}
     cgPathShares=${cgPath}"/cpu.shares"
     cgPathPeriod=${cgPath}"/cpu.cfs_period_us"
     cgPathQuota=${cgPath}"/cpu.cfs_quota_us"
-    echo "-2-"
     echo "cgPathShares:${cgPathShares}"
     echo "cgPathPeriod:${cgPathPeriod}"
     shares=`cat ${cgPathShares}`
     period=`cat ${cgPathPeriod}`
     scale=$(($shares/1024*2))
     quota=$((${scale}*${period}))
-    echo "-3-"
-    `echo ${quota} > ${cgPathQuota}` 
-    echo "-4-"
-    
+    `echo ${quota} > ${cgPathQuota}`
 done

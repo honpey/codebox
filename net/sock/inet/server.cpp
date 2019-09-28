@@ -22,6 +22,7 @@ int main()
   server_addr.sin_family = AF_INET;
   server_addr.sin_addr.s_addr = INADDR_ANY;
   server_addr.sin_port=htons(10943);
+//  server_addr.sin_port=htons(3306);
 
   /* bind with the local file */
   if(bind(server_sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
@@ -33,6 +34,7 @@ int main()
   listen(server_sockfd, 5);
 
   char ch;    
+  char buffer[4096];
   int client_sockfd;    
   struct sockaddr_un client_addr;    
   socklen_t len = sizeof(client_addr);    
@@ -44,10 +46,9 @@ int main()
     client_sockfd = accept(server_sockfd, (struct sockaddr *)&client_addr, &len);    
         
     /* exchange data */    
-    read(client_sockfd, &ch, 1);    
-    printf("get char from client: %c\n", ch);    
-    ++ch;    
-    write(client_sockfd, &ch, 1);    
+    read(client_sockfd, buffer, 4096);    
+    printf("get char from client: %s\n", buffer);    
+    write(client_sockfd, buffer, 4096);    
         
     /* close the socket */    
     close(client_sockfd);    
