@@ -1,0 +1,12 @@
+probe begin {  
+	print("overflow handler\n")  
+}  
+probe kernel.function("perf_event_output") {  
+//    printf("---%s\n", symname($probe))
+    printf("\n");
+    print_backtrace()
+}  
+      
+probe end {  
+	printf("End \n")  
+}  

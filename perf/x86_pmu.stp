@@ -1,0 +1,46 @@
+probe begin {
+    printf("Begin")
+}
+
+/*
+function getAllConstraints:long(arg:long)
+{
+    head=@cast(arg, "event_constraint")
+    for  
+}
+*/
+probe kernel.function("x86_get_event_constraints") {
+//    print("0x%lx\n", @var("x86_pmu@arch/x86/events/core.c"))
+    x86_pmu_addr = &$x86_pmu
+    d=@cast(x86_pmu_addr, "x86_pmu")->event_constraints
+    printf("event_constraints In this station: %s\n", symname(d)) // get funcname by addr
+    printf("---------event_constraint---------\n")
+//    for (elem = d; @cast(elem, "event_constraint")->weight != -1; elem = elem + %{sizeof(struct event_constraint)%}) {
+    for (elem = d; @cast(elem, "event_constraint")->weight != -1; elem = elem + 40) {
+        printf("idxmask:%lx, code:%lx, cmask:%lx, weight:%d, overlap:%d, flags:%x\n", 
+        @cast(elem, "event_constraint")->idxmsk64,
+        @cast(elem, "event_constraint")->code,
+        @cast(elem, "event_constraint")->cmask,
+        @cast(elem, "event_constraint")->weight,
+        @cast(elem, "event_constraint")->overlap,
+        @cast(elem, "event_constraint")->flags)
+    }
+
+    elem = &$unconstrained
+        printf("idxmask:%lx, code:%lx, cmask:%lx, weight:%d, overlap:%d, flags:%x\n", 
+        @cast(elem, "event_constraint")->idxmsk64,
+        @cast(elem, "event_constraint")->code,
+        @cast(elem, "event_constraint")->cmask,
+        @cast(elem, "event_constraint")->weight,
+        @cast(elem, "event_constraint")->overlap,
+        @cast(elem, "event_constraint")->flags)
+    
+    enable=@cast(&$x86_pmu, "x86_pmu")->enable
+    printf("enable:%s", symname(enable))
+    event_map=@cast(&$x86_pmu, "x86_pmu")->event_map
+    printf("event_map:%s", symname(event_map))
+}
+
+probe end {
+    printf("End")
+}

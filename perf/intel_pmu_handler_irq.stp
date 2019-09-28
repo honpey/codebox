@@ -1,0 +1,13 @@
+probe begin {
+    printf("hello world\n")
+}
+
+global count
+global iMap
+
+probe kernel.function("intel_pmu_handle_irq") {
+    printf("%s %d\n", ppfunc(), count++)
+}
+probe end {
+    printf("End\n")
+}

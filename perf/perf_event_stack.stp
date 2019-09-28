@@ -1,0 +1,17 @@
+global proc_counter  
+      
+probe begin {  
+	print("Started monitoring creation of new processes...Press ^C to terminate\n")  
+}  
+probe kernel.function("perf_trace_signal_deliver") {  
+//    printf("---%s\n", symname($probe))
+    if (pid() != 7536) {
+        next
+    }
+    print_backtrace()
+
+}  
+      
+probe end {  
+	printf("\n%d processes forked during the observed period\n", proc_counter)  
+}  
