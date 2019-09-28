@@ -1,0 +1,39 @@
+probe begin {
+    printf("Begin\n")
+}
+
+global preCPU0
+global preCPU1
+/*
+probe kernel.function("schedule") {
+    if (cpu() == 1) {
+       curCPU1 = gettimeofday_ns()    
+       printf("Diff: %d %d\n", curCPU1 - preCPU1, cpu())
+       preCPU1 = curCPU1
+       
+    }
+    if (cpu() == 0) {
+       curCPU0 = gettimeofday_ns()    
+        printf("Didff: %d %d\n", curCPU0 - preCPU0, cpu())
+        preCPU0 = curCPU0
+    }
+
+}
+*/
+
+global preCPUT0
+global preCPUT1
+
+probe kernel.function("do_timer") {
+    if (cpu() == 1) {
+        curCPU1 = gettimeofday_ns()
+        printf("Diff: %d %d\n", curCPU1 - preCPUT1, cpu())
+        preCPUT1 = curCPU1
+        print_backtrace()
+    }
+    if (cpu() == 0) {
+        curCPU0 = gettimeofday_ns()
+        printf("Diff: %d %d\n", curCPU0 - preCPUT0, cpu())
+        preCPUT0 = curCPU0
+    }
+}
