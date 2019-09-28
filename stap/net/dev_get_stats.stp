@@ -1,0 +1,15 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("dev_get_stats") {
+}
+
+probe module("mac80211").function("ieee80211_get_stats64") {
+    printf("%s\n", probefunc())
+    printf("%s\n", kernel_string(@cast($dev, "net_device")->name))
+}
+
+probe end {
+    printf("End\n")
+}

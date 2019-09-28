@@ -1,0 +1,23 @@
+probe begin {
+	print("hello world\n")
+}
+
+global count
+
+probe kernel.function("icmp_rcv") {
+	if (kernel_string($skb->dev->name) == "tap0") {
+		count++
+		printf("%s-------%d\n", kernel_string($skb->dev->name), count)
+//		print_backtrace()
+	}
+}
+
+probe kernel.function("icmp_rcv").return {
+	if (kernel_string($skb->dev->name) == "tap0") {
+		printf("%d\n", $return)
+	}
+}
+
+probe end {
+	print("End\n")
+}

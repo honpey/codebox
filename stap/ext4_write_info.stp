@@ -1,0 +1,11 @@
+probe begin {
+    print("Begin\n");
+}
+
+probe kernel.function("ext4_write_info") {
+    printf("hello----------\n")
+}
+
+probe end {
+    print("End\n")
+}

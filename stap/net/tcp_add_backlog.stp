@@ -1,0 +1,13 @@
+probe begin {
+    printf("Begin\n");
+}
+
+probe kernel.function("tcp_add_backlog") {
+//    printf("%s\n", probename())
+    print_backtrace()
+    printf("\n")
+}
+
+probe end {
+    printf("End\n");
+}

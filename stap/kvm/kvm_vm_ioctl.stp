@@ -1,0 +1,31 @@
+probe begin {
+	print("hello world\n")
+}
+
+global map
+
+// trace all the kvm function
+probe module("kvm").function("kvm_vm_ioctl") {
+		printf("%s(%d, %d) In %s\n", execname(), pid(), tid(), probefunc())
+		map[probefunc()]++
+}
+
+probe module("kvm").function("kvm_arch_sched_in") {
+	printf("%s(%d, %d) In %s\n", execname(), pid(), tid(), probefunc())
+}
+/*
+probe syscall.* {
+	printf("%s\n", probefunc())
+		map[probefunc()]++
+}
+*/
+
+probe end {
+	print("\n\nEnd\n")
+	print("------------------\n")
+	foreach ([name] in map) {
+		printf("%s -- %d\n", name, map[name])
+	}
+	delete map
+	print("__________________\n")
+}

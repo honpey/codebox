@@ -1,0 +1,27 @@
+probe begin {
+    printf("Begin")
+}
+
+global count
+global last0 = 0
+global last1 = 0
+probe kernel.function("intel_pmu_enable_event") {
+   count++
+   current = gettimeofday_ms()
+   diff = 0 
+   cpu = cpu()
+   if (cpu == 1) {
+       diff = current - last1
+       last1 = current
+   } else if (cpu == 0) {
+       diff = current - last0
+       last0 = current
+   }
+   printf("----------Stack(%d)-----------\n", count)
+   printf("%d:event.hw.config: 0x%lx\n", diff, $event->hw->config)
+   print_backtrace() 
+}
+
+probe end {
+    printf("End")
+}

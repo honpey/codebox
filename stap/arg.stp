@@ -1,0 +1,31 @@
+probe begin {
+	printf("Begin\n")
+}
+
+/*
+probe kernel.function("submit_bio") {
+	printf("%s : %d\n", execname(), $bio->bi_vcnt)
+}
+*/
+
+global gCount = 0
+
+/*
+probe kernel.function("vfs_write") {
+	gCount += 1
+	if (gCount % 10 != 0) {
+		next
+	}
+	name = user_string($buf)
+	printf("%s   %s(%d)\n", execname(), name, $count)
+}
+*/
+
+probe kernel.function("__elv_add_request") {
+	printf("%d VS %d\n", $q->nr_rqs[0], $q->nr_rqs[1])
+	printf("cpu: %d\n", $rq->cpu)
+}
+
+probe end {
+	printf("End\n")
+}

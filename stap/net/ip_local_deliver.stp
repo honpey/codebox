@@ -1,0 +1,14 @@
+probe begin {
+	printf("Begin\n")
+}
+
+probe kernel.function("ip_local_deliver") {
+    printf("%s\n", execname())
+    print_backtrace()
+	printf("------------\n")
+    
+}
+
+probe end {
+	printf("End\n")
+}

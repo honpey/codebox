@@ -1,0 +1,14 @@
+global proc_counter  
+      
+probe begin {  
+	print("Started monitoring creation of new processes...Press ^C to terminate\n")  
+	printf("%-25s %-10s %-s\n", "Process Name", "Process ID", "Clone Flags")  
+}  
+probe kernel.function("do_fork") {  
+	proc_counter++  
+	printf("%-25s %-10d 0x%-x\n", execname(), pid(), $clone_flags)  
+}  
+      
+probe end {  
+	printf("\n%d processes forked during the observed period\n", proc_counter)  
+}  

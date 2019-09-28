@@ -1,0 +1,47 @@
+probe begin {
+	printf("Begin\n")
+}
+
+/*
+probe module("nf_nat_ipv4").function("nf_nat_ipv4_local_fn") {
+	printf("ppfunc(%s): %s\n", execname(), ppfunc())
+}
+
+probe module("nf_nat_ipv4").function("nf_nat_ipv4_in") {
+	printf("comm(%s)\n", execname())
+}
+
+probe module("nf_conntrack").function("init_conntrack") {
+	printf("nf_conntrack:%s\n", execname())
+}
+*/
+
+/*
+probe module("nf_conntrack_ipv4").function("ipv4_invert_tuple") {
+	printf("nf_conntrack:%s\n", execname())
+//	print_backtrace()
+}
+*/
+
+/*
+probe module("nf_conntrack").function("__nf_conntrack_hash_insert") {
+	printf("HHHHHHHHH---\n");
+}
+*/
+/*
+probe module("nf_nat_ipv4").function("nf_nat_ipv4_fn") {
+	printf("-----1-----\n")
+}
+
+probe module("nf_nat").function("nf_nat_packet") {
+	printf("-----2-----\n")
+}
+*/
+
+probe module("nf_conntrack").function("__nf_conntrack_confirm") {
+	printf("%s---\n", ppfunc())
+}
+
+probe end {
+	printf("End\n")
+}

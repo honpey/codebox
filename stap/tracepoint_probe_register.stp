@@ -1,0 +1,13 @@
+probe begin {
+    printf("Begin")
+}
+
+probe kernel.function("tracepoint_probe_register") {
+//    printf("pre_comm:%s\n", kernel_string($prev->comm))
+    printf("func:%s\n", symname($probe))
+
+}
+
+probe end {
+    printf("End")
+}

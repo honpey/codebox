@@ -1,0 +1,21 @@
+probe begin {
+    print("Begin")
+}
+
+probe kernel.function("sys_perf_event_open") {
+    printf("Perf_event_attr:\n")
+    printf("type: %d\nsize: %d\nconfig: %d\nsample_freq: %d\nsample_type: %d\nread_fromat: %d\ndisabled: %d\n",
+
+            $attr_uptr->type,
+            $attr_uptr->size,
+            $attr_uptr->config,
+            $attr_uptr->sample_freq,
+            $attr_uptr->sample_type,
+            $attr_uptr->read_format,
+            $attr_uptr->disabled
+    )
+}
+
+probe end {
+    print("End")
+}

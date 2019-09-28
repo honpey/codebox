@@ -1,0 +1,22 @@
+probe begin {
+    print("Begin")
+}
+
+probe kernel.function("sys_perf_event_open") {
+    /*
+    print(
+            $attr_uptr->type,
+            $attr_uptr->size,
+            $attr_uptr->config,
+            $attr_uptr->sample_freq,
+            $attr_uptr->sample_type,
+            $attr_uptr->read_format,
+            $attr_uptr->disabled
+    )
+    */
+    print(@cast(attr_uptr, "perf_event_attr")->type)
+}
+
+probe end {
+    print("End")
+}

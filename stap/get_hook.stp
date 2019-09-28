@@ -1,0 +1,12 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("__ftrace_event_enable_disable") {
+    printf("%s\n", symname($file->event_call->class->reg))
+    printf("%s\n", symname($file->event_call->class->probe))
+}
+probe end {
+    printf("End\n")
+}
+

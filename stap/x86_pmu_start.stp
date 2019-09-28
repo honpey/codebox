@@ -1,0 +1,18 @@
+probe begin {
+    printf("Begin")
+}
+
+global count
+probe kernel.function("x86_pmu_start") {
+   printf("----------Stack-----------\n")
+//   print_backtrace()
+}
+
+probe kernel.function("intel_pmu_pebs_enable") {
+    printf("honpey:%s\n", ppfunc())
+    print_backtrace()
+}
+
+probe end {
+    printf("End")
+}

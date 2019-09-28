@@ -1,0 +1,15 @@
+probe begin {
+    printf("Begin")
+}
+
+global count
+probe kernel.function("intel_pmu_enable_event") {
+   printf("----------Stack(%d)-----------\n", count++)
+   printf("event.attr.config: 0x%lx\n", $event->attr->config)
+   printf("event.hw.config: 0x%lx\n",$event->hw->config)
+   print_backtrace() 
+}
+
+probe end {
+    printf("End")
+}

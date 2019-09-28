@@ -1,0 +1,12 @@
+probe begin {
+    print("Begin\n");
+}
+
+probe kernel.function("__jbd2_log_start_commit") {
+    printf("%s----------\n", execname())
+    print_backtrace()
+}
+
+probe end {
+    print("End\n")
+}

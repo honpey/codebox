@@ -1,0 +1,17 @@
+probe begin {
+	printf("hello world: tracing anon_vma_prepare now\n")
+}
+
+probe kernel.function("anon_vma_prepare") {
+	if (execname() == "anon") {
+		if ($vma->anon_vma == NULL) {
+			printf("hello world\n");
+		}
+	}
+}
+
+probe kernel.function("do_anonymous_page") {
+//	if (execname() == "anon") {
+		printf("do anonymous page")
+//	}
+}

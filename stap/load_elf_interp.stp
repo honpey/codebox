@@ -1,0 +1,11 @@
+probe begin {
+	printf("Begin\n")
+}
+
+probe kernel.function("load_elf_interp") {
+	printf("%s\n", execname())
+}
+
+probe end {
+	printf("End\n")
+}

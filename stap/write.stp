@@ -1,0 +1,15 @@
+probe begin {
+    print("Begin")
+}
+
+global iMap
+probe __syscall.write {
+    ++iMap[execname()]
+}
+probe end {
+    print("End")
+    foreach ([name] in iMap) {
+        printf("%s: %d\n", name, iMap[name])
+    }
+    delete iMap
+}

@@ -1,0 +1,5 @@
+probe timer.ms(4000) { #after 4 s
+	exit()
+}
+
+

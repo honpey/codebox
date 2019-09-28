@@ -1,0 +1,13 @@
+probe begin {
+    printf("Begin")
+}
+
+probe kernel.trace("sched_switch") {
+//    printf("pre_comm:%s\n", kernel_string($prev->comm))
+    printf("func:%s\n", probefunc())
+
+}
+
+probe end {
+    printf("End")
+}

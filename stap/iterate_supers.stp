@@ -1,0 +1,23 @@
+probe begin {
+    print("Begin\n")
+}
+
+%{
+#include <linux/fs.h>
+#include <linux/types.h>
+%}
+
+function showSB()
+%{
+    struct list_head super_blocks = (struct list_head)0xffffffff81e784d0;
+    struct super_block *sb = NULL;
+    list_for_each_entry(sb, &super_blocks, s_list) {
+            
+    }
+%}
+probe kernel.function("iterate_supers") {
+    showSB()
+}
+probe end {
+    print("End\n")
+}

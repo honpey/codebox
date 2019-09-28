@@ -1,0 +1,10 @@
+probe begin {
+    print("Begin")
+}
+
+probe tcpmib.PassiveOpens {
+    print("hi")
+}
+probe end {
+    print("End")
+}

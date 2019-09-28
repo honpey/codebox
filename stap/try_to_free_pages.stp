@@ -1,0 +1,16 @@
+probe begin {
+	printf("begin to trace\n");
+}
+
+global count = 0
+probe kernel.function("try_to_free_pages") {
+	if (execname() == "malloc") {
+		printf("come here\n");
+		count++
+//		print_backtrace();
+	}
+}
+
+probe end {
+	printf("end:%d\n", end);
+}

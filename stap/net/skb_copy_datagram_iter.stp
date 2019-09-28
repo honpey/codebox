@@ -1,0 +1,14 @@
+probe begin {
+    printf("Begin\n");
+}
+
+global do = 0
+probe kernel.function("skb_copy_datagram_iter").call {
+    if ($skb->data_len != 0)
+        printf("%s %d=%d-%d\n", execname(), $skb->len - $skb->data_len, $skb->len, $skb->data_len)
+
+}
+
+probe end {
+    printf("End\n");
+}

@@ -1,0 +1,12 @@
+probe begin {
+    printf("Begin\n")
+}
+
+global count
+probe kernel.function("ieee80211_ximit_fast_finish") {
+    printf("%d------------\n", count++)
+}
+
+probe end {
+    printf("End\n")
+}

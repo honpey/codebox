@@ -1,0 +1,29 @@
+probe begin {
+	printf("hello world\n")
+}
+
+global count
+global map
+probe kernel.function("try_charge") {
+	if (execname() == "malloc2") {
+		printf("nr: %d\n", $nr_pages);
+		map[$nr_pages]++
+	}
+}
+probe kernel.function("consume_stock") {
+}
+
+/*
+global count2
+probe kernel.function("try_to_free_mem_cgroup_pages") {
+	if (execname() == "malloc2") {
+		printf("come here\n");
+		count2++
+	}
+}
+*/
+probe end {
+	printf("%d\n", count);
+	printf("%d\n", count2);
+
+}

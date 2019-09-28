@@ -1,0 +1,11 @@
+probe begin {
+	printf("hello world, Bgin to trace\n")
+}
+probe kernel.function("bpf_prog_load") {
+	
+	printf("hello world\n")
+}
+
+probe end {
+	printf("\n\nEnd\n\n")
+}

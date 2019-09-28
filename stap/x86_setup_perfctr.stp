@@ -1,0 +1,16 @@
+probe begin {
+    print("Begin\n")
+    count = 0
+}
+
+probe kernel.function("x86_setup_perfctr") {
+    printf("Before:config: %lx\n", $event->hw->config)
+}
+
+probe kernel.function("x86_setup_perfctr").return {
+    printf("After:config: %lx\n", $event->hw->config)
+}
+
+probe end {
+    print("End\n")
+}

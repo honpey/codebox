@@ -1,0 +1,58 @@
+probe begin {
+    printf("Begin")
+}
+
+/*
+%{
+//#include "arch/x86/events/perf_event.h"
+#include "xyz.h"
+%}
+
+function getNum()
+%{
+    cpuc = this_cpu_ptr(&cpu_hw_events);
+    int idx = 0;
+    int count = 0;
+    for (idx = 0; idx < x86_pmu.num_counters; idx++) {
+        if (test_bit(idx, cpuc->active_mask) {
+             count++;
+        }
+    }
+    printk("count:%d\n", count);
+%}
+
+probe kernel.function("x86_pmu_handle_irq") {
+    getNum()
+}
+*/
+
+global gMap
+global last0
+global last1
+probe kernel.function("intel_pmu_handle_irq") {
+    current = gettimeofday_ms()
+    cpu = cpu()
+    diff = 0
+    if (cpu == 0) {
+        diff = current - last0
+        last0 = current
+    } else if (cpu == 1) {
+        diff = current - last1
+        last1 = current
+    }
+    printf("%dms cpu(%d)\n", diff, cpu)
+}
+probe kernel.function("intel_pmu_save_and_restart") {
+    printf("0x%lx\n", $event)
+    gMap[$event]++
+    print_backtrace()
+}
+probe end {
+    printf("-------------*-------------\n")
+    count = 0
+    foreach ([addr] in gMap) {
+        count++
+        printf("%d:0x%lx(%d)\n", count, addr, gMap[addr])
+    }
+    printf("End")
+}

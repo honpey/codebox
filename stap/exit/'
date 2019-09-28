@@ -1,0 +1,18 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("do_group_exit") {
+    if (execname() != "thread") {
+        next
+    }
+    printf("%s %d %d\n", execname(), pid(), tid())
+    printf("caller: %s\n", caller_addr())
+    print_backtrace()
+    printf("\n")
+    
+}
+probe end {
+    printf("End\n")
+}
+

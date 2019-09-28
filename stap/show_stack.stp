@@ -1,0 +1,11 @@
+probe begin {
+	printf("hello world Begin\n")
+}
+
+probe kernel.function("load_elf_interp") {
+	print_backtrace()
+}
+
+probe end {
+	printf("hello world End")
+}

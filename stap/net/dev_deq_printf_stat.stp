@@ -1,0 +1,16 @@
+probe begin {
+    printf("Begin\n")
+}
+
+global count = 0
+probe kernel.function("dev_seq_printf_stats") {
+    printf("%d\n", count++);
+}
+
+probe kernel.function("dev_from_bucket") {
+    printf("--*\n")
+}
+
+probe end {
+    printf("End\n")
+}
