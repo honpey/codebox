@@ -1,0 +1,146 @@
+栈帧！栈帧！今天就把栈帧给弄清楚！
+有一个函数调用关系
+-->main
+  -->print
+    -->add
+      -->funca
+        -->funcb
+          -->funcc
+在函数funcc函数处设置断点，由于用户态栈是由高到低扩展:
+当函数执行到
+(gdb) print $sp
+$1 = (void *) 0x7fffffffdb78
+然后打印出内存，
+0x7fffffffdb78:*0xffffdb90	0x00007fff	0x00400561	0x00000000
+0x7fffffffdb88:	0xffffdda0	0x00000017 *0xffffdba8	0x00007fff
+0x7fffffffdb98:	0x00400579	0x00000000	0x00000000	0x00000017
+0x7fffffffdba8:*0xffffdbd0	0x00007fff	0x0040059f	0x00000000
+0x7fffffffdbb8:	0x00000027	0x00000017	0x00000000	0x00000000
+0x7fffffffdbc8:	0x0000003e	0x00007fff	0xffffdcb0	0x00007fff
+0x7fffffffdbd8:	0x0040062c	0x00000000 *0x00000000	0x00000000
+0x7fffffffdbe8:	0x00000000	0x00000002	0x00000000	0x00000017
+0x7fffffffdbf8:	0x00000027	0x00000000	0x2f2f2f2f	0x2f2f2f2f
+0x7fffffffdc08:	0x00000003	0x00000000	0xffffddb8	0x00007fff
+0x7fffffffdc18:	0x00000000	0x00000000	0x004006e0	0x00000000
+0x7fffffffdc28:	0xf7de7ab0	0x00007fff	0x00000000	0x00000000
+0x7fffffffdc38:	0x00000000	0x00000000	0x00000000	0x00000000
+0x7fffffffdc48:	0x00000000	0x00000000	0x00000000	0x00000000
+0x7fffffffdc58:	0x00000000	0x00000000	0x0000ff00	0x0000ff00
+
+然后看下.内存.里到底是啥东西
+funca和funb栈的大小是8字节
+8个字节是怎么来的？首先是局部变量a，call指令执行的时候的返回的地址，每一个函数要为自己的栈帧准备啥东西？如果该函数有子过程，那么这个栈帧要首先要有一个８字节来准备调用，自己的返回地址放在了的栈帧里吗？
+
+拿funcb的来说的话，funcb如果啥也不干，那么就在自己的栈帧里玩耍，但是一旦funcb调用了新的函数，那么首先要做的，就是把返回地址压入到自己的栈帧中，然后保存下ebp的值，也就是ebp和ip是并蒂莲，紧挨着，所以我们可以知道ip是啥。
+
+那么这８个字节都是啥子呢，发现在funa和funcb中没啥就是一个函数，在６４位系统上，都是按照８字节来分配空间的！！！所以呢，所以一上来的寄存器的分配是这么来哒，所以呢
+
+stack frame 1  是 funcb 的栈帧 --
+1 0x7ffffffdb90 是上一个栈帧(funcb)的基地址, 在上面的内存空间中也能找到值, 只要能获得当前
+2 0x0000000000400561 这里是funcb 调用 funcc的返回地址
+3 0xffffdda0是个啥东西？ [8字节中的高4位是乱码没毛病]
+4 0x17 17是函数的参数这个没错
+
+stack frame 2 是 funca 的栈帧 --
+1 0x7fffffffdba8 是上一个栈帧的基地址
+2 0x0000000000400579 是funca调用funcb的返回地址
+3 0x00000000是个啥东西? [8字节中的高4位是乱码没毛病]
+2 0x17, 17是funca的形式参数
+
+add栈的大小是0x18, 也就是说有24个字节
+stack frame 3 是 add 函数的栈帧,add函数的栈基址是0x7fffffffdbd0, 按照上面汇编的写法，两个参数值，第一个参数值
+0x7fffffffdbd0-0x14=0x7fffffffdbbc
+0x7fffffffdbd0-0x18=0x7fffffffdbb8
+果然dbbc是27，dbb8是17，所以这个栈帧也就比较清楚了,　然后栈里肯定会有一些不知所云的脏数据在，可以无视了，但是××××！！！！perf等调测工具，只要获得了进程的ebp的值，那么通过这个call chain就能很快地得函数的调用关系了！！因为ebp和ip的并蒂莲，所以很容易就能得到啦！这就是perf工作的原理，可以看下函数：所谓的stack_trace就是这么来的，那么还有个
+
+push发生了啥：esp = esp + 8
+pop $
+leaveq和retq发生了啥事情
+retq
+leaveq: moveq %rbp, %rsp; popq rbp 是和enterq对应使用的：push %ebp move %rsp,%rbp
+retq:   popq %rip
+
+leaveq才是正确之道啊，但是有个问题，调用完了函数之后，
+callq会把紧接着栈顶的位置给ｐｏｐ到ｒｉｐ中去。
+
+/*
+内核里面获取栈帧的方法:
+/* The form of the top of the frame on the stack */
+struct stack_frame {
+    struct stack_frame *next_frame;
+    unsigned long return_address;
+};
+*/
+
+1 0x7fffffffdbd0 是上一个栈帧的地址, 上一次, add栈的基地址
+2 0x000000000040059f, 是add中调用funca的返回地址
+3 0x00000027 是add的两个参数
+4 0x00000017
+5 0x00000000
+6 0x00000000
+7 0x00007fff0000003e
+8 0x
+
+mov %edi, -0x14(%rbp)
+mov %esi, -0x18(%rbp)
+
+再看下a的汇编
+所以其实一个栈帧，就是两个ebp组成的，其中一个ebp是一个
+//待会可以试验一下，内核中抓出来的栈是啥子样子的！！
+现在先解决一个问题, ebp不作为栈基址寄存器的时候
+
+此时内存的值是,　这些值确实是0x7fffffffdb78, 并且$rsp和$rbp的值是一样的
+(gdb) info registers
+rax            0x17	23
+rbx            0x0	0
+rcx            0x0	0
+rdx            0x17	23
+rsi            0x27	39
+rdi            0x17	23
+rbp            0x7fffffffdb78	0x7fffffffdb78
+rsp            0x7fffffffdb78	0x7fffffffdb78
+r8             0x4006e0	4196064
+r9             0x7ffff7de7ab0	140737351940784
+r10            0x846	2118
+r11            0x7ffff7a2d740	140737348032320
+r12            0x400430	4195376
+r13            0x7fffffffdda0	140737488346528
+r14            0x0	0
+r15            0x0	0
+rip            0x40052a	0x40052a <funcc+4>
+eflags         0x216	[ PF AF IF ]
+cs             0x33	51
+ss             0x2b	43
+ds             0x0	0
+es             0x0	0
+fs             0x0	0
+gs             0x0	0
+
+当ebp不作为栈基址寄存器的时候！当ebp不是作为栈基址寄存器的时候，-fomit-frame-point的时候，这个时候的
+
+我们来看一下在fomit-frame-pointer关闭的情况下，是否能找到最终的cp，这里是啥事情
+
+汇编代码：
+(gdb) print/x $sp
+$1 = 0x7fffffffdb98
+(gdb) x/60x $sp
+0x7fffffffdb98:*0x0040055e	0x00000000	0x00000000	0x00000017
+0x7fffffffdba8:*0x00400577	0x00000000	0x00000001	0x00000017
+0x7fffffffdbb8:*0x004005a0	0x00000000	0x00000027	0x00000017
+0x7fffffffdbc8:	0xf7a1d410	0x00007fff	0x0000003e	0x00007fff
+0x7fffffffdbd8:	0x00400632	0x00000000	0x00000000	0x00000000
+0x7fffffffdbe8:	0x00000000	0x00000002	0x00000000	0x00000017
+0x7fffffffdbf8:	0x00000027	0x00000000	0x2f2f2f2f	0x2f2f2f2f
+0x7fffffffdc08:	0x00000003	0x00000000	0xffffddb8	0x00007fff
+0x7fffffffdc18:	0x00000000	0x00000000	0x004006f0	0x00000000
+0x7fffffffdc28:	0xf7de7ab0	0x00007fff	0x00000000	0x00000000
+0x7fffffffdc38:	0x00000000	0x00000000	0x00000000	0x00000000
+0x7fffffffdc48:	0x00000000	0x00000000	0x00000000	0x00000000
+0x7fffffffdc58:	0x00000000	0x00000000	0x0000ff00	0x0000ff00
+0x7fffffffdc68:	0x00000000	0x00000000	0x00000000	0x00000000
+0x7fffffffdc78:	0x00000000	0x00000000	0x00000001	0x00000000
+
+同样的代码使用 -fomit-stack-pointer 进行编译，看下追根溯源找到最终的调用栈, 从一些关键的入手，返回地址肯定是要填充的,funcb在调用funcc时的返回地址是是0x0040055e, funca调用funcb时的返回地址是0x00400577,add调用funca时的返回地址是4005a0，如上面栈中的*函数，于是问题也就来了，现在知道栈顶的位置是啥了，但是如何才能知道函数的调用关系呢？也就是说函数如何知道我这里
+0x004005a0 --> 0x400577 --> 0x40055e的调用关系，如果内核都解析出来了，那么还要 debug_info 干嘛呢，肯定是把地址发送用户态，让用户态去解析呀，这里咋解析的呢？
+
+

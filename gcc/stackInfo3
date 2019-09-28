@@ -1,0 +1,39 @@
+在perf的get_entries函数中，通过unw_step函数逐步得到栈帧地址，unw_step函数中通过access_mem函数得到一个合法的栈地址，传入的参数都是从eh_frame中来的，这里就是整个perf解析栈的核心所在了！核心在哪里？
+看下核心是在哪里？ 这里的每个函数都是怎么来的？
+
+
+access_mem (as=0x1f7cbd0, addr=139801455231200, valp=0x7fffffffac10, __write=0, arg=0x7fffffffb900) at util/unwind-libunwind-local.c:453
+#1  0x0000000000576645 in dwarf_readu8 (a=0x1f7cbd0, arg=0x7fffffffb900, valp=<synthetic pointer>, addr=<synthetic pointer>, as=0x1f7cbd0)
+    at ../include/dwarf_i.h:144
+#2  dwarf_readu16 (arg=0x7fffffffb900, val=<synthetic pointer>, addr=<synthetic pointer>, a=0x1f7cbd0, as=0x1f7cbd0)
+    at ../include/dwarf_i.h:161
+#3  dwarf_readu32 (arg=0x7fffffffb900, val=<synthetic pointer>, addr=<synthetic pointer>, a=0x1f7cbd0, as=0x1f7cbd0)
+    at ../include/dwarf_i.h:179
+#4  dwarf_reads32 (arg=0x7fffffffb900, val=<synthetic pointer>, addr=<synthetic pointer>, a=0x1f7cbd0, as=0x1f7cbd0)
+    at ../include/dwarf_i.h:241
+#5  remote_lookup (arg=0x7fffffffb900, last_ip_offset=<synthetic pointer>, e=0x7fffffffac00, rel_ip=-824413, table_size=<optimized out>, 
+    table=139801455220360, as=0x1f7cbd0) at dwarf/Gfind_proc_info-lsb.c:778
+#6  _Ux86_64_dwarf_search_unwind_table (as=as@entry=0x1f7cbd0, ip=ip@entry=139801454395935, di=di@entry=0x7fffffffacb0, 
+    pi=pi@entry=0x7fffffffb618, need_unwind_info=need_unwind_info@entry=1, arg=arg@entry=0x7fffffffb900) at dwarf/Gfind_proc_info-lsb.c:875
+#7  0x000000000052d2d6 in find_proc_info (as=0x1f7cbd0, ip=139801454395935, pi=0x7fffffffb618, need_unwind_info=1, arg=0x7fffffffb900)
+    at util/unwind-libunwind-local.c:364
+#8  0x0000000000576e97 in fetch_proc_info (c=c@entry=0x7fffffffb4c0, ip=139801454395935) at dwarf/Gparser.c:454
+#9  0x00000000005793ce in find_reg_state (sr=0x7fffffffae40, c=0x7fffffffb4c0) at dwarf/Gparser.c:911
+#10 _Ux86_64_dwarf_step (c=c@entry=0x7fffffffb4c0) at dwarf/Gparser.c:958
+#11 0x0000000000575e26 in _Ux86_64_step (cursor=cursor@entry=0x7fffffffb4c0) at x86_64/Gstep.c:73
+
+
+dwarf_search_unwind_table:
+
+反正就是用dwarf去处理栈帧啦！！！！
+至于是如何从 eh_frame 处去处理栈帧的，等着将来再看吧！！！
+
+还有几个 docker 的问题搞清楚！
+1) capacility
+2) docker是怎么挂载设备的
+3) docker是如何处理设备的
+
+权限通过什么方式体现出来，进程!在进程成为进程之前，它是程序，所以相关的capacility都是设置在程序上！
+权限通过什么方式体现出来，进程!
+进程都是
+在进行特权操作时，会通知进程是否有相应的capacility

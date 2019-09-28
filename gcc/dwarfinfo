@@ -1,0 +1,313 @@
+
+.debug_info
+
+COMPILE_UNIT<header overall offset = 0x00000000>:
+< 0><0x0000000b>  DW_TAG_compile_unit
+                    DW_AT_producer              "GNU C11 5.4.0 20160609 -mtune=generic -march=x86-64 -g -fomit-frame-pointer -fstack-protector-strong"
+                    DW_AT_language              DW_LANG_C99
+                    DW_AT_name                  "sleep.c"
+                    DW_AT_comp_dir              "/home/hon/codebox/gcc"
+                    DW_AT_low_pc                0x00400566
+                    DW_AT_high_pc               <offset-from-lowpc>354
+                    DW_AT_stmt_list             0x00000000
+
+LOCAL_SYMBOLS:
+< 1><0x0000002d>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000001
+                      DW_AT_encoding              DW_ATE_signed_char
+                      DW_AT_name                  "signed char"
+< 1><0x00000034>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000001
+                      DW_AT_encoding              DW_ATE_unsigned_char
+                      DW_AT_name                  "unsigned char"
+< 1><0x0000003b>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000002
+                      DW_AT_encoding              DW_ATE_signed
+                      DW_AT_name                  "short int"
+< 1><0x00000042>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000002
+                      DW_AT_encoding              DW_ATE_unsigned
+                      DW_AT_name                  "short unsigned int"
+< 1><0x00000049>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000004
+                      DW_AT_encoding              DW_ATE_signed
+                      DW_AT_name                  "int"
+< 1><0x00000050>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000004
+                      DW_AT_encoding              DW_ATE_unsigned
+                      DW_AT_name                  "unsigned int"
+< 1><0x00000057>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000008
+                      DW_AT_encoding              DW_ATE_signed
+                      DW_AT_name                  "long long int"
+< 1><0x0000005e>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000008
+                      DW_AT_encoding              DW_ATE_unsigned
+                      DW_AT_name                  "long long unsigned int"
+< 1><0x00000065>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000008
+                      DW_AT_encoding              DW_ATE_unsigned
+                      DW_AT_name                  "sizetype"
+< 1><0x0000006c>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000008
+                      DW_AT_encoding              DW_ATE_unsigned
+                      DW_AT_name                  "long unsigned int"
+< 1><0x00000073>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000008
+                      DW_AT_encoding              DW_ATE_signed
+                      DW_AT_name                  "long int"
+< 1><0x0000007a>    DW_TAG_base_type
+                      DW_AT_byte_size             0x00000001
+                      DW_AT_encoding              DW_ATE_signed_char
+                      DW_AT_name                  "char"
+< 1><0x00000081>    DW_TAG_subprogram
+                      DW_AT_external              yes(1)
+                      DW_AT_name                  "funcc"
+                      DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                      DW_AT_decl_line             0x00000004
+                      DW_AT_prototyped            yes(1)
+                      DW_AT_type                  <0x00000049>
+                      DW_AT_low_pc                0x00400566
+                      DW_AT_high_pc               <offset-from-lowpc>58
+                      DW_AT_frame_base            len 0x0001: 9c: DW_OP_call_frame_cfa
+                      DW_AT_GNU_all_tail_call_sitesyes(1)
+                      DW_AT_sibling               <0x000000ca>
+< 2><0x000000a2>      DW_TAG_formal_parameter
+                        DW_AT_name                  "a"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x00000004
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0002: 915c: DW_OP_fbreg -36
+< 2><0x000000ae>      DW_TAG_variable
+                        DW_AT_name                  "ret"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x00000006
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0002: 916c: DW_OP_fbreg -20
+< 2><0x000000bc>      DW_TAG_subprogram
+                        DW_AT_external              yes(1)
+                        DW_AT_name                  "getpid"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x00000008
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_declaration           yes(1)
+< 3><0x000000c7>        DW_TAG_unspecified_parameters
+< 1><0x000000ca>    DW_TAG_subprogram
+                      DW_AT_external              yes(1)
+                      DW_AT_name                  "funcb"
+                      DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                      DW_AT_decl_line             0x0000000b
+                      DW_AT_prototyped            yes(1)
+                      DW_AT_type                  <0x00000049>
+                      DW_AT_low_pc                0x004005a0
+                      DW_AT_high_pc               <offset-from-lowpc>25
+                      DW_AT_frame_base            len 0x0001: 9c: DW_OP_call_frame_cfa
+                      DW_AT_GNU_all_tail_call_sitesyes(1)
+                      DW_AT_sibling               <0x000000f8>
+< 2><0x000000eb>      DW_TAG_formal_parameter
+                        DW_AT_name                  "b"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x0000000b
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0002: 916c: DW_OP_fbreg -20
+< 1><0x000000f8>    DW_TAG_subprogram
+                      DW_AT_external              yes(1)
+                      DW_AT_name                  "funca"
+                      DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                      DW_AT_decl_line             0x0000000e
+                      DW_AT_prototyped            yes(1)
+                      DW_AT_type                  <0x00000049>
+                      DW_AT_low_pc                0x004005b9
+                      DW_AT_high_pc               <offset-from-lowpc>25
+                      DW_AT_frame_base            len 0x0001: 9c: DW_OP_call_frame_cfa
+                      DW_AT_GNU_all_tail_call_sitesyes(1)
+                      DW_AT_sibling               <0x00000126>
+< 2><0x00000119>      DW_TAG_formal_parameter
+                        DW_AT_name                  "a"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x0000000e
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0002: 916c: DW_OP_fbreg -20
+< 1><0x00000126>    DW_TAG_subprogram
+                      DW_AT_external              yes(1)
+                      DW_AT_name                  "add"
+                      DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                      DW_AT_decl_line             0x00000011
+                      DW_AT_prototyped            yes(1)
+                      DW_AT_type                  <0x00000049>
+                      DW_AT_low_pc                0x004005d2
+                      DW_AT_high_pc               <offset-from-lowpc>55
+                      DW_AT_frame_base            len 0x0001: 9c: DW_OP_call_frame_cfa
+                      DW_AT_GNU_all_tail_call_sitesyes(1)
+                      DW_AT_sibling               <0x00000178>
+< 2><0x00000147>      DW_TAG_formal_parameter
+                        DW_AT_name                  "a"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x00000011
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0002: 915c: DW_OP_fbreg -36
+< 2><0x00000153>      DW_TAG_formal_parameter
+                        DW_AT_name                  "b"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x00000011
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0002: 9158: DW_OP_fbreg -40
+< 2><0x0000015f>      DW_TAG_variable
+                        DW_AT_name                  "i"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x00000013
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0002: 9168: DW_OP_fbreg -24
+< 2><0x0000016b>      DW_TAG_variable
+                        DW_AT_name                  "j"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x00000013
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0002: 916c: DW_OP_fbreg -20
+< 1><0x00000178>    DW_TAG_subprogram
+                      DW_AT_external              yes(1)
+                      DW_AT_name                  "print"
+                      DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                      DW_AT_decl_line             0x00000018
+                      DW_AT_prototyped            yes(1)
+                      DW_AT_type                  <0x00000049>
+                      DW_AT_low_pc                0x00400609
+                      DW_AT_high_pc               <offset-from-lowpc>144
+                      DW_AT_frame_base            len 0x0001: 9c: DW_OP_call_frame_cfa
+                      DW_AT_GNU_all_tail_call_sitesyes(1)
+                      DW_AT_sibling               <0x000001cf>
+< 2><0x00000199>      DW_TAG_formal_parameter
+                        DW_AT_name                  "i"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x00000018
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0003: 91ac7e: DW_OP_fbreg -212
+< 2><0x000001a6>      DW_TAG_unspecified_parameters
+< 2><0x000001a7>      DW_TAG_variable
+                        DW_AT_name                  "j"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x0000001a
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0003: 91bc7e: DW_OP_fbreg -196
+< 2><0x000001b4>      DW_TAG_variable
+                        DW_AT_name                  "a"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x0000001a
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0003: 91b47e: DW_OP_fbreg -204
+< 2><0x000001c1>      DW_TAG_variable
+                        DW_AT_name                  "b"
+                        DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                        DW_AT_decl_line             0x0000001a
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_location              len 0x0003: 91b87e: DW_OP_fbreg -200
+< 1><0x000001cf>    DW_TAG_subprogram
+                      DW_AT_external              yes(1)
+                      DW_AT_name                  "main"
+                      DW_AT_decl_file             0x00000001 /home/hon/codebox/gcc/sleep.c
+                      DW_AT_decl_line             0x00000020
+                      DW_AT_prototyped            yes(1)
+                      DW_AT_low_pc                0x00400699
+                      DW_AT_high_pc               <offset-from-lowpc>47
+                      DW_AT_frame_base            len 0x0001: 9c: DW_OP_call_frame_cfa
+                      DW_AT_GNU_all_tail_call_sitesyes(1)
+                      DW_AT_sibling               <0x000001ff>
+< 2><0x000001ec>      DW_TAG_subprogram
+                        DW_AT_external              yes(1)
+                        DW_AT_name                  "printf"
+                        DW_AT_decl_file             0x00000002 /home/hon/codebox/gcc/<built-in>
+                        DW_AT_decl_line             0x00000000
+                        DW_AT_prototyped            yes(1)
+                        DW_AT_type                  <0x00000049>
+                        DW_AT_declaration           yes(1)
+< 3><0x000001f7>        DW_TAG_formal_parameter
+                          DW_AT_type                  <0x000001ff>
+< 3><0x000001fc>        DW_TAG_unspecified_parameters
+< 1><0x000001ff>    DW_TAG_pointer_type
+                      DW_AT_byte_size             0x00000008
+                      DW_AT_type                  <0x00000205>
+< 1><0x00000205>    DW_TAG_const_type
+                      DW_AT_type                  <0x0000007a>
+
+.debug_line: line number info for a single cu
+Source lines (from CU-DIE at .debug_info offset 0x0000000b):
+
+<pc>        [row,col] NS BB ET PE EB IS= DI= uri: "filepath"
+NS new statement, BB new basic block, ET end of text sequence
+PE prologue end, EB epilogue begin
+IA=val ISA number, DI=val discriminator value
+0x00400566  [   4, 0] NS uri: "/home/hon/codebox/gcc/sleep.c"
+0x0040056e  [   6, 0] NS
+0x00400576  [   7, 0] NS
+0x00400577  [   7, 0] DI=0x1
+0x00400589  [   8, 0] NS
+0x00400597  [   9, 0] NS
+0x0040059b  [  10, 0] NS
+0x004005a0  [  11, 0] NS
+0x004005a8  [  12, 0] NS
+0x004005b3  [  13, 0] NS
+0x004005b9  [  14, 0] NS
+0x004005c1  [  15, 0] NS
+0x004005cc  [  16, 0] NS
+0x004005d2  [  18, 0] NS
+0x004005de  [  20, 0] NS
+0x004005ec  [  21, 0] NS
+0x004005fb  [  22, 0] NS
+0x00400604  [  23, 0] NS
+0x00400609  [  25, 0] NS
+0x00400668  [  27, 0] NS
+0x00400670  [  28, 0] NS
+0x00400678  [  29, 0] NS
+0x0040068d  [  30, 0] NS
+0x00400691  [  31, 0] NS
+0x00400699  [  33, 0] NS
+0x0040069d  [  35, 0] NS
+0x004006c2  [  36, 0] NS
+0x004006c3  [  37, 0] NS
+0x004006c8  [  37, 0] NS ET
+
+.debug_pubnames
+
+.debug_macinfo
+
+.debug_string
+name at offset 0x00000000, length    5 is 'funcb'
+name at offset 0x00000006, length    5 is 'funcc'
+name at offset 0x0000000c, length    6 is 'getpid'
+name at offset 0x00000013, length   13 is 'unsigned char'
+name at offset 0x00000021, length    4 is 'main'
+name at offset 0x00000026, length    7 is 'sleep.c'
+name at offset 0x0000002e, length    5 is 'print'
+name at offset 0x00000034, length   22 is 'long long unsigned int'
+name at offset 0x0000004b, length    9 is 'short int'
+name at offset 0x00000055, length   13 is 'long long int'
+name at offset 0x00000063, length   18 is 'short unsigned int'
+name at offset 0x00000076, length    6 is 'printf'
+name at offset 0x0000007d, length    8 is 'sizetype'
+name at offset 0x00000086, length   21 is '/home/hon/codebox/gcc'
+name at offset 0x0000009c, length  100 is 'GNU C11 5.4.0 20160609 -mtune=generic -march=x86-64 -g -fomit-frame-pointer -fstack-protector-strong'
+name at offset 0x00000101, length    5 is 'funca'
+
+.debug_aranges
+
+COMPILE_UNIT<header overall offset = 0x00000000>:
+< 0><0x0000000b>  DW_TAG_compile_unit
+                    DW_AT_producer              "GNU C11 5.4.0 20160609 -mtune=generic -march=x86-64 -g -fomit-frame-pointer -fstack-protector-strong"
+                    DW_AT_language              DW_LANG_C99
+                    DW_AT_name                  "sleep.c"
+                    DW_AT_comp_dir              "/home/hon/codebox/gcc"
+                    DW_AT_low_pc                0x00400566
+                    DW_AT_high_pc               <offset-from-lowpc>354
+                    DW_AT_stmt_list             0x00000000
+
+
+arange starts at 0x00400566, length of 0x00000162, cu_die_offset = 0x0000000b
+arange end
+.debug_frame
+
+.debug_static_func
+
+.debug_static_vars
+
+.debug_weaknames
+

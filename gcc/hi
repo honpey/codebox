@@ -1,0 +1,1796 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+
+0xe8 [0x58]: event: 1
+.
+. ... raw event: size 88 bytes
+.  0000:  01 00 00 00 01 00 58 00 ff ff ff ff 00 00 00 00  ......X.........
+.  0010:  00 00 00 81 ff ff ff ff 00 00 00 3f 00 00 00 00  ...........?....
+.  0020:  00 00 00 81 ff ff ff ff 5b 6b 65 72 6e 65 6c 2e  ........[kernel.
+.  0030:  6b 61 6c 6c 73 79 6d 73 5d 5f 74 65 78 74 00 00  kallsyms]_text..
+.  0040:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0050:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0xe8 [0x58]: PERF_RECORD_MMAP -1/0: [0xffffffff81000000(0x3f000000) @ 0xffffffff81000000]: x [kernel.kallsyms]_text
+
+0x140 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 00 c0 ff ff ff ff 00 90 05 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 67 70 75 2f 64 72 6d 2f 64 72 6d  vers/gpu/drm/drm
+.  0060:  2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00 00  .ko.............
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x140 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0000000(0x59000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/gpu/drm/drm.ko
+
+0x1c0 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 90 05 c0 ff ff ff ff 00 70 00 00 00 00 00 00  .........p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 76 69 64 65 6f 2f 66 62 64 65 76  vers/video/fbdev
+.  0060:  2f 63 6f 72 65 2f 73 79 73 66 69 6c 6c 72 65 63  /core/sysfillrec
+.  0070:  74 2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00  t.ko............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1c0 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0059000(0x7000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/video/fbdev/core/sysfillrect.ko
+
+0x250 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 06 c0 ff ff ff ff 00 70 00 00 00 00 00 00  .........p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 76 69 64 65 6f 2f 66 62 64 65 76  vers/video/fbdev
+.  0060:  2f 63 6f 72 65 2f 73 79 73 63 6f 70 79 61 72 65  /core/syscopyare
+.  0070:  61 2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00  a.ko............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x250 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0060000(0x7000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/video/fbdev/core/syscopyarea.ko
+
+0x2e0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 70 06 c0 ff ff ff ff 00 b0 00 00 00 00 00 00  .p..............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 61 63 70 69 2f 76 69 64 65 6f 2e  vers/acpi/video.
+.  0060:  6b 6f 00 72 65 2f 73 79 00 00 00 00 00 00 00 00  ko.re/sy........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2e0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0067000(0xb000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/acpi/video.ko
+
+0x360 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 20 07 c0 ff ff ff ff 00 70 00 00 00 00 00 00  . .......p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 6d 63 2f 68 6f 73 74 2f 72 74  vers/mmc/host/rt
+.  0060:  73 78 5f 70 63 69 5f 73 64 6d 6d 63 2e 6b 6f 00  sx_pci_sdmmc.ko.
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x360 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0072000(0x7000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/mmc/host/rtsx_pci_sdmmc.ko
+
+0x3e8 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 90 07 c0 ff ff ff ff 00 70 00 00 00 00 00 00  .........p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 76 69 64 65 6f 2f 66 62 64 65 76  vers/video/fbdev
+.  0060:  2f 63 6f 72 65 2f 66 62 5f 73 79 73 5f 66 6f 70  /core/fb_sys_fop
+.  0070:  73 2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00  s.ko............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3e8 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0079000(0x7000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/video/fbdev/core/fb_sys_fops.ko
+
+0x478 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 08 c0 ff ff ff ff 00 a0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 70 73 2f 70 70 73 5f 63 6f 72  vers/pps/pps_cor
+.  0060:  65 2e 6b 6f 00 2f 66 62 00 00 00 00 00 00 00 00  e.ko./fb........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x478 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0080000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/pps/pps_core.ko
+
+0x4f8 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 08 c0 ff ff ff ff 00 70 00 00 00 00 00 00  .........p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 76 69 64 65 6f 2f 66 62 64 65 76  vers/video/fbdev
+.  0060:  2f 63 6f 72 65 2f 73 79 73 69 6d 67 62 6c 74 2e  /core/sysimgblt.
+.  0070:  6b 6f 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ko..............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x4f8 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc008a000(0x7000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/video/fbdev/core/sysimgblt.ko
+
+0x588 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 10 09 c0 ff ff ff ff 00 e0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 66 64 2f 72 74 73 78 5f 70 63  vers/mfd/rtsx_pc
+.  0060:  69 2e 6b 6f 00 2f 73 79 00 00 00 00 00 00 00 00  i.ko./sy........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x588 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0091000(0xe000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/mfd/rtsx_pci.ko
+
+0x608 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 f0 09 c0 ff ff ff ff 00 70 00 00 00 00 00 00  .........p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 63 68 61 72 2f 6c 70 2e 6b 6f 00  vers/char/lp.ko.
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x608 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc009f000(0x7000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/char/lp.ko
+
+0x680 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 60 0a c0 ff ff ff ff 00 a0 00 00 00 00 00 00  .`..............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 74 70 2f 70 74 70 2e 6b 6f 00  vers/ptp/ptp.ko.
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x680 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc00a6000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/ptp/ptp.ko
+
+0x6f8 [0x98]: event: 1
+.
+. ... raw event: size 152 bytes
+.  0000:  01 00 00 00 01 00 98 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 0b c0 ff ff ff ff 00 b0 03 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6e 65 74 2f 65 74 68 65 72 6e 65  vers/net/etherne
+.  0060:  74 2f 69 6e 74 65 6c 2f 65 31 30 30 30 65 2f 65  t/intel/e1000e/e
+.  0070:  31 30 30 30 65 2e 6b 6f 00 00 00 00 00 00 00 00  1000e.ko........
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0090:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x6f8 [0x98]: PERF_RECORD_MMAP -1/0: [0xffffffffc00b0000(0x3b000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/net/ethernet/intel/e1000e/e1000e.ko
+
+0x790 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 b0 0e c0 ff ff ff ff 00 f0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 66 73 2f  neric/kernel/fs/
+.  0050:  61 75 74 6f 66 73 34 2f 61 75 74 6f 66 73 34 2e  autofs4/autofs4.
+.  0060:  6b 6f 00 6e 74 65 6c 2f 00 00 00 00 00 00 00 00  ko.ntel/........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x790 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc00eb000(0xf000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/fs/autofs4/autofs4.ko
+
+0x810 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 0f c0 ff ff ff ff 00 c0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6e 65 74 2f 66 6a 65 73 2f 66 6a  vers/net/fjes/fj
+.  0060:  65 73 2e 6b 6f 00 6c 2f 00 00 00 00 00 00 00 00  es.ko.l/........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x810 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc00fa000(0xc000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/net/fjes/fjes.ko
+
+0x890 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 60 10 c0 ff ff ff ff 00 30 02 00 00 00 00 00  .`.......0......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 67 70 75 2f 64 72 6d 2f 64 72 6d  vers/gpu/drm/drm
+.  0060:  5f 6b 6d 73 5f 68 65 6c 70 65 72 2e 6b 6f 00 00  _kms_helper.ko..
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x890 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0106000(0x23000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/gpu/drm/drm_kms_helper.ko
+
+0x918 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 90 12 c0 ff ff ff ff 00 f0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 61 72 70 6f 72 74 2f 70 61 72  vers/parport/par
+.  0060:  70 6f 72 74 2e 6b 6f 00 00 00 00 00 00 00 00 00  port.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x918 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0129000(0xf000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/parport/parport.ko
+
+0x998 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 80 13 c0 ff ff ff ff 00 a0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 6c 61 74 66 6f 72 6d 2f 78 38  vers/platform/x8
+.  0060:  36 2f 77 6d 69 2e 6b 6f 00 00 00 00 00 00 00 00  6/wmi.ko........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x998 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0138000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/platform/x86/wmi.ko
+
+0xa20 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 20 14 c0 ff ff ff ff 00 90 00 00 00 00 00 00  . ..............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 61 74 61 2f 6c 69 62 61 68 63 69  vers/ata/libahci
+.  0060:  2e 6b 6f 00 69 2e 6b 6f 00 00 00 00 00 00 00 00  .ko.i.ko........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0xa20 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0142000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/ata/libahci.ko
+
+0xaa0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 b0 14 c0 ff ff ff ff 00 90 01 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 67 70 75 2f 64 72 6d 2f 74 74 6d  vers/gpu/drm/ttm
+.  0060:  2f 74 74 6d 2e 6b 6f 00 00 00 00 00 00 00 00 00  /ttm.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0xaa0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc014b000(0x19000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/gpu/drm/ttm/ttm.ko
+
+0xb20 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 40 16 c0 ff ff ff ff 00 60 00 00 00 00 00 00  .@.......`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 63 68 61 72 2f 70 70 64 65 76 2e  vers/char/ppdev.
+.  0060:  6b 6f 00 6d 2e 6b 6f 00 00 00 00 00 00 00 00 00  ko.m.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0xb20 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0164000(0x6000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/char/ppdev.ko
+
+0xba0 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 16 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 65 64 61 63 2f 69 65 33 31 32 30  vers/edac/ie3120
+.  0060:  30 5f 65 64 61 63 2e 6b 6f 00 00 00 00 00 00 00  0_edac.ko.......
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0xba0 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc016a000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/edac/ie31200_edac.ko
+
+0xc28 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 f0 16 c0 ff ff ff ff 00 a0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 61 74 61 2f 61 68 63 69 2e 6b 6f  vers/ata/ahci.ko
+.  0060:  00 5f 65 64 61 63 2e 6b 00 00 00 00 00 00 00 00  ._edac.k........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0xc28 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc016f000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/ata/ahci.ko
+
+0xca8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 90 17 c0 ff ff ff ff 00 70 00 00 00 00 00 00  .........p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 61 63 69 6e 74 6f 73 68 2f 6d  vers/macintosh/m
+.  0060:  61 63 5f 68 69 64 2e 6b 6f 00 00 00 00 00 00 00  ac_hid.ko.......
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0xca8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0179000(0x7000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/macintosh/mac_hid.ko
+
+0xd30 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 18 c0 ff ff ff ff 00 00 02 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 69 6e 70 75 74 2f 6d 6f 75 73 65  vers/input/mouse
+.  0060:  2f 70 73 6d 6f 75 73 65 2e 6b 6f 00 00 00 00 00  /psmouse.ko.....
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0xd30 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0180000(0x20000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/input/mouse/psmouse.ko
+
+0xdb8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 1a c0 ff ff ff ff 00 90 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 61 72 70 6f 72 74 2f 70 61 72  vers/parport/par
+.  0060:  70 6f 72 74 5f 70 63 2e 6b 6f 00 00 00 00 00 00  port_pc.ko......
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0xdb8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc01a0000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/parport/parport_pc.ko
+
+0xe40 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 90 1a c0 ff ff ff ff 00 90 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 66 73 2f  neric/kernel/fs/
+.  0050:  62 69 6e 66 6d 74 5f 6d 69 73 63 2e 6b 6f 00 72  binfmt_misc.ko.r
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0xe40 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc01a9000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/fs/binfmt_misc.ko
+
+0xeb8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 20 1b c0 ff ff ff ff 00 50 00 00 00 00 00 00  . .......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 69 32 63 2f 61 6c 67 6f 73 2f 69  vers/i2c/algos/i
+.  0060:  32 63 2d 61 6c 67 6f 2d 62 69 74 2e 6b 6f 00 00  2c-algo-bit.ko..
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0xeb8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc01b2000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/i2c/algos/i2c-algo-bit.ko
+
+0xf40 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 70 1b c0 ff ff ff ff 00 50 00 00 00 00 00 00  .p.......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 6c 61 74 66 6f 72 6d 2f 78 38  vers/platform/x8
+.  0060:  36 2f 6d 78 6d 2d 77 6d 69 2e 6b 6f 00 6f 00 00  6/mxm-wmi.ko.o..
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0xf40 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc01b7000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/platform/x86/mxm-wmi.ko
+
+0xfc8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 c0 1b c0 ff ff ff ff 00 80 12 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 67 70 75 2f 64 72 6d 2f 69 39 31  vers/gpu/drm/i91
+.  0060:  35 2f 69 39 31 35 2e 6b 6f 00 6b 6f 00 6f 00 00  5/i915.ko.ko.o..
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0xfc8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc01bc000(0x128000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/gpu/drm/i915/i915.ko
+
+0x1050 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 40 2e c0 ff ff ff ff 00 e0 00 00 00 00 00 00  .@..............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 65 64 61 63 2f 65 64 61 63 5f 63  vers/edac/edac_c
+.  0060:  6f 72 65 2e 6b 6f 00 6b 00 00 00 00 00 00 00 00  ore.ko.k........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1050 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc02e4000(0xe000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/edac/edac_core.ko
+
+0x10d0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 20 2f c0 ff ff ff ff 00 90 01 00 00 00 00 00  . /.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 69 73 63 2f 6d 65 69 2f 6d 65  vers/misc/mei/me
+.  0060:  69 2e 6b 6f 00 6f 00 6b 00 00 00 00 00 00 00 00  i.ko.o.k........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x10d0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc02f2000(0x19000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/misc/mei/mei.ko
+
+0x1150 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 b0 30 c0 ff ff ff ff 00 50 00 00 00 00 00 00  ..0......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 63 68 61 72 2f 6e 76 72 61 6d 2e  vers/char/nvram.
+.  0060:  6b 6f 00 6f 00 6f 00 6b 00 00 00 00 00 00 00 00  ko.o.o.k........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1150 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc030b000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/char/nvram.ko
+
+0x11d0 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 00 31 c0 ff ff ff ff 00 80 00 00 00 00 00 00  ..1.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 73 6f 75 6e 64 63 6f 72 65 2e 6b 6f 00  nd/soundcore.ko.
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x11d0 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc0310000(0x8000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/soundcore.ko
+
+0x1248 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 80 31 c0 ff ff ff ff 00 e0 16 00 00 00 00 00  ..1.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 67 70 75 2f 64 72 6d 2f 6e 6f 75  vers/gpu/drm/nou
+.  0060:  76 65 61 75 2f 6e 6f 75 76 65 61 75 2e 6b 6f 00  veau/nouveau.ko.
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x1248 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0318000(0x16e000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/gpu/drm/nouveau/nouveau.ko
+
+0x12d0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 60 48 c0 ff ff ff ff 00 a0 00 00 00 00 00 00  .`H.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 69 73 63 2f 6d 65 69 2f 6d 65  vers/misc/mei/me
+.  0060:  69 2d 6d 65 2e 6b 6f 00 00 00 00 00 00 00 00 00  i-me.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x12d0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0486000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/misc/mei/mei-me.ko
+
+0x1350 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 49 c0 ff ff ff ff 00 90 00 00 00 00 00 00  ..I.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 63 6f 72 65 2f 73 65 71 2f 73 6e 64 2d  nd/core/seq/snd-
+.  0060:  73 65 71 2d 6d 69 64 69 2d 65 76 65 6e 74 2e 6b  seq-midi-event.k
+.  0070:  6f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  o...............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1350 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0490000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/core/seq/snd-seq-midi-event.ko
+
+0x13e0 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 90 49 c0 ff ff ff ff 00 80 00 00 00 00 00 00  ..I.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 63 6f 72 65 2f 73 65 71 2f 73 6e 64 2d  nd/core/seq/snd-
+.  0060:  73 65 71 2d 6d 69 64 69 2e 6b 6f 00 6e 74 2e 6b  seq-midi.ko.nt.k
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x13e0 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0499000(0x8000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/core/seq/snd-seq-midi.ko
+
+0x1468 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 10 4a c0 ff ff ff ff 00 90 01 00 00 00 00 00  ..J.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 63 6f 72 65 2f 73 6e 64 2e 6b 6f 00 2d  nd/core/snd.ko.-
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x1468 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc04a1000(0x19000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/core/snd.ko
+
+0x14e0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 4b c0 ff ff ff ff 00 60 00 00 00 00 00 00  ..K......`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 63 6f 72 65 2f 73 6e 64 2d 68 77 64 65  nd/core/snd-hwde
+.  0060:  70 2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00  p.ko............
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x14e0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc04ba000(0x6000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/core/snd-hwdep.ko
+
+0x1560 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 4c c0 ff ff ff ff 00 90 00 00 00 00 00 00  ..L.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 63 6f 72 65 2f 73 65 71 2f 73 6e 64 2d  nd/core/seq/snd-
+.  0060:  73 65 71 2d 64 65 76 69 63 65 2e 6b 6f 00 00 00  seq-device.ko...
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x1560 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc04c0000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/core/seq/snd-seq-device.ko
+
+0x15e8 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 90 4c c0 ff ff ff ff 00 20 01 00 00 00 00 00  ..L...... ......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 63 6f 72 65 2f 73 65 71 2f 73 6e 64 2d  nd/core/seq/snd-
+.  0060:  73 65 71 2e 6b 6f 00 69 00 00 00 00 00 00 00 00  seq.ko.i........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x15e8 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc04c9000(0x12000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/core/seq/snd-seq.ko
+
+0x1668 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 b0 4d c0 ff ff ff ff 00 50 00 00 00 00 00 00  ..M......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 6c 61 74 66 6f 72 6d 2f 78 38  vers/platform/x8
+.  0060:  36 2f 69 6e 74 65 6c 2d 73 6d 61 72 74 63 6f 6e  6/intel-smartcon
+.  0070:  6e 65 63 74 2e 6b 6f 00 00 00 00 00 00 00 00 00  nect.ko.........
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1668 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc04db000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/platform/x86/intel-smartconnect.ko
+
+0x16f8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 4e c0 ff ff ff ff 00 a0 00 00 00 00 00 00  ..N.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 70 63 69 2f 68 64 61 2f 73 6e 64 2d 68  nd/pci/hda/snd-h
+.  0060:  64 61 2d 69 6e 74 65 6c 2e 6b 6f 00 74 63 6f 6e  da-intel.ko.tcon
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x16f8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc04e0000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/pci/hda/snd-hda-intel.ko
+
+0x1780 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 4e c0 ff ff ff ff 00 a0 00 00 00 00 00 00  ..N.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 63 6f 72 65 2f 73 6e 64 2d 72 61 77 6d  nd/core/snd-rawm
+.  0060:  69 64 69 2e 6b 6f 00 6c 00 00 00 00 00 00 00 00  idi.ko.l........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1780 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc04ea000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/core/snd-rawmidi.ko
+
+0x1800 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 40 4f c0 ff ff ff ff 00 90 00 00 00 00 00 00  .@O.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 63 6f 72 65 2f 73 6e 64 2d 74 69 6d 65  nd/core/snd-time
+.  0060:  72 2e 6b 6f 00 6f 00 6c 00 00 00 00 00 00 00 00  r.ko.o.l........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1800 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc04f4000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/core/snd-timer.ko
+
+0x1880 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 d0 4f c0 ff ff ff ff 00 50 00 00 00 00 00 00  ..O......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 62 6c 75 65 74 6f 6f 74 68 2f 62  vers/bluetooth/b
+.  0060:  74 62 63 6d 2e 6b 6f 00 00 00 00 00 00 00 00 00  tbcm.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1880 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc04fd000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/bluetooth/btbcm.ko
+
+0x1900 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 20 50 c0 ff ff ff ff 00 50 00 00 00 00 00 00  . P......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 69 6e 70 75 74 2f 73 65 72 69 6f  vers/input/serio
+.  0060:  2f 73 65 72 69 6f 5f 72 61 77 2e 6b 6f 00 00 00  /serio_raw.ko...
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x1900 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0502000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/input/serio/serio_raw.ko
+
+0x1988 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 70 50 c0 ff ff ff ff 00 80 00 00 00 00 00 00  .pP.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 69 6e 70 75 74 2f 69 6e 70 75 74  vers/input/input
+.  0060:  2d 6c 65 64 73 2e 6b 6f 00 77 2e 6b 6f 00 00 00  -leds.ko.w.ko...
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x1988 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0507000(0x8000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/input/input-leds.ko
+
+0x1a10 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 f0 50 c0 ff ff ff ff 00 a0 00 00 00 00 00 00  ..P.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 63 69 2f 68 6f 74 70 6c 75 67  vers/pci/hotplug
+.  0060:  2f 73 68 70 63 68 70 2e 6b 6f 00 6b 6f 00 00 00  /shpchp.ko.ko...
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x1a10 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc050f000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/pci/hotplug/shpchp.ko
+
+0x1a98 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 90 51 c0 ff ff ff ff 00 b0 01 00 00 00 00 00  ..Q.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 63 6f 72 65 2f 73 6e 64 2d 70 63 6d 2e  nd/core/snd-pcm.
+.  0060:  6b 6f 00 70 63 68 70 2e 00 00 00 00 00 00 00 00  ko.pchp.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1a98 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0519000(0x1b000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/core/snd-pcm.ko
+
+0x1b18 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 40 53 c0 ff ff ff ff 00 60 01 00 00 00 00 00  .@S......`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 6c 61 74 66 6f 72 6d 2f 78 38  vers/platform/x8
+.  0060:  36 2f 74 68 69 6e 6b 70 61 64 5f 61 63 70 69 2e  6/thinkpad_acpi.
+.  0070:  6b 6f 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ko..............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1b18 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0534000(0x16000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/platform/x86/thinkpad_acpi.ko
+
+0x1ba8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 54 c0 ff ff ff ff 00 50 00 00 00 00 00 00  ..T......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 62 6c 75 65 74 6f 6f 74 68 2f 62  vers/bluetooth/b
+.  0060:  74 69 6e 74 65 6c 2e 6b 6f 00 5f 61 63 70 69 2e  tintel.ko._acpi.
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x1ba8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc054a000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/bluetooth/btintel.ko
+
+0x1c30 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 f0 54 c0 ff ff ff ff 00 90 00 00 00 00 00 00  ..T.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 66 64 2f 6c 70 63 5f 69 63 68  vers/mfd/lpc_ich
+.  0060:  2e 6b 6f 00 65 6c 2e 6b 00 00 00 00 00 00 00 00  .ko.el.k........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1c30 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc054f000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/mfd/lpc_ich.ko
+
+0x1cb0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 80 55 c0 ff ff ff ff 00 30 01 00 00 00 00 00  ..U......0......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 68 64 61 2f 73 6e 64 2d 68 64 61 2d 63  nd/hda/snd-hda-c
+.  0060:  6f 72 65 2e 6b 6f 00 6b 00 00 00 00 00 00 00 00  ore.ko.k........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1cb0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0558000(0x13000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/hda/snd-hda-core.ko
+
+0x1d30 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 b0 56 c0 ff ff ff ff 00 50 00 00 00 00 00 00  ..V......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 64 69 61 2f 76 34 6c 32 2d  vers/media/v4l2-
+.  0060:  63 6f 72 65 2f 76 34 6c 32 2d 63 6f 6d 6d 6f 6e  core/v4l2-common
+.  0070:  2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00 00  .ko.............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1d30 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc056b000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/media/v4l2-core/v4l2-common.ko
+
+0x1dc0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 57 c0 ff ff ff ff 00 50 00 00 00 00 00 00  ..W......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 62 6c 75 65 74 6f 6f 74 68 2f 62  vers/bluetooth/b
+.  0060:  74 72 74 6c 2e 6b 6f 00 00 00 00 00 00 00 00 00  trtl.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1dc0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0570000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/bluetooth/btrtl.ko
+
+0x1e40 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 50 57 c0 ff ff ff ff 00 c0 00 00 00 00 00 00  .PW.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 62 6c 75 65 74 6f 6f 74 68 2f 62  vers/bluetooth/b
+.  0060:  74 75 73 62 2e 6b 6f 00 00 00 00 00 00 00 00 00  tusb.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1e40 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0575000(0xc000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/bluetooth/btusb.ko
+
+0x1ec0 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 10 58 c0 ff ff ff ff 00 90 00 00 00 00 00 00  ..X.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 6d 73 74 69 63 6b 2f 68 6f  vers/memstick/ho
+.  0060:  73 74 2f 72 74 73 78 5f 70 63 69 5f 6d 73 2e 6b  st/rtsx_pci_ms.k
+.  0070:  6f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  o...............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1ec0 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0581000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/memstick/host/rtsx_pci_ms.ko
+
+0x1f50 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 58 c0 ff ff ff ff 00 40 01 00 00 00 00 00  ..X......@......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 70 63 69 2f 68 64 61 2f 73 6e 64 2d 68  nd/pci/hda/snd-h
+.  0060:  64 61 2d 63 6f 64 65 63 2d 67 65 6e 65 72 69 63  da-codec-generic
+.  0070:  2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00 00  .ko.............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1f50 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc058a000(0x14000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/pci/hda/snd-hda-codec-generic.ko
+
+0x1fe0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 e0 59 c0 ff ff ff ff 00 60 00 00 00 00 00 00  ..Y......`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 69 6e 70 75 74 2f 6a 6f 79 64 65  vers/input/joyde
+.  0060:  76 2e 6b 6f 00 64 65 63 00 00 00 00 00 00 00 00  v.ko.dec........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x1fe0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc059e000(0x6000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/input/joydev.ko
+
+0x2060 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 40 5a c0 ff ff ff ff 00 60 00 00 00 00 00 00  .@Z......`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 63 72 79  neric/kernel/cry
+.  0050:  70 74 6f 2f 63 72 79 70 74 64 2e 6b 6f 00 64 65  pto/cryptd.ko.de
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x2060 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc05a4000(0x6000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/crypto/cryptd.ko
+
+0x20d8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 5a c0 ff ff ff ff 00 20 02 00 00 00 00 00  ..Z...... ......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 70 63 69 2f 68 64 61 2f 73 6e 64 2d 68  nd/pci/hda/snd-h
+.  0060:  64 61 2d 63 6f 64 65 63 2e 6b 6f 00 00 00 00 00  da-codec.ko.....
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x20d8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc05aa000(0x22000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/pci/hda/snd-hda-codec.ko
+
+0x2160 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 c0 5c c0 ff ff ff ff 00 00 08 00 00 00 00 00  ..\.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 62 6c 75 65 74 6f 6f 74 68 2f 62 6c 75 65 74  /bluetooth/bluet
+.  0060:  6f 6f 74 68 2e 6b 6f 00 00 00 00 00 00 00 00 00  ooth.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2160 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc05cc000(0x80000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/bluetooth/bluetooth.ko
+
+0x21e0 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 c0 64 c0 ff ff ff ff 00 60 00 00 00 00 00 00  ..d......`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 6d 73 74 69 63 6b 2f 63 6f  vers/memstick/co
+.  0060:  72 65 2f 6d 65 6d 73 74 69 63 6b 2e 6b 6f 00 00  re/memstick.ko..
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x21e0 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc064c000(0x6000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/memstick/core/memstick.ko
+
+0x2268 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 20 65 c0 ff ff ff ff 00 b0 08 00 00 00 00 00  . e.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 77 69 72 65 6c 65 73 73 2f 63 66 67 38 30 32  /wireless/cfg802
+.  0060:  31 31 2e 6b 6f 00 73 74 00 00 00 00 00 00 00 00  11.ko.st........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2268 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0652000(0x8b000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/wireless/cfg80211.ko
+
+0x22e8 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 d0 6d c0 ff ff ff ff 00 e0 00 00 00 00 00 00  ..m.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 70 63 69 2f 68 64 61 2f 73 6e 64 2d 68  nd/pci/hda/snd-h
+.  0060:  64 61 2d 63 6f 64 65 63 2d 68 64 6d 69 2e 6b 6f  da-codec-hdmi.ko
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x22e8 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc06dd000(0xe000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/pci/hda/snd-hda-codec-hdmi.ko
+
+0x2378 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 b0 6e c0 ff ff ff ff 00 50 01 00 00 00 00 00  ..n......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 73 6f 75  neric/kernel/sou
+.  0050:  6e 64 2f 70 63 69 2f 68 64 61 2f 73 6e 64 2d 68  nd/pci/hda/snd-h
+.  0060:  64 61 2d 63 6f 64 65 63 2d 72 65 61 6c 74 65 6b  da-codec-realtek
+.  0070:  2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00 00  .ko.............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2378 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc06eb000(0x15000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/sound/pci/hda/snd-hda-codec-realtek.ko
+
+0x2408 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 70 c0 ff ff ff ff 00 20 03 00 00 00 00 00  ..p...... ......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6e 65 74 2f 77 69 72 65 6c 65 73  vers/net/wireles
+.  0060:  73 2f 69 77 6c 77 69 66 69 2f 69 77 6c 77 69 66  s/iwlwifi/iwlwif
+.  0070:  69 2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00  i.ko............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2408 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0700000(0x32000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/net/wireless/iwlwifi/iwlwifi.ko
+
+0x2498 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 20 73 c0 ff ff ff ff 00 50 00 00 00 00 00 00  . s......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 61 72 63  neric/kernel/arc
+.  0050:  68 2f 78 38 36 2f 63 72 79 70 74 6f 2f 63 72 63  h/x86/crypto/crc
+.  0060:  33 32 2d 70 63 6c 6d 75 6c 2e 6b 6f 00 77 69 66  32-pclmul.ko.wif
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x2498 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0732000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/arch/x86/crypto/crc32-pclmul.ko
+
+0x2520 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 70 73 c0 ff ff ff ff 00 70 00 00 00 00 00 00  .ps......p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 64 69 61 2f 6d 65 64 69 61  vers/media/media
+.  0060:  2e 6b 6f 00 63 6c 6d 75 00 00 00 00 00 00 00 00  .ko.clmu........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2520 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0737000(0x7000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/media/media.ko
+
+0x25a0 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 e0 73 c0 ff ff ff ff 00 50 00 00 00 00 00 00  ..s......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 61 72 63  neric/kernel/arc
+.  0050:  68 2f 78 38 36 2f 63 72 79 70 74 6f 2f 63 72 63  h/x86/crypto/crc
+.  0060:  74 31 30 64 69 66 2d 70 63 6c 6d 75 6c 2e 6b 6f  t10dif-pclmul.ko
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x25a0 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc073e000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/arch/x86/crypto/crct10dif-pclmul.ko
+
+0x2630 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 30 74 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .0t......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 76 69 72  neric/kernel/vir
+.  0050:  74 2f 6c 69 62 2f 69 72 71 62 79 70 61 73 73 2e  t/lib/irqbypass.
+.  0060:  6b 6f 00 64 69 66 2d 70 00 00 00 00 00 00 00 00  ko.dif-p........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2630 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0743000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/virt/lib/irqbypass.ko
+
+0x26b0 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 80 74 c0 ff ff ff ff 00 c0 02 00 00 00 00 00  ..t.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 64 69 61 2f 76 34 6c 32 2d  vers/media/v4l2-
+.  0060:  63 6f 72 65 2f 76 69 64 65 6f 64 65 76 2e 6b 6f  core/videodev.ko
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x26b0 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0748000(0x2c000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/media/v4l2-core/videodev.ko
+
+0x2740 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 40 77 c0 ff ff ff ff 00 e0 00 00 00 00 00 00  .@w.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 64 69 61 2f 76 34 6c 32 2d  vers/media/v4l2-
+.  0060:  63 6f 72 65 2f 76 69 64 65 6f 62 75 66 32 2d 63  core/videobuf2-c
+.  0070:  6f 72 65 2e 6b 6f 00 00 00 00 00 00 00 00 00 00  ore.ko..........
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2740 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0774000(0xe000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/media/v4l2-core/videobuf2-core.ko
+
+0x27d0 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 20 78 c0 ff ff ff ff 00 80 00 00 00 00 00 00  . x.............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 64 69 61 2f 76 34 6c 32 2d  vers/media/v4l2-
+.  0060:  63 6f 72 65 2f 76 69 64 65 6f 62 75 66 32 2d 76  core/videobuf2-v
+.  0070:  34 6c 32 2e 6b 6f 00 00 00 00 00 00 00 00 00 00  4l2.ko..........
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x27d0 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0782000(0x8000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/media/v4l2-core/videobuf2-v4l2.ko
+
+0x2860 [0x98]: event: 1
+.
+. ... raw event: size 152 bytes
+.  0000:  01 00 00 00 01 00 98 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 78 c0 ff ff ff ff 00 50 00 00 00 00 00 00  ..x......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 64 69 61 2f 76 34 6c 32 2d  vers/media/v4l2-
+.  0060:  63 6f 72 65 2f 76 69 64 65 6f 62 75 66 32 2d 76  core/videobuf2-v
+.  0070:  6d 61 6c 6c 6f 63 2e 6b 6f 00 00 00 00 00 00 00  malloc.ko.......
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0090:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x2860 [0x98]: PERF_RECORD_MMAP -1/0: [0xffffffffc078a000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/media/v4l2-core/videobuf2-vmalloc.ko
+
+0x28f8 [0x98]: event: 1
+.
+. ... raw event: size 152 bytes
+.  0000:  01 00 00 00 01 00 98 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 f0 78 c0 ff ff ff ff 00 50 00 00 00 00 00 00  ..x......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 64 69 61 2f 76 34 6c 32 2d  vers/media/v4l2-
+.  0060:  63 6f 72 65 2f 76 69 64 65 6f 62 75 66 32 2d 6d  core/videobuf2-m
+.  0070:  65 6d 6f 70 73 2e 6b 6f 00 00 00 00 00 00 00 00  emops.ko........
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0090:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x28f8 [0x98]: PERF_RECORD_MMAP -1/0: [0xffffffffc078f000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/media/v4l2-core/videobuf2-memops.ko
+
+0x2990 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 40 79 c0 ff ff ff ff 00 40 08 00 00 00 00 00  .@y......@......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 61 72 63  neric/kernel/arc
+.  0050:  68 2f 78 38 36 2f 6b 76 6d 2f 6b 76 6d 2e 6b 6f  h/x86/kvm/kvm.ko
+.  0060:  00 6f 72 65 2f 76 69 64 00 00 00 00 00 00 00 00  .ore/vid........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2990 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0794000(0x84000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/arch/x86/kvm/kvm.ko
+
+0x2a10 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 80 81 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 74 68 65 72 6d 61 6c 2f 78 38 36  vers/thermal/x86
+.  0060:  5f 70 6b 67 5f 74 65 6d 70 5f 74 68 65 72 6d 61  _pkg_temp_therma
+.  0070:  6c 2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00  l.ko............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2a10 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0818000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/thermal/x86_pkg_temp_thermal.ko
+
+0x2aa0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 d0 81 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 68 77 6d 6f 6e 2f 63 6f 72 65 74  vers/hwmon/coret
+.  0060:  65 6d 70 2e 6b 6f 00 6d 00 00 00 00 00 00 00 00  emp.ko.m........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2aa0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc081d000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/hwmon/coretemp.ko
+
+0x2b20 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 20 82 c0 ff ff ff ff 00 80 00 00 00 00 00 00  . ..............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 63 72 79  neric/kernel/cry
+.  0050:  70 74 6f 2f 61 72 63 34 2e 6b 6f 00 6f 72 65 74  pto/arc4.ko.oret
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x2b20 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc0822000(0x8000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/crypto/arc4.ko
+
+0x2b98 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 82 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 74 68 65 72 6d 61 6c 2f 69 6e 74  vers/thermal/int
+.  0060:  65 6c 5f 70 6f 77 65 72 63 6c 61 6d 70 2e 6b 6f  el_powerclamp.ko
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2b98 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc082a000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/thermal/intel_powerclamp.ko
+
+0x2c28 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 f0 82 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 6c 6c 63 2f 6c 6c 63 2e 6b 6f 00 2f 69 6e 74  /llc/llc.ko./int
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x2c28 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc082f000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/llc/llc.ko
+
+0x2ca0 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 40 83 c0 ff ff ff ff 00 60 00 00 00 00 00 00  .@.......`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 70 6f 77 65 72 63 61 70 2f 69 6e  vers/powercap/in
+.  0060:  74 65 6c 5f 72 61 70 6c 2e 6b 6f 00 00 00 00 00  tel_rapl.ko.....
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x2ca0 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0834000(0x6000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/powercap/intel_rapl.ko
+
+0x2d28 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 83 c0 ff ff ff ff 00 90 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 62 6c 75 65 74 6f 6f 74 68 2f 62 6e 65 70 2f  /bluetooth/bnep/
+.  0060:  62 6e 65 70 2e 6b 6f 00 00 00 00 00 00 00 00 00  bnep.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2d28 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc083a000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/bluetooth/bnep/bnep.ko
+
+0x2da8 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 30 84 c0 ff ff ff ff 00 b0 02 00 00 00 00 00  .0..............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 61 72 63  neric/kernel/arc
+.  0050:  68 2f 78 38 36 2f 6b 76 6d 2f 6b 76 6d 2d 69 6e  h/x86/kvm/kvm-in
+.  0060:  74 65 6c 2e 6b 6f 00 00 00 00 00 00 00 00 00 00  tel.ko..........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2da8 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0843000(0x2b000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/arch/x86/kvm/kvm-intel.ko
+
+0x2e28 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 e0 86 c0 ff ff ff ff 00 d0 04 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6e 65 74 2f 77 69 72 65 6c 65 73  vers/net/wireles
+.  0060:  73 2f 69 77 6c 77 69 66 69 2f 6d 76 6d 2f 69 77  s/iwlwifi/mvm/iw
+.  0070:  6c 6d 76 6d 2e 6b 6f 00 00 00 00 00 00 00 00 00  lmvm.ko.........
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2e28 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc086e000(0x4d000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko
+
+0x2eb8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 b0 8b c0 ff ff ff ff 00 60 01 00 00 00 00 00  .........`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 62 6c 75 65 74 6f 6f 74 68 2f 72 66 63 6f 6d  /bluetooth/rfcom
+.  0060:  6d 2f 72 66 63 6f 6d 6d 2e 6b 6f 00 6d 2f 69 77  m/rfcomm.ko.m/iw
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x2eb8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc08bb000(0x16000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/bluetooth/rfcomm/rfcomm.ko
+
+0x2f40 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 10 8d c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 38 30 32 2f 73 74 70 2e 6b 6f 00 66 63 6f 6d  /802/stp.ko.fcom
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x2f40 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc08d1000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/802/stp.ko
+
+0x2fb8 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 60 8d c0 ff ff ff ff 00 a0 00 00 00 00 00 00  .`..............
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 6e 65 74 66 69 6c 74 65 72 2f 6e 66 5f 6e 61  /netfilter/nf_na
+.  0060:  74 2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00  t.ko............
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x2fb8 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc08d6000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/netfilter/nf_nat.ko
+
+0x3038 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 8e c0 ff ff ff ff 00 a0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 62 72 69 64 67 65 2f 62 72 5f 6e 65 74 66 69  /bridge/br_netfi
+.  0060:  6c 74 65 72 2e 6b 6f 00 00 00 00 00 00 00 00 00  lter.ko.........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3038 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc08e0000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/bridge/br_netfilter.ko
+
+0x30b8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 8e c0 ff ff ff ff 00 70 01 00 00 00 00 00  .........p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 64 72 69  neric/kernel/dri
+.  0050:  76 65 72 73 2f 6d 65 64 69 61 2f 75 73 62 2f 75  vers/media/usb/u
+.  0060:  76 63 2f 75 76 63 76 69 64 65 6f 2e 6b 6f 00 00  vc/uvcvideo.ko..
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x30b8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc08ea000(0x17000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/drivers/media/usb/uvc/uvcvideo.ko
+
+0x3140 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 10 90 c0 ff ff ff ff 00 50 0b 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 6d 61 63 38 30 32 31 31 2f 6d 61 63 38 30 32  /mac80211/mac802
+.  0060:  31 31 2e 6b 6f 00 76 69 00 00 00 00 00 00 00 00  11.ko.vi........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3140 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0901000(0xb5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/mac80211/mac80211.ko
+
+0x31c0 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 60 9b c0 ff ff ff ff 00 40 03 00 00 00 00 00  .`.......@......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 66 73 2f  neric/kernel/fs/
+.  0050:  61 75 66 73 2f 61 75 66 73 2e 6b 6f 00 38 30 32  aufs/aufs.ko.802
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x31c0 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc09b6000(0x34000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/fs/aufs/aufs.ko
+
+0x3238 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 9e c0 ff ff ff ff 00 40 02 00 00 00 00 00  .........@......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 62 72 69 64 67 65 2f 62 72 69 64 67 65 2e 6b  /bridge/bridge.k
+.  0060:  6f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  o...............
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3238 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc09ea000(0x24000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/bridge/bridge.ko
+
+0x32b8 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 e0 a0 c0 ff ff ff ff 00 b0 01 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 6e 65 74 66 69 6c 74 65 72 2f 6e 66 5f 63 6f  /netfilter/nf_co
+.  0060:  6e 6e 74 72 61 63 6b 2e 6b 6f 00 00 00 00 00 00  nntrack.ko......
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x32b8 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a0e000(0x1b000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/netfilter/nf_conntrack.ko
+
+0x3340 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 90 a2 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 69 70 76 34 2f 6e 65 74 66 69 6c 74 65 72 2f  /ipv4/netfilter/
+.  0060:  69 70 74 61 62 6c 65 5f 66 69 6c 74 65 72 2e 6b  iptable_filter.k
+.  0070:  6f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  o...............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3340 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a29000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/ipv4/netfilter/iptable_filter.ko
+
+0x33d0 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 e0 a2 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 6e 65 74 66 69 6c 74 65 72 2f 78 74 5f 61 64  /netfilter/xt_ad
+.  0060:  64 72 74 79 70 65 2e 6b 6f 00 6c 74 65 72 2e 6b  drtype.ko.lter.k
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x33d0 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a2e000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/netfilter/xt_addrtype.ko
+
+0x3458 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 30 a3 c0 ff ff ff ff 00 70 00 00 00 00 00 00  .0.......p......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 69 70 76 34 2f 6e 65 74 66 69 6c 74 65 72 2f  /ipv4/netfilter/
+.  0060:  6e 66 5f 6e 61 74 5f 69 70 76 34 2e 6b 6f 00 6b  nf_nat_ipv4.ko.k
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x3458 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a33000(0x7000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/ipv4/netfilter/nf_nat_ipv4.ko
+
+0x34e0 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 a3 c0 ff ff ff ff 00 a0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 6e 65 74 66 69 6c 74 65 72 2f 78 5f 74 61 62  /netfilter/x_tab
+.  0060:  6c 65 73 2e 6b 6f 00 69 00 00 00 00 00 00 00 00  les.ko.i........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x34e0 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a3a000(0xa000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/netfilter/x_tables.ko
+
+0x3560 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 40 a4 c0 ff ff ff ff 00 60 00 00 00 00 00 00  .@.......`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 69 70 76 34 2f 6e 65 74 66 69 6c 74 65 72 2f  /ipv4/netfilter/
+.  0060:  6e 66 5f 64 65 66 72 61 67 5f 69 70 76 34 2e 6b  nf_defrag_ipv4.k
+.  0070:  6f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  o...............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3560 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a44000(0x6000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/ipv4/netfilter/nf_defrag_ipv4.ko
+
+0x35f0 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 a0 a4 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 6e 65 74 66 69 6c 74 65 72 2f 78 74 5f 63 6f  /netfilter/xt_co
+.  0060:  6e 6e 74 72 61 63 6b 2e 6b 6f 00 70 76 34 2e 6b  nntrack.ko.pv4.k
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x35f0 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a4a000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/netfilter/xt_conntrack.ko
+
+0x3678 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 f0 a4 c0 ff ff ff ff 00 c0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 69 70 76 34 2f 6e 65 74 66 69 6c 74 65 72 2f  /ipv4/netfilter/
+.  0060:  69 70 5f 74 61 62 6c 65 73 2e 6b 6f 00 34 2e 6b  ip_tables.ko.4.k
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x3678 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a4f000(0xc000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/ipv4/netfilter/ip_tables.ko
+
+0x3700 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 b0 a5 c0 ff ff ff ff 00 90 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 69 70 76 34 2f 6e 65 74 66 69 6c 74 65 72 2f  /ipv4/netfilter/
+.  0060:  6e 66 5f 63 6f 6e 6e 74 72 61 63 6b 5f 69 70 76  nf_conntrack_ipv
+.  0070:  34 2e 6b 6f 00 00 00 00 00 00 00 00 00 00 00 00  4.ko............
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3700 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a5b000(0x9000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/ipv4/netfilter/nf_conntrack_ipv4.ko
+
+0x3790 [0x88]: event: 1
+.
+. ... raw event: size 136 bytes
+.  0000:  01 00 00 00 01 00 88 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 40 a6 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .@.......P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 69 70 76 34 2f 6e 65 74 66 69 6c 74 65 72 2f  /ipv4/netfilter/
+.  0060:  69 70 74 61 62 6c 65 5f 6e 61 74 2e 6b 6f 00 76  iptable_nat.ko.v
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0080:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x3790 [0x88]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a64000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/ipv4/netfilter/iptable_nat.ko
+
+0x3818 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 90 a6 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 78 66 72 6d 2f 78 66 72 6d 5f 61 6c 67 6f 2e  /xfrm/xfrm_algo.
+.  0060:  6b 6f 00 61 62 6c 65 5f 00 00 00 00 00 00 00 00  ko.able_........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3818 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a69000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/xfrm/xfrm_algo.ko
+
+0x3898 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 e0 a6 c0 ff ff ff ff 00 d0 00 00 00 00 00 00  ................
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 78 66 72 6d 2f 78 66 72 6d 5f 75 73 65 72 2e  /xfrm/xfrm_user.
+.  0060:  6b 6f 00 61 62 6c 65 5f 00 00 00 00 00 00 00 00  ko.able_........
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3898 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a6e000(0xd000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/xfrm/xfrm_user.ko
+
+0x3918 [0x98]: event: 1
+.
+. ... raw event: size 152 bytes
+.  0000:  01 00 00 00 01 00 98 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 b0 a7 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 69 70 76 34 2f 6e 65 74 66 69 6c 74 65 72 2f  /ipv4/netfilter/
+.  0060:  6e 66 5f 6e 61 74 5f 6d 61 73 71 75 65 72 61 64  nf_nat_masquerad
+.  0070:  65 5f 69 70 76 34 2e 6b 6f 00 00 00 00 00 00 00  e_ipv4.ko.......
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0090:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x3918 [0x98]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a7b000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/ipv4/netfilter/nf_nat_masquerade_ipv4.ko
+
+0x39b0 [0x90]: event: 1
+.
+. ... raw event: size 144 bytes
+.  0000:  01 00 00 00 01 00 90 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 a8 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 6e 65 74  neric/kernel/net
+.  0050:  2f 69 70 76 34 2f 6e 65 74 66 69 6c 74 65 72 2f  /ipv4/netfilter/
+.  0060:  69 70 74 5f 4d 41 53 51 55 45 52 41 44 45 2e 6b  ipt_MASQUERADE.k
+.  0070:  6f 00 69 70 76 34 2e 6b 00 00 00 00 00 00 00 00  o.ipv4.k........
+.  0080:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x39b0 [0x90]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a80000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/net/ipv4/netfilter/ipt_MASQUERADE.ko
+
+0x3a40 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 50 a8 c0 ff ff ff ff 00 60 00 00 00 00 00 00  .P.......`......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 63 72 79  neric/kernel/cry
+.  0050:  70 74 6f 2f 63 63 6d 2e 6b 6f 00 6c 74 65 72 2f  pto/ccm.ko.lter/
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x3a40 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a85000(0x6000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/crypto/ccm.ko
+
+0x3ab8 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 b0 a8 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 63 72 79  neric/kernel/cry
+.  0050:  70 74 6f 2f 63 74 72 2e 6b 6f 00 6c 74 65 72 2f  pto/ctr.ko.lter/
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x3ab8 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a8b000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/crypto/ctr.ko
+
+0x3b30 [0x80]: event: 1
+.
+. ... raw event: size 128 bytes
+.  0000:  01 00 00 00 01 00 80 00 ff ff ff ff 00 00 00 00  ................
+.  0010:  00 00 a9 c0 ff ff ff ff 00 50 00 00 00 00 00 00  .........P......
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 63 72 79  neric/kernel/cry
+.  0050:  70 74 6f 2f 61 6e 73 69 5f 63 70 72 6e 67 2e 6b  pto/ansi_cprng.k
+.  0060:  6f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  o...............
+.  0070:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3b30 [0x80]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a90000(0x5000) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/crypto/ansi_cprng.ko
+
+0x3bb0 [0x78]: event: 1
+.
+. ... raw event: size 120 bytes
+.  0000:  01 00 00 00 01 00 78 00 ff ff ff ff 00 00 00 00  ......x.........
+.  0010:  00 50 a9 c0 ff ff ff ff ff af 56 3f 00 00 00 00  .P........V?....
+.  0020:  00 00 00 00 00 00 00 00 2f 6c 69 62 2f 6d 6f 64  ......../lib/mod
+.  0030:  75 6c 65 73 2f 34 2e 34 2e 30 2d 32 31 2d 67 65  ules/4.4.0-21-ge
+.  0040:  6e 65 72 69 63 2f 6b 65 72 6e 65 6c 2f 63 72 79  neric/kernel/cry
+.  0050:  70 74 6f 2f 64 72 62 67 2e 6b 6f 00 6e 67 2e 6b  pto/drbg.ko.ng.k
+.  0060:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0070:  00 00 00 00 00 00 00 00                          ........
+.
+0 0 0x3bb0 [0x78]: PERF_RECORD_MMAP -1/0: [0xffffffffc0a95000(0x3f56afff) @ 0]: x /lib/modules/4.4.0-21-generic/kernel/crypto/drbg.ko
+
+0x3c28 [0x30]: event: 3
+.
+. ... raw event: size 48 bytes
+.  0000:  03 00 00 00 00 00 30 00 81 48 00 00 81 48 00 00  ......0..H...H..
+.  0010:  70 65 72 66 00 00 00 00 00 00 00 00 00 00 00 00  perf............
+.  0020:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.
+0 0 0x3c28 [0x30]: PERF_RECORD_COMM: perf:18561/18561
+
+0x3f78 [0x8]: event: 68
+.
+. ... raw event: size 8 bytes
+.  0000:  44 00 00 00 00 00 08 00                          D.......
+.
+0x3f78 [0x8]: PERF_RECORD_FINISHED_ROUND
+
+0x3c58 [0x38]: event: 3
+.
+. ... raw event: size 56 bytes
+.  0000:  03 00 00 00 00 20 38 00 81 48 00 00 81 48 00 00  ..... 8..H...H..
+.  0010:  73 6c 65 65 70 46 53 74 61 63 6b 00 00 00 00 00  sleepFStack.....
+.  0020:  81 48 00 00 81 48 00 00 8c b7 96 bb 4b 03 00 00  .H...H......K...
+.  0030:  01 00 00 00 00 00 00 00                          ........
+.
+1 3623804647308 0x3c58 [0x38]: PERF_RECORD_COMM exec: sleepFStack:18561/18561
+
+0x3c90 [0x88]: event: 10
+.
+. ... raw event: size 136 bytes
+.  0000:  0a 00 00 00 02 00 88 00 81 48 00 00 81 48 00 00  .........H...H..
+.  0010:  00 00 40 00 00 00 00 00 00 10 00 00 00 00 00 00  ..@.............
+.  0020:  00 00 00 00 00 00 00 00 08 00 00 00 06 00 00 00  ................
+.  0030:  6e 43 96 00 00 00 00 00 35 98 f5 41 00 00 00 00  nC......5..A....
+.  0040:  05 00 00 00 02 18 00 00 2f 68 6f 6d 65 2f 68 6f  ......../home/ho
+.  0050:  6e 2f 63 6f 64 65 62 6f 78 2f 67 63 63 2f 73 6c  n/codebox/gcc/sl
+.  0060:  65 65 70 46 53 74 61 63 6b 00 00 00 00 00 00 00  eepFStack.......
+.  0070:  81 48 00 00 81 48 00 00 d5 ef 96 bb 4b 03 00 00  .H...H......K...
+.  0080:  01 00 00 00 00 00 00 00                          ........
+.
+1 3623804661717 0x3c90 [0x88]: PERF_RECORD_MMAP2 18561/18561: [0x400000(0x1000) @ 0 08:06 9847662 1106614325]: r-xp /home/hon/codebox/gcc/sleepFStack
+
+0x3d18 [0x88]: event: 10
+.
+. ... raw event: size 136 bytes
+.  0000:  0a 00 00 00 02 00 88 00 81 48 00 00 81 48 00 00  .........H...H..
+.  0010:  00 10 ac cc 54 7f 00 00 00 80 22 00 00 00 00 00  ....T.....".....
+.  0020:  00 00 00 00 00 00 00 00 08 00 00 00 06 00 00 00  ................
+.  0030:  62 03 da 00 00 00 00 00 b9 ca e7 6c 00 00 00 00  b..........l....
+.  0040:  05 00 00 00 02 18 00 00 2f 6c 69 62 2f 78 38 36  ......../lib/x86
+.  0050:  5f 36 34 2d 6c 69 6e 75 78 2d 67 6e 75 2f 6c 64  _64-linux-gnu/ld
+.  0060:  2d 32 2e 32 33 2e 73 6f 00 00 00 00 00 00 00 00  -2.23.so........
+.  0070:  81 48 00 00 81 48 00 00 d2 24 97 bb 4b 03 00 00  .H...H...$..K...
+.  0080:  01 00 00 00 00 00 00 00                          ........
+.
+1 3623804675282 0x3d18 [0x88]: PERF_RECORD_MMAP2 18561/18561: [0x7f54ccac1000(0x228000) @ 0 08:06 14287714 1827130041]: r-xp /lib/x86_64-linux-gnu/ld-2.23.so
+
+0x3da0 [0x68]: event: 10
+.
+. ... raw event: size 104 bytes
+.  0000:  0a 00 00 00 02 00 68 00 81 48 00 00 81 48 00 00  ......h..H...H..
+.  0010:  00 30 bf 3c fd 7f 00 00 00 20 00 00 00 00 00 00  .0.<..... ......
+.  0020:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0030:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+.  0040:  00 00 00 00 00 00 00 00 5b 76 64 73 6f 5d 00 00  ........[vdso]..
+.  0050:  81 48 00 00 81 48 00 00 58 6a 97 bb 4b 03 00 00  .H...H..Xj..K...
+.  0060:  01 00 00 00 00 00 00 00                          ........
+.
+1 3623804693080 0x3da0 [0x68]: PERF_RECORD_MMAP2 18561/18561: [0x7ffd3cbf3000(0x2000) @ 0 00:00 0 0]: ---p [vdso]
+
+0x3e08 [0x88]: event: 10
+.
+. ... raw event: size 136 bytes
+.  0000:  0a 00 00 00 02 00 88 00 81 48 00 00 81 48 00 00  .........H...H..
+.  0010:  00 70 6f cc 54 7f 00 00 00 a0 3c 00 00 00 00 00  .po.T.....<.....
+.  0020:  00 00 00 00 00 00 00 00 08 00 00 00 06 00 00 00  ................
+.  0030:  64 03 da 00 00 00 00 00 bb ca e7 6c 00 00 00 00  d..........l....
+.  0040:  05 00 00 00 02 10 00 00 2f 6c 69 62 2f 78 38 36  ......../lib/x86
+.  0050:  5f 36 34 2d 6c 69 6e 75 78 2d 67 6e 75 2f 6c 69  _64-linux-gnu/li
+.  0060:  62 63 2d 32 2e 32 33 2e 73 6f 00 00 00 00 00 00  bc-2.23.so......
+.  0070:  81 48 00 00 81 48 00 00 4f 1f 99 bb 4b 03 00 00  .H...H..O...K...
+.  0080:  01 00 00 00 00 00 00 00                          ........
+.
+1 3623804804943 0x3e08 [0x88]: PERF_RECORD_MMAP2 18561/18561: [0x7f54cc6f7000(0x3ca000) @ 0 08:06 14287716 1827130043]: r-xp /lib/x86_64-linux-gnu/libc-2.23.so
+
+0x3e90 [0xb0]: event: 9
+.
+. ... raw event: size 176 bytes
+.  0000:  09 00 00 00 01 00 b0 00 91 dc 09 81 ff ff ff ff  ................
+.  0010:  81 48 00 00 81 48 00 00 3e d5 9b bb 4b 03 00 00  .H...H..>...K...
+.  0020:  01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00  ................
+.  0030:  0c 00 00 00 00 00 00 00 80 ff ff ff ff ff ff ff  ................
+.  0040:  91 dc 09 81 ff ff ff ff f2 44 82 81 ff ff ff ff  .........D......
+.  0050:  00 fe ff ff ff ff ff ff 1f 42 7c cc 54 7f 00 00  .........B|.T...
+.  0060:  98 05 40 00 00 00 00 00 b0 05 40 00 00 00 00 00  ..@.......@.....
+.  0070:  d6 05 40 00 00 00 00 00 63 06 40 00 00 00 00 00  ..@.....c.@.....
+.  0080:  89 06 40 00 00 00 00 00 30 78 71 cc 54 7f 00 00  ..@.....0xq.T...
+.  0090:  55 41 54 4c 8d 25 5e 07 14 00 00 00 ff 05 01 00  UATL.%^.........
+.  00a0:  81 48 00 00 90 dc 09 81 ff ff ff ff 00 00 00 00  .H..............
+.
+1 3623804982590 0x3e90 [0xb0]: PERF_RECORD_SAMPLE(IP, 0x1): 18561/18561: 0xffffffff8109dc91 period: 1 addr: 0
+... FP chain: nr:12
+.....  0: ffffffffffffff80
+.....  1: ffffffff8109dc91
+.....  2: ffffffff818244f2
+.....  3: fffffffffffffe00
+.....  4: 00007f54cc7c421f
+.....  5: 0000000000400598
+.....  6: 00000000004005b0
+.....  7: 00000000004005d6
+.....  8: 0000000000400663
+.....  9: 0000000000400689
+..... 10: 00007f54cc717830
+..... 11: 075e258d4c544155
+ ... thread: sleepFStack:18561
+ ...... dso: /usr/lib/debug/boot/vmlinux-4.4.0-21-generic
+
+0x3f40 [0x38]: event: 4
+.
+. ... raw event: size 56 bytes
+.  0000:  04 00 00 00 00 00 38 00 81 48 00 00 81 48 00 00  ......8..H...H..
+.  0010:  81 48 00 00 81 48 00 00 f2 f5 9d bb 4b 03 00 00  .H...H......K...
+.  0020:  81 48 00 00 81 48 00 00 3c f5 9d bb 4b 03 00 00  .H...H..<...K...
+.  0030:  01 00 00 00 00 00 00 00                          ........
+.
+1 3623805121852 0x3f40 [0x38]: PERF_RECORD_EXIT(18561:18561):(18561:18561)
+
+Aggregated stats:
+           TOTAL events:        123
+            MMAP events:        114
+            COMM events:          2
+            EXIT events:          1
+          SAMPLE events:          1
+           MMAP2 events:          4
+  FINISHED_ROUND events:          1
+kprobes:pid_vnr stats:
+           TOTAL events:          1
+          SAMPLE events:          1
