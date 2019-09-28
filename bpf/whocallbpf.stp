@@ -1,0 +1,12 @@
+probe begin {
+    print("who call bpf\n")
+}
+
+probe kernel.function("__bpf_prog_run") {
+    printf("%d\n", 1); 
+    print_backtrace();
+
+}
+probe end {
+    print("End")
+}
