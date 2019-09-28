@@ -1,0 +1,3 @@
+/home/hon/codebox/cmake/CMakeFiles/edit_cache.dir
+/home/hon/codebox/cmake/CMakeFiles/rebuild_cache.dir
+/home/hon/codebox/cmake/CMakeFiles/ex1.dir
