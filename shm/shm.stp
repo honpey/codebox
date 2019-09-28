@@ -1,0 +1,17 @@
+probe begin {
+    printf("Begin\n")
+}
+
+probe kernel.function("ipcget") {
+    printf("%x\n", ($ops->getnew))
+}
+
+probe kernel.function("__do_fault") {
+    if (execname() == "malloc") {
+        printf("--:%x\n", $vma->vm_ops->fault)
+    }
+}
+
+probe end {
+    printf("End\n")
+}
