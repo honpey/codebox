@@ -1,0 +1,208 @@
+
+cal.so：     文件格式 elf64-x86-64
+cal.so
+
+
+Disassembly of section .init:
+
+0000000000000628 <_init>:
+ 628:	48 83 ec 08          	sub    $0x8,%rsp
+ 62c:	48 8b 05 ad 09 20 00 	mov    0x2009ad(%rip),%rax        # 200fe0 <_DYNAMIC+0x1c8>
+ 633:	48 85 c0             	test   %rax,%rax
+ 636:	74 05                	je     63d <_init+0x15>
+ 638:	e8 53 00 00 00       	callq  690 <max@plt+0x10>
+ 63d:	48 83 c4 08          	add    $0x8,%rsp
+ 641:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000000650 <puts@plt-0x10>:
+ 650:	ff 35 b2 09 20 00    	pushq  0x2009b2(%rip)        # 201008 <_GLOBAL_OFFSET_TABLE_+0x8>
+ 656:	ff 25 b4 09 20 00    	jmpq   *0x2009b4(%rip)        # 201010 <_GLOBAL_OFFSET_TABLE_+0x10>
+ 65c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000660 <puts@plt>:
+ 660:	ff 25 b2 09 20 00    	jmpq   *0x2009b2(%rip)        # 201018 <_GLOBAL_OFFSET_TABLE_+0x18>
+ 666:	68 00 00 00 00       	pushq  $0x0
+ 66b:	e9 e0 ff ff ff       	jmpq   650 <_init+0x28>
+
+0000000000000670 <min@plt>:
+ 670:	ff 25 aa 09 20 00    	jmpq   *0x2009aa(%rip)        # 201020 <_GLOBAL_OFFSET_TABLE_+0x20>
+ 676:	68 01 00 00 00       	pushq  $0x1
+ 67b:	e9 d0 ff ff ff       	jmpq   650 <_init+0x28>
+
+0000000000000680 <max@plt>:
+ 680:	ff 25 a2 09 20 00    	jmpq   *0x2009a2(%rip)        # 201028 <_GLOBAL_OFFSET_TABLE_+0x28>
+ 686:	68 02 00 00 00       	pushq  $0x2
+ 68b:	e9 c0 ff ff ff       	jmpq   650 <_init+0x28>
+
+Disassembly of section .plt.got:
+
+0000000000000690 <.plt.got>:
+ 690:	ff 25 4a 09 20 00    	jmpq   *0x20094a(%rip)        # 200fe0 <_DYNAMIC+0x1c8>
+ 696:	66 90                	xchg   %ax,%ax
+ 698:	ff 25 5a 09 20 00    	jmpq   *0x20095a(%rip)        # 200ff8 <_DYNAMIC+0x1e0>
+ 69e:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .text:
+
+00000000000006a0 <deregister_tm_clones>:
+ 6a0:	48 8d 3d 91 09 20 00 	lea    0x200991(%rip),%rdi        # 201038 <_edata>
+ 6a7:	48 8d 05 91 09 20 00 	lea    0x200991(%rip),%rax        # 20103f <_edata+0x7>
+ 6ae:	55                   	push   %rbp
+ 6af:	48 29 f8             	sub    %rdi,%rax
+ 6b2:	48 89 e5             	mov    %rsp,%rbp
+ 6b5:	48 83 f8 0e          	cmp    $0xe,%rax
+ 6b9:	76 15                	jbe    6d0 <deregister_tm_clones+0x30>
+ 6bb:	48 8b 05 16 09 20 00 	mov    0x200916(%rip),%rax        # 200fd8 <_DYNAMIC+0x1c0>
+ 6c2:	48 85 c0             	test   %rax,%rax
+ 6c5:	74 09                	je     6d0 <deregister_tm_clones+0x30>
+ 6c7:	5d                   	pop    %rbp
+ 6c8:	ff e0                	jmpq   *%rax
+ 6ca:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 6d0:	5d                   	pop    %rbp
+ 6d1:	c3                   	retq   
+ 6d2:	0f 1f 40 00          	nopl   0x0(%rax)
+ 6d6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ 6dd:	00 00 00 
+
+00000000000006e0 <register_tm_clones>:
+ 6e0:	48 8d 3d 51 09 20 00 	lea    0x200951(%rip),%rdi        # 201038 <_edata>
+ 6e7:	48 8d 35 4a 09 20 00 	lea    0x20094a(%rip),%rsi        # 201038 <_edata>
+ 6ee:	55                   	push   %rbp
+ 6ef:	48 29 fe             	sub    %rdi,%rsi
+ 6f2:	48 89 e5             	mov    %rsp,%rbp
+ 6f5:	48 c1 fe 03          	sar    $0x3,%rsi
+ 6f9:	48 89 f0             	mov    %rsi,%rax
+ 6fc:	48 c1 e8 3f          	shr    $0x3f,%rax
+ 700:	48 01 c6             	add    %rax,%rsi
+ 703:	48 d1 fe             	sar    %rsi
+ 706:	74 18                	je     720 <register_tm_clones+0x40>
+ 708:	48 8b 05 e1 08 20 00 	mov    0x2008e1(%rip),%rax        # 200ff0 <_DYNAMIC+0x1d8>
+ 70f:	48 85 c0             	test   %rax,%rax
+ 712:	74 0c                	je     720 <register_tm_clones+0x40>
+ 714:	5d                   	pop    %rbp
+ 715:	ff e0                	jmpq   *%rax
+ 717:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+ 71e:	00 00 
+ 720:	5d                   	pop    %rbp
+ 721:	c3                   	retq   
+ 722:	0f 1f 40 00          	nopl   0x0(%rax)
+ 726:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ 72d:	00 00 00 
+
+0000000000000730 <__do_global_dtors_aux>:
+ 730:	80 3d 01 09 20 00 00 	cmpb   $0x0,0x200901(%rip)        # 201038 <_edata>
+ 737:	75 27                	jne    760 <__do_global_dtors_aux+0x30>
+ 739:	48 83 3d b7 08 20 00 	cmpq   $0x0,0x2008b7(%rip)        # 200ff8 <_DYNAMIC+0x1e0>
+ 740:	00 
+ 741:	55                   	push   %rbp
+ 742:	48 89 e5             	mov    %rsp,%rbp
+ 745:	74 0c                	je     753 <__do_global_dtors_aux+0x23>
+ 747:	48 8b 3d e2 08 20 00 	mov    0x2008e2(%rip),%rdi        # 201030 <__dso_handle>
+ 74e:	e8 45 ff ff ff       	callq  698 <max@plt+0x18>
+ 753:	e8 48 ff ff ff       	callq  6a0 <deregister_tm_clones>
+ 758:	5d                   	pop    %rbp
+ 759:	c6 05 d8 08 20 00 01 	movb   $0x1,0x2008d8(%rip)        # 201038 <_edata>
+ 760:	f3 c3                	repz retq 
+ 762:	0f 1f 40 00          	nopl   0x0(%rax)
+ 766:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ 76d:	00 00 00 
+
+0000000000000770 <frame_dummy>:
+ 770:	48 8d 3d 99 06 20 00 	lea    0x200699(%rip),%rdi        # 200e10 <__JCR_END__>
+ 777:	48 83 3f 00          	cmpq   $0x0,(%rdi)
+ 77b:	75 0b                	jne    788 <frame_dummy+0x18>
+ 77d:	e9 5e ff ff ff       	jmpq   6e0 <register_tm_clones>
+ 782:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+ 788:	48 8b 05 59 08 20 00 	mov    0x200859(%rip),%rax        # 200fe8 <_DYNAMIC+0x1d0>
+ 78f:	48 85 c0             	test   %rax,%rax
+ 792:	74 e9                	je     77d <frame_dummy+0xd>
+ 794:	55                   	push   %rbp
+ 795:	48 89 e5             	mov    %rsp,%rbp
+ 798:	ff d0                	callq  *%rax
+ 79a:	5d                   	pop    %rbp
+ 79b:	e9 40 ff ff ff       	jmpq   6e0 <register_tm_clones>
+
+00000000000007a0 <max>:
+ 7a0:	55                   	push   %rbp
+ 7a1:	48 89 e5             	mov    %rsp,%rbp
+ 7a4:	89 7d fc             	mov    %edi,-0x4(%rbp)
+ 7a7:	89 75 f8             	mov    %esi,-0x8(%rbp)
+ 7aa:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 7ad:	39 45 f8             	cmp    %eax,-0x8(%rbp)
+ 7b0:	0f 4d 45 f8          	cmovge -0x8(%rbp),%eax
+ 7b4:	5d                   	pop    %rbp
+ 7b5:	c3                   	retq   
+
+00000000000007b6 <min>:
+ 7b6:	55                   	push   %rbp
+ 7b7:	48 89 e5             	mov    %rsp,%rbp
+ 7ba:	89 7d fc             	mov    %edi,-0x4(%rbp)
+ 7bd:	89 75 f8             	mov    %esi,-0x8(%rbp)
+ 7c0:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 7c3:	39 45 f8             	cmp    %eax,-0x8(%rbp)
+ 7c6:	0f 4e 45 f8          	cmovle -0x8(%rbp),%eax
+ 7ca:	5d                   	pop    %rbp
+ 7cb:	c3                   	retq   
+
+00000000000007cc <which>:
+ 7cc:	55                   	push   %rbp
+ 7cd:	48 89 e5             	mov    %rsp,%rbp
+ 7d0:	48 83 ec 10          	sub    $0x10,%rsp
+ 7d4:	89 7d fc             	mov    %edi,-0x4(%rbp)
+ 7d7:	89 75 f8             	mov    %esi,-0x8(%rbp)
+ 7da:	89 55 f4             	mov    %edx,-0xc(%rbp)
+ 7dd:	83 7d f4 01          	cmpl   $0x1,-0xc(%rbp)
+ 7e1:	75 11                	jne    7f4 <which+0x28>
+ 7e3:	8b 55 f8             	mov    -0x8(%rbp),%edx
+ 7e6:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 7e9:	89 d6                	mov    %edx,%esi
+ 7eb:	89 c7                	mov    %eax,%edi
+ 7ed:	e8 8e fe ff ff       	callq  680 <max@plt>
+ 7f2:	eb 1c                	jmp    810 <which+0x44>
+ 7f4:	83 7d f4 00          	cmpl   $0x0,-0xc(%rbp)
+ 7f8:	75 11                	jne    80b <which+0x3f>
+ 7fa:	8b 55 f8             	mov    -0x8(%rbp),%edx
+ 7fd:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 800:	89 d6                	mov    %edx,%esi
+ 802:	89 c7                	mov    %eax,%edi
+ 804:	e8 67 fe ff ff       	callq  670 <min@plt>
+ 809:	eb 05                	jmp    810 <which+0x44>
+ 80b:	b8 00 00 00 00       	mov    $0x0,%eax
+ 810:	c9                   	leaveq 
+ 811:	c3                   	retq   
+
+0000000000000812 <sayhello>:
+ 812:	55                   	push   %rbp
+ 813:	48 89 e5             	mov    %rsp,%rbp
+ 816:	48 8d 3d 38 00 00 00 	lea    0x38(%rip),%rdi        # 855 <_fini+0x9>
+ 81d:	e8 3e fe ff ff       	callq  660 <puts@plt>
+ 822:	90                   	nop
+ 823:	5d                   	pop    %rbp
+ 824:	c3                   	retq   
+
+0000000000000825 <sayhello2>:
+ 825:	55                   	push   %rbp
+ 826:	48 89 e5             	mov    %rsp,%rbp
+ 829:	48 8d 3d 25 00 00 00 	lea    0x25(%rip),%rdi        # 855 <_fini+0x9>
+ 830:	e8 2b fe ff ff       	callq  660 <puts@plt>
+ 835:	90                   	nop
+ 836:	5d                   	pop    %rbp
+ 837:	c3                   	retq   
+
+0000000000000838 <sayhell3>:
+ 838:	55                   	push   %rbp
+ 839:	48 89 e5             	mov    %rsp,%rbp
+ 83c:	48 8d 3d 12 00 00 00 	lea    0x12(%rip),%rdi        # 855 <_fini+0x9>
+ 843:	e8 18 fe ff ff       	callq  660 <puts@plt>
+ 848:	90                   	nop
+ 849:	5d                   	pop    %rbp
+ 84a:	c3                   	retq   
+
+Disassembly of section .fini:
+
+000000000000084c <_fini>:
+ 84c:	48 83 ec 08          	sub    $0x8,%rsp
+ 850:	48 83 c4 08          	add    $0x8,%rsp
+ 854:	c3                   	retq   
