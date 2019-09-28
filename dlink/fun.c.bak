@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+	printf("hello world\n");
+	//sayhell04();
+<<<<<<< HEAD
+	int i = 0;
+	while (i++ < 10000000);
+	i = 3;
+	while (i-- > 0) {sleep(1);printf("%d", i);}
+=======
+>>>>>>> b3ab0564c4f54fa61d405a936405057b315dad9e
+	sayhello();
+}
