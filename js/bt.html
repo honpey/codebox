@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+<form id="myform" method="post" actions="#">
+    <select name="grade" id="grade">
+        <option value="1"> 初级 </option>
+        <option value="2"> 中级 </option>
+        <option value="3"> 高级 </option>
+    </select>
+    <button id="btn" name="btn" type="button" > append </button>
+    <button id="btn2" name="btn2" type="button" > clear </button>
+</form>
+
+<script>
+
+btn.onclick = function(){
+    var newOption = document.createElement("option")
+    newOption.appendChild(document.createTextNode("特技"))
+    newOption.setAttribute("value", "4")
+    grade.appendChild(newOption)
+}
+btn2.onclick = function() {
+    for (var i = 0, length = grade.options.length; i < len; i++) {
+        grade.remove(0);
+    }
+}
+
+</script>
+</body>
+</html>
+

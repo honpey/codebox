@@ -1,0 +1,23 @@
+<style>
+.event{background:#FFF38F;}
+.odd{background:#FFFFEE;}
+</style>
+<table>
+    <thead>
+        <tr><th>姓名</th><th>性别</th><th>暂住地</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>张珊</td><td>男</td><td>浙江宁波</td></tr>
+        <tr><td>李四</td><td>男</td><td>内蒙古包头</td></tr>
+        <tr><td>李雪涛</td><td>男</td><td>河北石家庄</td></tr>
+        <tr><td>刘德华</td><td>男</td><td>香港</td></tr>
+        <tr><td>徐熙娣</td><td>女</td><td>台湾</td></tr>
+    </tbody>
+</table>
+<script>
+    $(function(){
+        $("tr:odd").addClass("odd");
+        $("tr:event").addClass("event");
+    });
+</script>
+   
