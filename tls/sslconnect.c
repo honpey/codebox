@@ -182,6 +182,7 @@ int create_socket(char url_str[], BIO *out) {
     BIO_printf(out, "Error: Cannot resolve hostname %s.\n",  hostname);
     abort();
   }
+  printf("host: %s\n", host->h_addr);
 
   /* ---------------------------------------------------------- *
    * create the basic TCP socket                                *
