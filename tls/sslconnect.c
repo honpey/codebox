@@ -85,6 +85,7 @@ int main() {
    * Make the underlying TCP socket connection                  *
    * ---------------------------------------------------------- */
   server = create_socket(dest_url, outbio);
+  printf("server: %d\n", server);
   if(server != 0)
     BIO_printf(outbio, "Successfully made the TCP connection to: %s.\n", dest_url);
 
@@ -109,6 +110,8 @@ int main() {
     BIO_printf(outbio, "Error: Could not get a certificate from: %s.\n", dest_url);
   else
     BIO_printf(outbio, "Retrieved the server's certificate from: %s.\n", dest_url);
+
+  printf("cert: %v\n", cert);
 
   /* ---------------------------------------------------------- *
    * extract various certificate information                    *
